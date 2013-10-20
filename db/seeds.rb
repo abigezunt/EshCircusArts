@@ -191,7 +191,7 @@ User.create(
 	role: "teacher")
 
 User.create(
-	name: "Eileen Little"
+	name: "Eileen Little",
 	bio: "Eileen Little has been climbing on things ever since she can remember, but she first touched a trapeze when she was working toward her MFA in Acting from the National Theater Conservatory.  Eileen is co-artistic director and co-founder of Fight or Flight, an aerial theater company based in NYC. She teaches aerial workshops and classes across the US, and in conjunction with Fight or Flight tailors aerial programs to school curricula for education and outreach.  She is a graduate of the New England Center for Circus Arts in Brattleboro, VT.  Eileen performs regularly in the Boston area and is a member of Girls on Trapeze, whose latest show “Herself Rising” is touring across the U.S. <br> www.eileenlittle.com",
 	role: "teacher",
 	photo: "instructors/eileen.png")
@@ -211,7 +211,7 @@ User.create(
 
 User.create(
 	name: "Gina DeFreitas",
-	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center. <br> Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids. <br> Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad."
+	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center. <br> Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids. <br> Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad.",
 	role: "teacher",
 	photo: "instructors/gina.jpg")
 
@@ -219,9 +219,9 @@ User.create(
 	name: "Abby Howell",
 	bio: "Abby has been a student at Esh since January 2012 and has studied silks, partner acrobatics, trapeze, handbalancing, and cirque fitness.  She is a former teacher of the deaf and is a student at General Assembly.",
 	role: "student",
-	injuries: ["sprained ankle Oct 2012"],
+	injuries: "sprained ankle Oct 2012",
 	email: "abby.g.howell@gmail.com",
-	phone_number: "512-762-2113"
+	phone_number: "512-762-2113",
 	emergency_contact_name: "Brian Olson",
 	emergency_contact_number: "617-899-4019",
 	address: "92 Bristol Rd, Medford MA 02155",
@@ -233,7 +233,7 @@ User.create(
 	role: "student",
 	email: "brian.olson@gmail.com",
 	address: "92 Bristol Rd, Medford MA 02155",
-	emergency_contact_number: "512-762-2113"
+	emergency_contact_number: "512-762-2113",
 	emergency_contact_name: "Abby Howell",
 	phone_number: "617-899-4019")
 
