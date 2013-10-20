@@ -1,2 +1,2 @@
-module MainsHelper
+module MainHelper
 end

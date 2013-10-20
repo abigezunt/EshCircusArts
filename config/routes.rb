@@ -1,5 +1,5 @@
 EshTestApp::Application.routes.draw do
-  resources :mains
+  resources :main
 
   resources :registrations
 
