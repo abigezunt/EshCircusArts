@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
@@ -69,6 +70,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :bio, :role, :injuries, :photo, :emergency_contact_name, :emergency_contact_number, :email, :phone_number, :address)
+      params.require(:user).permit(:name, :course_ids, :registration_ids, :bio, :role, :injuries, :photo, :emergency_contact_name, :emergency_contact_number, :email, :phone_number, :address)
     end
 end

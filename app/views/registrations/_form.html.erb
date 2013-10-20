@@ -13,20 +13,21 @@
 
   <div class="field">
     <%= f.label :user %><br>
-    <%= f.text_field :user %>
+    <%= collection_select(:registration, :user_id, User.where(:role => "student"), :id, :name) %>
   </div>
+
+  <%= link_to "Register as a new student", new_user_path %>
+
   <div class="field">
     <%= f.label :course %><br>
-    <%= f.text_field :course %>
+    <%= collection_select(:registration, :course_id, Course.where(:start_date.future?), :id, :name) %>
   </div>
-  <div class="field">
-    <%= f.label :paid %><br>
-    <%= f.check_box :paid %>
-  </div>
+
   <div class="field">
     <%= f.label :timestamps %><br>
     <%= f.text_field :timestamps %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

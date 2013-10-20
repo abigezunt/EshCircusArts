@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<%= @user.name %>
-<%= image_tag @user.photo_url%>
+<h2><%= @user.name %></h2>
+<%= image_tag @user.photo%>
+<% if @user.role == "teacher" %>
+
+  <% @user.courses.each do |course| %>
+    <%= link_to course.name, course %>
+  <% end %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
