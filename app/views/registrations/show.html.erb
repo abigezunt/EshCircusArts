@@ -2,23 +2,16 @@
 
 <p>
   <strong>User:</strong>
-  <%= @registration.user %>
+  <%= @registration.user.name %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @registration.course %>
+  <%= @registration.course.description %> starting on 
+  <%= @registration.course.start_date.strftime("%A, %B %-d, %Y") %>
 </p>
 
-<p>
-  <strong>Paid:</strong>
-  <%= @registration.paid %>
-</p>
-
-<p>
-  <strong>Timestamps:</strong>
-  <%= @registration.timestamps %>
-</p>
+<h3><%= link_to "Pay Now", new_charge_path %></h3>
 
 <%= link_to 'Edit', edit_registration_path(@registration) %> |
 <%= link_to 'Back', registrations_path %>

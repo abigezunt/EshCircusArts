@@ -20,13 +20,9 @@
 
   <div class="field">
     <%= f.label :course %><br>
-    <%= collection_select(:registration, :course_id, Course.where(:start_date.future?), :id, :name) %>
+    <%= collection_select(:registration, :course_id, Course.find(:all, :conditions => ["start_date between ? and ?", Date.today, Date.today + 70]), :id, :description) %>
   </div>
 
-  <div class="field">
-    <%= f.label :timestamps %><br>
-    <%= f.text_field :timestamps %>
-  </div>
 
   <div class="actions">
     <%= f.submit %>
