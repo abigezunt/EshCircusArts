@@ -1,15 +1,11 @@
 
 #header {
 	border: 2px purple solid;
+	background: url('eshlogo.jpg') no-repeat fixed;
+	background-size: 100px;
+	text-align: center;
 
-	.header-logo {
-		display: inline-block;
-		img {
-			height: 100px;
-		}
-	}
 	.header-text {
-		text-align: center;
 		display: inline-block;
 	}
 	#nav-bar {
@@ -21,3 +17,27 @@
 	}
 
 }
+
+#page-container {
+
+	padding: 20px;
+
+	#hero-image {
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 500px;
+		}
+	}
+
+	.left-column {
+		border: 3px red dotted;
+	
+	}
+
+	.right-column {
+		border: 3px blue dotted;
+		padding: 20px;
+	}
+}
+

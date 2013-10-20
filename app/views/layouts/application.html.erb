@@ -9,7 +9,6 @@
 <body>
 
 <div id="header">
-  <div class="header-logo"><%= image_tag 'eshlogo.jpg' %></div>
   <div class="header-text">
     <h1><%= link_to 'Esh Circus Arts', '/' %></h1>
     <div id="nav-bar">
@@ -25,8 +24,9 @@
   </div>
 </div>
 
-
-<%= yield %>
+<div id="page-container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
