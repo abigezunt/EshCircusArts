@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020161012) do
+ActiveRecord::Schema.define(version: 20131020184020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,23 @@ ActiveRecord::Schema.define(version: 20131020161012) do
     t.float    "instructior_pay"
     t.string   "level"
     t.text     "description"
-    t.string   "discipline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "discipline_id"
+  end
+
+  create_table "disciplines", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "photo_url"
+    t.text     "photo_caption"
+    t.text     "level_1_description"
+    t.text     "level_2_description"
+    t.text     "level_3_description"
+    t.text     "level_4_description"
+    t.text     "all_levels"
+    t.text     "apparatus_description"
+    t.string   "apparatus_photo_urls",  array: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

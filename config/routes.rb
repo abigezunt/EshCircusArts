@@ -1,5 +1,7 @@
 EshTestApp::Application.routes.draw do
 
+  resources :disciplines
+
   root to: 'main#index'
 
   get '/location', to: 'main#location'
