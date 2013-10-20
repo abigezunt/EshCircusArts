@@ -6,12 +6,129 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Discipline.create(name: "", description: "", photo_url: "", photo_caption: "", level_1_description: "", level_2_description: "", level_3_description: "", level_4_description: "", all_levels: "", apparatus_description: "", apparatus_photo_urls: ["", ""])
-Discipline.create(name: "", description: "", photo_url: "", photo_caption: "", level_1_description: "", level_2_description: "", level_3_description: "", level_4_description: "", all_levels: "", apparatus_description: "", apparatus_photo_urls: ["", ""])
-Discipline.create(name: "", description: "", photo_url: "", photo_caption: "", level_1_description: "", level_2_description: "", level_3_description: "", level_4_description: "", all_levels: "", apparatus_description: "", apparatus_photo_urls: ["", ""])
-Discipline.create(name: "", description: "", photo_url: "", photo_caption: "", level_1_description: "", level_2_description: "", level_3_description: "", level_4_description: "", all_levels: "", apparatus_description: "", apparatus_photo_urls: ["", ""])
-Discipline.create(name: "", description: "", photo_url: "", photo_caption: "", level_1_description: "", level_2_description: "", level_3_description: "", level_4_description: "", all_levels: "", apparatus_description: "", apparatus_photo_urls: ["", ""])
-Discipline.create(name: "", description: "", photo_url: "", photo_caption: "", level_1_description: "", level_2_description: "", level_3_description: "", level_4_description: "", all_levels: "", apparatus_description: "", apparatus_photo_urls: ["", ""])
+Discipline.create(
+	name: "Trapeze", 
+	description: "Distinct from its oft-confused cousins flying trapeze and swinging trapeze, static trapeze (a.k.a. trap) consists of a single bar suspended from two ropes hanging from two points on the ceiling. Poses, sequences, and dynamic movements are performed under the bar, on the bar, and up in the ropes.", 
+	photo_url: "disciplines/trapeze.jpg", 
+	photo_caption: "Esh alumna Victoria Quine in a 2012 student performance", 
+	level_1_description: "Static Trapeze classes at the beginner level focus on building students’ confidence and technique on the bar. 
+		<br>
+		The goals of these classes are: 
+
+		<ul>
+		  <li>To build the body awareness, strength, and flexibility</li>
+		  <li>To introduce and maintain strong form and technique.</li>
+		  <li>To build and expand a versatile movement vocabulary.</li>
+		  <li>To give students the opportunity to be creative and playful in the air through improvisation and routine-building.</li>
+		  <li>To always emphasize good safety habits and injury prevention.</li>
+		</ul>", 
+	level_2_description: "
+	    Generally, this is for students who have completed some course of aerial training either at Esh or at other schools, and have a baseline of core/upper body strength. This level will begin to work with more complex wraps, poses, and transitions. <br>
+	    <br>
+	    Pre-requisites for level 2: 
+	    <ul>
+	      <li>Ability to invert from the mat without instructor’s help (jumping is ok!)</li>
+	      <li>Able to find correct shoulder form when hanging from the bar, both inverted and upright</li>
+	      <li>Able to hold knee hang with toes below the level of the knees</li>
+	      <li>Able to dismount from the bar with reasonable control</li>
+	      <li>Familiarity with: Angel, mermaid, gazelle, star, man in the moon, straddle back balance, standing on the bar, front balance.</li>
+	    </ul>", 
+	level_3_description: "
+	This level is for students who are comfortable with knee hangs, back balances, front balances, pullovers, long hang beats, and standing/rope work. Students in this level will begin to work on movements higher in the air, as well as sequences to build stamina, more advanced drops, and some choreographic skills. Students should be able to invert from the mat with minimal jumping, or be able to invert in the air (using feet and/or swinging to help you up is ok!).
+		Pre-requisities: 
+		<ul>
+		  <li>Ability to invert cleanly without instructor’s help.</li>
+		  <li>Ability to pull over onto the bar without instructor’s help (some assist with feet ok).</li>
+		  <li>Ability to hang from hands for at least ten seconds with good shoulder engagement.</li>
+		  <li>Familiarity with hanging beats under the bar.</li>
+		  <li>Familiarity and competence with: half milcircle, front balance rolldowns, back balances, inversions in the ropes (trapeze), top-of-the-lyra movements, flags, amazons.</li>
+		</ul>", 
+	level_4_description: "
+		This is for advanced students who are comfortable with being in the air on their chosen apparatus. <br>
+		Classes labeled with “continuing” are for students who have been at Level 4 for a couple of sessions; these classes require that students already be familiar with Level 4 vocabulary. <br>
+		These classes will start to work on dynamic movements and unlocked drops/release moves, and will encourage students to find creative transitions and even invent new tricks, shapes, and movements of their own. As with all other levels, technique and injury prevention will continue to be emphasized. <br>
+		<br>
+		Pre-requisites:
+		<ul>
+		  <li>Ability to invert cleanly both on the bar and in the ropes.</li>
+		  <li>Ability to pull over onto the bar cleanly and without using feet.</li>
+		  <li>Familiarity and competence with momentum tricks such as russian rolls, milcircles, and front hip circles.</li>
+		  <li>Comfort with single knee hangs and knee hang beats.</li>
+		  <li>Familiarity with: front rolls, foot flags, vertical splits, drops onto the bar (lyra).</li>
+		  <li>Has the strength and stamina to complete 2-minute sequences in the air.</li>
+		</ul>", 
+	all_levels: "", 
+	apparatus_description: "", 
+	apparatus_photo_urls: ["", ""]
+	)
+
+Discipline.create(
+	name: "Aerial Hoop", 
+	description: "Aerial hoop (a.k.a. lyra, cerceau, aerial ring) consists of a steel hoop suspended in the air.", 
+	photo_url: "disciplines/hoop.jpg", 
+	photo_caption: "Esh student Fonda Feeling performing in the 2012 Esh student recital", 
+	level_1_description: "Aerial Hoop classes at the beginner level focus on building students’ confidence and technique on the bar. The goals of these classes are: </p>
+
+		<ul>
+		  <li>To build the body awareness, strength, and flexibility</li>
+		  <li>To introduce and maintain strong form and technique.</li>
+		  <li>To build and expand a versatile movement vocabulary.</li>
+		  <li>To give students the opportunity to be creative and playful in the air through improvisation and routine-building.</li>
+		  <li>To always emphasize good safety habits and injury prevention.</li>
+		</ul>", 
+	level_2_description: "
+	 	Generally, this is for students who have completed some course of aerial training either at Esh or at other schools, and have a baseline of core/upper body strength. This level will begin to work with more complex wraps, poses, and transitions. <br>
+	    <br>
+	    Pre-requisites for level 2: 
+	    <ul>
+	      <li>Ability to invert from the mat without instructor’s help (jumping is ok!)</li>
+	      <li>Able to find correct shoulder form when hanging from the bar, both inverted and upright</li>
+	      <li>Able to hold knee hang with toes below the level of the knees</li>
+	      <li>Able to dismount from the bar with reasonable control</li>
+	      <li>Familiarity with: Angel, mermaid, gazelle, star, man in the moon, straddle back balance, standing on the bar, front balance.</li>
+	    </ul>", 
+	level_3_description: "This level is for students who are comfortable with knee hangs, back balances, front balances, pullovers, long hang beats, and standing/rope work. Students in this level will begin to work on movements higher in the air, as well as sequences to build stamina, more advanced drops, and some choreographic skills. Students should be able to invert from the mat with minimal jumping, or be able to invert in the air (using feet and/or swinging to help you up is ok!).<br>
+		<br>
+		Pre-requisities: 
+		<ul>
+		  <li>Ability to invert cleanly without instructor’s help.</li>
+		  <li>Ability to pull over onto the bar without instructor’s help (some assist with feet ok).</li>
+		  <li>Ability to hang from hands for at least ten seconds with good shoulder engagement.</li>
+		  <li>Familiarity with hanging beats under the bar.</li>
+		  <li>Familiarity and competence with: half milcircle, front balance rolldowns, back balances, inversions in the ropes (trapeze), top-of-the-lyra movements, flags, amazons.</li>
+		</ul>", 
+	level_4_description: "
+		This is for advanced students who are comfortable with being in the air on their chosen apparatus. <br>
+		Classes labeled with “continuing” are for students who have been at Level 4 for a couple of sessions; these classes require that students already be familiar with Level 4 vocabulary. <br>
+		These classes will start to work on dynamic movements and unlocked drops/release moves, and will encourage students to find creative transitions and even invent new tricks, shapes, and movements of their own. As with all other levels, technique and injury prevention will continue to be emphasized. <br>
+		<br>
+		Pre-requisites:
+		<ul>
+		  <li>Ability to invert cleanly both on the bar and in the ropes.</li>
+		  <li>Ability to pull over onto the bar cleanly and without using feet.</li>
+		  <li>Familiarity and competence with momentum tricks such as russian rolls, milcircles, and front hip circles.</li>
+		  <li>Comfort with single knee hangs and knee hang beats.</li>
+		  <li>Familiarity with: front rolls, foot flags, vertical splits, drops onto the bar (lyra).</li>
+		  <li>Has the strength and stamina to complete 2-minute sequences in the air.</li>
+		</ul>", 
+	all_levels: "", 
+	apparatus_description: "", 
+	apparatus_photo_urls: ["", ""]
+	)
+
+Discipline.create(
+	name: "", 
+	description: "", 
+	photo_url: "", 
+	photo_caption: "", 
+	level_1_description: "", 
+	level_2_description: "", 
+	level_3_description: "", 
+	level_4_description: "", 
+	all_levels: "", 
+	apparatus_description: "", 
+	apparatus_photo_urls: ["", ""]
+	)
 
 User.create(
 	name: "Rachel Stewart", 
@@ -97,4 +214,26 @@ User.create(
 	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center. <br> Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids. <br> Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad."
 	role: "teacher",
 	photo: "instructors/gina.jpg")
+
+User.create(
+	name: "Abby Howell",
+	bio: "Abby has been a student at Esh since January 2012 and has studied silks, partner acrobatics, trapeze, handbalancing, and cirque fitness.  She is a former teacher of the deaf and is a student at General Assembly.",
+	role: "student",
+	injuries: ["sprained ankle Oct 2012"],
+	email: "abby.g.howell@gmail.com",
+	phone_number: "512-762-2113"
+	emergency_contact_name: "Brian Olson",
+	emergency_contact_number: "617-899-4019",
+	address: "92 Bristol Rd, Medford MA 02155",
+	)
+
+User.create(
+	name: "Brian Olson",
+	bio: "Brian is a computer wizard and Esh student since Fall of 1999. Brian specializes in aerial silks and partner acrobatics.",
+	role: "student",
+	email: "brian.olson@gmail.com",
+	address: "92 Bristol Rd, Medford MA 02155",
+	emergency_contact_number: "512-762-2113"
+	emergency_contact_name: "Abby Howell",
+	phone_number: "617-899-4019")
 
