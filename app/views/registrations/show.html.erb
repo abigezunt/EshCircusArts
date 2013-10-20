@@ -11,6 +11,11 @@
   <%= @registration.course.start_date.strftime("%A, %B %-d, %Y") %>
 </p>
 
+<p>
+  <strong>Your unpaid balance:</strong>
+  <%= @registration.user.unpaid_balance%>
+</p>
+
 <h3><%= link_to "Pay Now", new_charge_path %></h3>
 
 <%= link_to 'Edit', edit_registration_path(@registration) %> |

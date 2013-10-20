@@ -20,8 +20,10 @@
     <%= f.text_area :bio %>
   </div>
   <div class="field">
-    <%= f.label :role %><br>
-    <%= f.text_field :role %>
+    <%= radio_button_tag(:role, "student") %><br>
+    <%= label_tag(:role_student, "I am a student") %>
+    <%= radio_button_tag(:role, "teacher") %><br>
+    <%= label_tag(:role_teacher, "I am a teacher") %>
   </div>
   <div class="field">
     <%= f.label :injuries %><br>
