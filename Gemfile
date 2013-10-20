@@ -13,6 +13,11 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'pry-rails'
 
+group :production do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
+
 # manually including bootstrap instead of this gem
 # gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 #                           :github => 'anjlab/bootstrap-rails',
