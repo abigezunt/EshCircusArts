@@ -8,6 +8,24 @@
 </head>
 <body>
 
+<div id="header">
+  <div class="header-logo"><%= image_tag 'eshlogo.jpg' %></div>
+  <div class="header-text">
+    <h1><%= link_to 'Esh Circus Arts', '/' %></h1>
+    <div id="nav-bar">
+      <ul> 
+        <li>Circus Skills</li> | 
+        <li><%= link_to 'Classes', '/courses' %> </li> | 
+        <li>Workshops</li> | 
+        <li>Private Lessons</li> | 
+        <li>About</li> | 
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
 <%= yield %>
 
 </body>

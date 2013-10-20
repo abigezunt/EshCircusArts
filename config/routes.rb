@@ -1,4 +1,9 @@
 EshTestApp::Application.routes.draw do
+
+  root to: 'main#index'
+
+  get '/location', to: 'main#location'
+
   resources :main
 
   resources :registrations

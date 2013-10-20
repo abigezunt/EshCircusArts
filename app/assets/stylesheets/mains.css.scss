@@ -1,3 +1,23 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#header {
+	border: 2px purple solid;
+
+	.header-logo {
+		display: inline-block;
+		img {
+			height: 100px;
+		}
+	}
+	.header-text {
+		text-align: center;
+		display: inline-block;
+	}
+	#nav-bar {
+
+		li{
+			display: inline-block;
+		}
+
+	}
+
+}
