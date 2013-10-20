@@ -24,17 +24,6 @@
   </div>
 </div>
 
-<%= nav_bar :fixed => :top, :brand => 'Esh Circus Arts', :responsive => true do %>
-  <%= menu_group do %>
-    <%= menu_item "Home", root_path %>
-    <%= menu_divider %>
-    <%= drop_down "About Esh" do %>
-      <%= menu_item "Location", location_path %>
-      <%= menu_item "Contact Us", contact_path %>
-    <% end %>
-  <% end %>
-<% end %>
-
 <div id="page-container">
   <%= yield %>
 </div>

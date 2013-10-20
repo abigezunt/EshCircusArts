@@ -13,9 +13,10 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'pry-rails'
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                          :github => 'anjlab/bootstrap-rails',
-                          :branch => '3.0.0'
+# manually including bootstrap instead of this gem
+# gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+#                           :github => 'anjlab/bootstrap-rails',
+#                           :branch => '3.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
