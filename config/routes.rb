@@ -4,6 +4,8 @@ EshTestApp::Application.routes.draw do
 
   get '/location', to: 'main#location'
 
+  get '/contact', to: 'main#contact'
+
   resources :main
 
   resources :registrations
