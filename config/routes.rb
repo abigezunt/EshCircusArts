@@ -8,6 +8,8 @@ EshTestApp::Application.routes.draw do
 
   get '/contact', to: 'main#contact'
 
+  get '/instructors', to: 'main#instructors'
+
   resources :main
 
   resources :registrations

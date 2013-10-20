@@ -15,6 +15,10 @@ class MainController < ApplicationController
   def private_lessons
   end
 
+  def instructors
+    @instructors = User.where(role: "teacher")
+  end
+
   def special_workshops
     @workshops = Course.where(number_of_sessions: 1)
   end

@@ -1,0 +1,13 @@
+
+
+<% @instructors.each do |instructor| %>
+<div class="row">  
+  <div class="col-sm-4 col-md-4 left-column">
+    <%= image_tag instructor.photo %>
+  </div>
+  <div class="col-sm-8 col-md-8 right-column">
+    <h3><%= link_to instructor.name, instructor %></h3>
+    <p><%= instructor.bio %></p>
+  </div>
+</div>
+<% end %>

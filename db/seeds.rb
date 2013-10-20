@@ -12,51 +12,52 @@ Discipline.create(
 	photo_url: "disciplines/trapeze.jpg", 
 	photo_caption: "Esh alumna Victoria Quine in a 2012 student performance", 
 	level_1_description: "Static Trapeze classes at the beginner level focus on building students’ confidence and technique on the bar. 
-		<br>
+		\n
 		The goals of these classes are: 
 
-		<ul>
-		  <li>To build the body awareness, strength, and flexibility</li>
-		  <li>To introduce and maintain strong form and technique.</li>
-		  <li>To build and expand a versatile movement vocabulary.</li>
-		  <li>To give students the opportunity to be creative and playful in the air through improvisation and routine-building.</li>
-		  <li>To always emphasize good safety habits and injury prevention.</li>
-		</ul>", 
+		
+		  * To build the body awareness, strength, and flexibility\n
+		  * To introduce and maintain strong form and technique.\n
+		  * To build and expand a versatile movement vocabulary.\n
+		  * To give students the opportunity to be creative and playful in the air through improvisation and routine-building.\n
+		  * To always emphasize good safety habits and injury prevention.\n
+		", 
 	level_2_description: "
-	    Generally, this is for students who have completed some course of aerial training either at Esh or at other schools, and have a baseline of core/upper body strength. This level will begin to work with more complex wraps, poses, and transitions. <br>
-	    <br>
+	    Generally, this is for students who have completed some course of aerial training either at Esh or at other schools, and have a baseline of core/upper body strength. This level will begin to work with more complex wraps, poses, and transitions. 
+	    \n
 	    Pre-requisites for level 2: 
-	    <ul>
-	      <li>Ability to invert from the mat without instructor’s help (jumping is ok!)</li>
-	      <li>Able to find correct shoulder form when hanging from the bar, both inverted and upright</li>
-	      <li>Able to hold knee hang with toes below the level of the knees</li>
-	      <li>Able to dismount from the bar with reasonable control</li>
-	      <li>Familiarity with: Angel, mermaid, gazelle, star, man in the moon, straddle back balance, standing on the bar, front balance.</li>
-	    </ul>", 
+	    \n
+	      * Ability to invert from the mat without instructor’s help (jumping is ok!)\n
+	      * Able to find correct shoulder form when hanging from the bar, both inverted and upright\n
+	      * Able to hold knee hang with toes below the level of the knees\n
+	      * Able to dismount from the bar with reasonable control\n
+	      * Familiarity with: Angel, mermaid, gazelle, star, man in the moon, straddle back balance, standing on the bar, front balance.\n
+	    ", 
 	level_3_description: "
 	This level is for students who are comfortable with knee hangs, back balances, front balances, pullovers, long hang beats, and standing/rope work. Students in this level will begin to work on movements higher in the air, as well as sequences to build stamina, more advanced drops, and some choreographic skills. Students should be able to invert from the mat with minimal jumping, or be able to invert in the air (using feet and/or swinging to help you up is ok!).
+		\n
 		Pre-requisities: 
-		<ul>
-		  <li>Ability to invert cleanly without instructor’s help.</li>
-		  <li>Ability to pull over onto the bar without instructor’s help (some assist with feet ok).</li>
-		  <li>Ability to hang from hands for at least ten seconds with good shoulder engagement.</li>
-		  <li>Familiarity with hanging beats under the bar.</li>
-		  <li>Familiarity and competence with: half milcircle, front balance rolldowns, back balances, inversions in the ropes (trapeze), top-of-the-lyra movements, flags, amazons.</li>
-		</ul>", 
+		\n
+		  * Ability to invert cleanly without instructor’s help.\n
+		  * Ability to pull over onto the bar without instructor’s help (some assist with feet ok).\n
+		  * Ability to hang from hands for at least ten seconds with good shoulder engagement.\n
+		  * Familiarity with hanging beats under the bar.\n
+		  * Familiarity and competence with: half milcircle, front balance rolldowns, back balances, inversions in the ropes (trapeze), top-of-the-lyra movements, flags, amazons.\n
+		", 
 	level_4_description: "
-		This is for advanced students who are comfortable with being in the air on their chosen apparatus. <br>
-		Classes labeled with “continuing” are for students who have been at Level 4 for a couple of sessions; these classes require that students already be familiar with Level 4 vocabulary. <br>
-		These classes will start to work on dynamic movements and unlocked drops/release moves, and will encourage students to find creative transitions and even invent new tricks, shapes, and movements of their own. As with all other levels, technique and injury prevention will continue to be emphasized. <br>
-		<br>
+		This is for advanced students who are comfortable with being in the air on their chosen apparatus. 
+		Classes labeled with “continuing” are for students who have been at Level 4 for a couple of sessions; these classes require that students already be familiar with Level 4 vocabulary. 
+		These classes will start to work on dynamic movements and unlocked drops/release moves, and will encourage students to find creative transitions and even invent new tricks, shapes, and movements of their own. As with all other levels, technique and injury prevention will continue to be emphasized. 
+		\n
 		Pre-requisites:
-		<ul>
-		  <li>Ability to invert cleanly both on the bar and in the ropes.</li>
-		  <li>Ability to pull over onto the bar cleanly and without using feet.</li>
-		  <li>Familiarity and competence with momentum tricks such as russian rolls, milcircles, and front hip circles.</li>
-		  <li>Comfort with single knee hangs and knee hang beats.</li>
-		  <li>Familiarity with: front rolls, foot flags, vertical splits, drops onto the bar (lyra).</li>
-		  <li>Has the strength and stamina to complete 2-minute sequences in the air.</li>
-		</ul>", 
+		\n
+		  * Ability to invert cleanly both on the bar and in the ropes.\n
+		  * Ability to pull over onto the bar cleanly and without using feet.\n
+		  * Familiarity and competence with momentum tricks such as russian rolls, milcircles, and front hip circles.\n
+		  * Comfort with single knee hangs and knee hang beats.\n
+		  * Familiarity with: front rolls, foot flags, vertical splits, drops onto the bar (lyra).\n
+		  * Has the strength and stamina to complete 2-minute sequences in the air.\n
+		", 
 	all_levels: "", 
 	apparatus_description: "", 
 	apparatus_photo_urls: ["", ""]
@@ -68,67 +69,67 @@ Discipline.create(
 	photo_url: "disciplines/hoop.jpg", 
 	photo_caption: "Esh student Fonda Feeling performing in the 2012 Esh student recital", 
 	level_1_description: "Aerial Hoop classes at the beginner level focus on building students’ confidence and technique on the bar. The goals of these classes are: </p>
-
-		<ul>
-		  <li>To build the body awareness, strength, and flexibility</li>
-		  <li>To introduce and maintain strong form and technique.</li>
-		  <li>To build and expand a versatile movement vocabulary.</li>
-		  <li>To give students the opportunity to be creative and playful in the air through improvisation and routine-building.</li>
-		  <li>To always emphasize good safety habits and injury prevention.</li>
-		</ul>", 
+		  \n
+		
+		  * To build the body awareness, strength, and flexibility\n
+		  * To introduce and maintain strong form and technique.\n
+		  * To build and expand a versatile movement vocabulary.\n
+		  * To give students the opportunity to be creative and playful in the air through improvisation and routine-building.\n
+		  * To always emphasize good safety habits and injury prevention.\n
+		", 
 	level_2_description: "
-	 	Generally, this is for students who have completed some course of aerial training either at Esh or at other schools, and have a baseline of core/upper body strength. This level will begin to work with more complex wraps, poses, and transitions. <br>
-	    <br>
+	 	Generally, this is for students who have completed some course of aerial training either at Esh or at other schools, and have a baseline of core/upper body strength. This level will begin to work with more complex wraps, poses, and transitions. 
+	    \n
 	    Pre-requisites for level 2: 
-	    <ul>
-	      <li>Ability to invert from the mat without instructor’s help (jumping is ok!)</li>
-	      <li>Able to find correct shoulder form when hanging from the bar, both inverted and upright</li>
-	      <li>Able to hold knee hang with toes below the level of the knees</li>
-	      <li>Able to dismount from the bar with reasonable control</li>
-	      <li>Familiarity with: Angel, mermaid, gazelle, star, man in the moon, straddle back balance, standing on the bar, front balance.</li>
-	    </ul>", 
-	level_3_description: "This level is for students who are comfortable with knee hangs, back balances, front balances, pullovers, long hang beats, and standing/rope work. Students in this level will begin to work on movements higher in the air, as well as sequences to build stamina, more advanced drops, and some choreographic skills. Students should be able to invert from the mat with minimal jumping, or be able to invert in the air (using feet and/or swinging to help you up is ok!).<br>
-		<br>
+	    \n
+	      * Ability to invert from the mat without instructor’s help (jumping is ok!)\n
+	      * Able to find correct shoulder form when hanging from the bar, both inverted and upright\n
+	      * Able to hold knee hang with toes below the level of the knees\n
+	      * Able to dismount from the bar with reasonable control\n
+	      * Familiarity with: Angel, mermaid, gazelle, star, man in the moon, straddle back balance, standing on the bar, front balance.\n
+	    ", 
+	level_3_description: "This level is for students who are comfortable with knee hangs, back balances, front balances, pullovers, long hang beats, and standing/rope work. Students in this level will begin to work on movements higher in the air, as well as sequences to build stamina, more advanced drops, and some choreographic skills. Students should be able to invert from the mat with minimal jumping, or be able to invert in the air (using feet and/or swinging to help you up is ok!).
+		\n
 		Pre-requisities: 
-		<ul>
-		  <li>Ability to invert cleanly without instructor’s help.</li>
-		  <li>Ability to pull over onto the bar without instructor’s help (some assist with feet ok).</li>
-		  <li>Ability to hang from hands for at least ten seconds with good shoulder engagement.</li>
-		  <li>Familiarity with hanging beats under the bar.</li>
-		  <li>Familiarity and competence with: half milcircle, front balance rolldowns, back balances, inversions in the ropes (trapeze), top-of-the-lyra movements, flags, amazons.</li>
-		</ul>", 
+		\n
+		  * Ability to invert cleanly without instructor’s help.\n
+		  * Ability to pull over onto the bar without instructor’s help (some assist with feet ok).\n
+		  * Ability to hang from hands for at least ten seconds with good shoulder engagement.\n
+		  * Familiarity with hanging beats under the bar.\n
+		  * Familiarity and competence with: half milcircle, front balance rolldowns, back balances, inversions in the ropes (trapeze), top-of-the-lyra movements, flags, amazons.\n
+		", 
 	level_4_description: "
-		This is for advanced students who are comfortable with being in the air on their chosen apparatus. <br>
-		Classes labeled with “continuing” are for students who have been at Level 4 for a couple of sessions; these classes require that students already be familiar with Level 4 vocabulary. <br>
-		These classes will start to work on dynamic movements and unlocked drops/release moves, and will encourage students to find creative transitions and even invent new tricks, shapes, and movements of their own. As with all other levels, technique and injury prevention will continue to be emphasized. <br>
-		<br>
+		This is for advanced students who are comfortable with being in the air on their chosen apparatus. 
+		Classes labeled with “continuing” are for students who have been at Level 4 for a couple of sessions; these classes require that students already be familiar with Level 4 vocabulary. 
+		These classes will start to work on dynamic movements and unlocked drops/release moves, and will encourage students to find creative transitions and even invent new tricks, shapes, and movements of their own. As with all other levels, technique and injury prevention will continue to be emphasized. 
+		\n
 		Pre-requisites:
-		<ul>
-		  <li>Ability to invert cleanly both on the bar and in the ropes.</li>
-		  <li>Ability to pull over onto the bar cleanly and without using feet.</li>
-		  <li>Familiarity and competence with momentum tricks such as russian rolls, milcircles, and front hip circles.</li>
-		  <li>Comfort with single knee hangs and knee hang beats.</li>
-		  <li>Familiarity with: front rolls, foot flags, vertical splits, drops onto the bar (lyra).</li>
-		  <li>Has the strength and stamina to complete 2-minute sequences in the air.</li>
-		</ul>", 
+		\n
+		  * Ability to invert cleanly both on the bar and in the ropes.\n
+		  * Ability to pull over onto the bar cleanly and without using feet.\n
+		  * Familiarity and competence with momentum tricks such as russian rolls, milcircles, and front hip circles.\n
+		  * Comfort with single knee hangs and knee hang beats.\n
+		  * Familiarity with: front rolls, foot flags, vertical splits, drops onto the bar (lyra).\n
+		  * Has the strength and stamina to complete 2-minute sequences in the air.\n
+		", 
 	all_levels: "", 
 	apparatus_description: "", 
 	apparatus_photo_urls: ["", ""]
 	)
 
-Discipline.create(
-	name: "", 
-	description: "", 
-	photo_url: "", 
-	photo_caption: "", 
-	level_1_description: "", 
-	level_2_description: "", 
-	level_3_description: "", 
-	level_4_description: "", 
-	all_levels: "", 
-	apparatus_description: "", 
-	apparatus_photo_urls: ["", ""]
-	)
+# Discipline.create(
+# 	name: "", 
+# 	description: "", 
+# 	photo_url: "", 
+# 	photo_caption: "", 
+# 	level_1_description: "", 
+# 	level_2_description: "", 
+# 	level_3_description: "", 
+# 	level_4_description: "", 
+# 	all_levels: "", 
+# 	apparatus_description: "", 
+# 	apparatus_photo_urls: ["", ""]
+# 	)
 
 User.create(
 	name: "Rachel Stewart", 
@@ -151,7 +152,7 @@ User.create(
 	name: "Ellen Waylonis May",
 	bio: "Ellen first performed on stage at the age of 5, tap dancing to Frank Sinatra’s “High Hopes.” Though her tap career was short lived, she loved the stage, and made her way back during college as a member of an experimental dance troupe. Shortly thereafter, a brief but fiery love affair with hula hooping lead her to the wide world of circus, where she discovered partner acrobatics and aerial arts, and fell head over heals for the joy, sweat, and magic of circus performance.  She honed her skills in the professional training program at the New England Center for Circus Arts, focusing on partner acrobatics, corde lisse, and Spanish web. Ellen’s teaching is informed not only by her experiences studying and performing circus arts, but also by her background in yoga.  She holds an advanced certification in vinyasa and restorative yoga, and is one of only a handful of teachers trained in Unnata Aerial Yoga.  Ellen is excited to share her love of circus with the students at Esh Aerial Arts.",
 	role: "teacher",
-	photo: "instructors/ellen-acro.png"
+	photo: "instructors/Ellen-acro.png"
 	)
 
 User.create(
@@ -164,7 +165,7 @@ User.create(
 	name: "Micah Ellinger",
 	bio: "Micah Ellinger dove head first into circus at age 17 by enrolling in the Professional Track program at New England Center for Circus Arts, where he focused on hand balancing.  He now performs as part of an acrobatic duo. He has performed with Cirque Polynesia in Hawaii, and continues to tour on cruise ships. He is also a certified as a personal trainer. When not traveling the world, Micah is delighted to perform with the Boston Circus Guild and to share his passion for hand balancing and acrobatics with students at Esh.",
 	role: "teacher",
-	photo: "instructors/micah.jpg")
+	photo: "instructors/Micah.jpg")
 
 User.create(
 	name: "Amanda Graff",
@@ -180,7 +181,7 @@ User.create(
 
 User.create(
 	name: "Trevor Kafka",
-	bio: "Trevor Kafka first discovered circus arts when he was inspired by the artists of Cirque du Soleil at age 13.  He began his circus arts training in the summer of 2006 at Circus Smirkus Summer Camp in Craftsbury Commons, VT, where he realized his passions for aerial acrobatics, hand balancing, and flexibility training.  In 2010-2011, Trevor completed the Professional Track program at NECCA, where he developed a dynamic-height single point trapeze act and floor acrobatic act. He also completed NECCA’s Aerial Fabric and Static Trapeze Teacher Training programs. <br> Trevor has taught aerial acrobatics and flying trapeze at numerous institutions, including World Cup Gymnastics in Chappaqua, NY; Concord Academy Summer Camp in Concord, MA; the STREB Lab for Action Mechanics in Brooklyn, NY; and the 2011 NYC-Regional American Youth Circus Organization Festival in Queens, NY. <br> Trevor is a member of the Boston Circus Guild, as well as a student at Brandeis University. He is infinitely grateful for all of the wonderful circus opportunities that Massachusetts offers, and he is overjoyed to be a part of the driving force that helps the circus community grow.",
+	bio: "Trevor Kafka first discovered circus arts when he was inspired by the artists of Cirque du Soleil at age 13.  He began his circus arts training in the summer of 2006 at Circus Smirkus Summer Camp in Craftsbury Commons, VT, where he realized his passions for aerial acrobatics, hand balancing, and flexibility training.  In 2010-2011, Trevor completed the Professional Track program at NECCA, where he developed a dynamic-height single point trapeze act and floor acrobatic act. He also completed NECCA’s Aerial Fabric and Static Trapeze Teacher Training programs.  Trevor has taught aerial acrobatics and flying trapeze at numerous institutions, including World Cup Gymnastics in Chappaqua, NY; Concord Academy Summer Camp in Concord, MA; the STREB Lab for Action Mechanics in Brooklyn, NY; and the 2011 NYC-Regional American Youth Circus Organization Festival in Queens, NY.  Trevor is a member of the Boston Circus Guild, as well as a student at Brandeis University. He is infinitely grateful for all of the wonderful circus opportunities that Massachusetts offers, and he is overjoyed to be a part of the driving force that helps the circus community grow.",
 	role: "teacher",
 	photo: "instructors/trevor.jpg")
 
@@ -192,9 +193,9 @@ User.create(
 
 User.create(
 	name: "Eileen Little",
-	bio: "Eileen Little has been climbing on things ever since she can remember, but she first touched a trapeze when she was working toward her MFA in Acting from the National Theater Conservatory.  Eileen is co-artistic director and co-founder of Fight or Flight, an aerial theater company based in NYC. She teaches aerial workshops and classes across the US, and in conjunction with Fight or Flight tailors aerial programs to school curricula for education and outreach.  She is a graduate of the New England Center for Circus Arts in Brattleboro, VT.  Eileen performs regularly in the Boston area and is a member of Girls on Trapeze, whose latest show “Herself Rising” is touring across the U.S. <br> www.eileenlittle.com",
+	bio: "Eileen Little has been climbing on things ever since she can remember, but she first touched a trapeze when she was working toward her MFA in Acting from the National Theater Conservatory.  Eileen is co-artistic director and co-founder of Fight or Flight, an aerial theater company based in NYC. She teaches aerial workshops and classes across the US, and in conjunction with Fight or Flight tailors aerial programs to school curricula for education and outreach.  She is a graduate of the New England Center for Circus Arts in Brattleboro, VT.  Eileen performs regularly in the Boston area and is a member of Girls on Trapeze, whose latest show “Herself Rising” is touring across the U.S.  www.eileenlittle.com",
 	role: "teacher",
-	photo: "instructors/eileen.png")
+	photo: "instructors/Eileen.png")
 
 User.create(
 	name: "Tracy McAskill",
@@ -205,13 +206,13 @@ User.create(
 
 User.create(
 	name: "Theresa Racicot",
-	bio: "Theresa Racicot fell in love with physical fitness in January of 2000. She discovered flying trapeze and circus arts shortly thereafter, and has been pursuing education and training in these modalities ever since. Her passion to share fitness and a healthy lifestyle lead her to become certified as a personal trainer and as a pilates and yoga instructor. <br> When she isn’t working out on the ground, Theresa takes to the air.  She completed the Static Trapeze Teacher Training at the New England Center for Circus Arts in Brattleboro, VT.  She has also been working as a flying trapeze instructor since 2008. Theresa describes flying trapeze – her favorite aerial discipline – as “singing to my soul.”",
+	bio: "Theresa Racicot fell in love with physical fitness in January of 2000. She discovered flying trapeze and circus arts shortly thereafter, and has been pursuing education and training in these modalities ever since. Her passion to share fitness and a healthy lifestyle lead her to become certified as a personal trainer and as a pilates and yoga instructor.  When she isn’t working out on the ground, Theresa takes to the air.  She completed the Static Trapeze Teacher Training at the New England Center for Circus Arts in Brattleboro, VT.  She has also been working as a flying trapeze instructor since 2008. Theresa describes flying trapeze – her favorite aerial discipline – as “singing to my soul.”",
 	role: "teacher",
-	photo: "instructors/Theresa.png")
+	photo: "instructors/Theresa.jpg")
 
 User.create(
 	name: "Gina DeFreitas",
-	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center. <br> Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids. <br> Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad.",
+	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center.  Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids.  Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad.",
 	role: "teacher",
 	photo: "instructors/gina.jpg")
 

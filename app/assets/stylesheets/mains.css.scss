@@ -31,13 +31,18 @@
 	}
 
 	.left-column {
-		border: 3px red dotted;
-	
+		
+		padding: 20px;
+
+		img {
+		width: 100%;
+		}
 	}
 
 	.right-column {
-		border: 3px blue dotted;
+
 		padding: 20px;
+		vertical-align: middle;
 	}
 }
 
