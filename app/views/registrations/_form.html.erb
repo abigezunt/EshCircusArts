@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :course %><br>
-    <%= collection_select(:registration, :course_id, Course.find(:all, :conditions => ["start_date between ? and ?", Date.today, Date.today + 70]), :id, :description) %>
+    <%= collection_select(:registration, :course_id, Course.find(:all, :conditions => ["start_date between ? and ?", Date.today, Date.today + 70]), :id, :name) %>
   </div>
 
 
