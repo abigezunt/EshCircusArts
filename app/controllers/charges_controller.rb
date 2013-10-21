@@ -1,5 +1,5 @@
 class ChargesController < ApplicationController
-before_filter :authenticate_user!
+before_filter :authenticate_user! unless user_signed_in? 
 
 def new
   @registration = params[:registration_id]

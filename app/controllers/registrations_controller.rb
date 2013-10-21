@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
+  before_filter :authenticate_user! unless user_signed_in? 
   
   # GET /registrations
   # GET /registrations.json
