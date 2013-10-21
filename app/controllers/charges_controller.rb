@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 
 def new
+  @registration = params[:registration_id]
 end
 
 def create

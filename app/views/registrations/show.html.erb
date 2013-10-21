@@ -16,7 +16,7 @@
   <%= @registration.user.unpaid_balance%>
 </p>
 
-<h3><%= link_to "Pay Now", new_charge_path %></h3>
+<h3><%= link_to "Pay Now", new_registration_charge_path %></h3>
 
 <%= link_to 'Edit', edit_registration_path(@registration) %> |
 <%= link_to 'Back', registrations_path %>

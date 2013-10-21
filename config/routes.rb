@@ -12,13 +12,15 @@ EshTestApp::Application.routes.draw do
 
   resources :main
 
-  resources :registrations
+  resources :registrations do 
+    resources :charges
+  end
 
   resources :courses
 
   resources :users
 
-  resources :charges
+  # resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
