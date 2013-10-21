@@ -4,17 +4,18 @@ class CourseRegistrationsController < ApplicationController
   
   # GET /course_registrations
   # GET /course_registrations.json
-  def index
-    @course_registrations = CourseRegistration.all
-  end
+  # def index
+  #   @course_registrations = CourseRegistration.all
+  # end
 
   # GET /course_registrations/1
   # GET /course_registrations/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /course_registrations/new
   def new
+    @courses = Course.all
     @course_registration = CourseRegistration.new
   end
 
@@ -25,12 +26,13 @@ class CourseRegistrationsController < ApplicationController
   # POST /course_registrations
   # POST /course_registrations.json
   def create
-    @course_registration = CourseRegistration.new(course_registration_params)
 
+    @course_registration = CourseRegistration.new(course_registration_params)
+binding.pry
     respond_to do |format|
       if @course_registration.save
-        format.html { redirect_to @course_registration, notice: 'Registration was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @course_registration }
+        format.html { render action: 'new', notice: "You've successfully registered for #{@course_registration.course.name}. Want to register for another class?" }
+        #format.json { render action: 'show', status: :created, location: @course_registration }
       else
         format.html { render action: 'new' }
         format.json { render json: @course_registration.errors, status: :unprocessable_entity }
@@ -70,6 +72,6 @@ class CourseRegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_registration_params
-      params.require(:course_registration).permit(:user_id, :course_id, :paid, :timestamps)
+      params.require(:course_registration).permit(:user_id, :course_id, :paid, :timestamps, :current_user.id)
     end
 end

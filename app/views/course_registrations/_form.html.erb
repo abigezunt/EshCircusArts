@@ -1,30 +1,37 @@
-<%= form_for(@course_registration) do |f| %>
-  <% if @course_registration.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
+<% @courses.each do |course| %>
+  <% if course.future %>
+    <%= form_for @course_registration, action: 'create' do |f| %>
 
-      <ul>
-      <% @course_registration.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% if @course_registration.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
+
+          <ul>
+          <% @course_registration.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
+   <% unless current_user.courses.include? course %>
+    <h3><%= course.name %></h3>
+    <p><%= course.description %></p>
+    <p>    
+      <% if course.number_of_sessions > 1 %>
+        <%= course.start_date.strftime("%A") %>s 
+        <%= course.start_time.strftime("%k:%M")%> - <%=course.end_time.strftime("%k:%M")%> 
+        <%= course.start_date.strftime("%B") %> to 
+        <%= course.end_date.strftime("%B")%>
+      <% else %>
+        <%= course.start_date.strftime("%B") %>
+        <%= course.start_time.strftime("%k:%M")%> - <%=course.end_time.strftime("%k:%M")%> 
+      <% end %>
+    </p>
+
+    <%= f.submit "Register for this Course" %>
+   <% end %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user %><br>
-    <%= collection_select(:course_registration, :user_id, User.where(:role => "student"), :id, :name) %>
-  </div>
-
-  <%= link_to "Register as a new student", new_user_path %>
-
-  <div class="field">
-    <%= f.label :course %><br>
-    <%= collection_select(:course_registration, :course_id, Course.find(:all, :conditions => ["start_date between ? and ?", Date.today, Date.today + 70]), :id, :name) %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ <% end %>
 <% end %>
+
+<h1><%= link_to "Pay Now", new_charge_path %></h1>
