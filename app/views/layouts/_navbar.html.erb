@@ -1,0 +1,25 @@
+<% if user_signed_in? %>
+  <p>logged in as <%= current_user.email %></p>
+  <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
+<% else %>  
+  <%= link_to "Sign Up", new_user_registration_path %>  
+  <%= link_to "Log In", new_user_session_path %>
+<% end %>
+
+
+<div id="header">
+  <div class="header-text">
+    <h1><%= link_to 'Esh Circus Arts', '/' %></h1>
+    <div id="nav-bar">
+      <ul> 
+        <li><%= link_to 'Circus Skills', '/disciplines' %></li> | 
+        <li><%= link_to 'Classes', '/courses' %> </li> | 
+        <li><%= link_to 'Register', new_registration_path %></li> |
+        <li><%= link_to 'Workshops', '/workshops' %></li> | 
+        <li>Private Lessons</li> | 
+        <li><%= link_to 'Instructors', '/instructors' %></li> | 
+        <li><%= link_to 'Location', '/location' %></li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+before_filter :authenticate_user!
 
 def new
   @registration = params[:registration_id]
