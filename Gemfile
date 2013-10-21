@@ -17,9 +17,10 @@ gem 'pry-rails'
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'rails_12factor', group: :production
 end
 
-gem 'rails_12factor', group: :production
+
 
 # manually including bootstrap instead of this gem
 # gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
