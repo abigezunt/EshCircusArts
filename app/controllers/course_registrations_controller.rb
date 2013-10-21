@@ -1,6 +1,6 @@
 class CourseRegistrationsController < ApplicationController
   before_action :set_course_registration, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user! unless user_signed_in? 
+  before_filter :authenticate_user! #unless user_signed_in? 
   
   # GET /course_registrations
   # GET /course_registrations.json
