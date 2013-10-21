@@ -1,5 +1,6 @@
 EshTestApp::Application.routes.draw do
 
+  devise_for :users
   resources :disciplines
 
   root to: 'main#index'
