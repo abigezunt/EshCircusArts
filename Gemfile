@@ -20,7 +20,7 @@ group :production do
   gem 'rails_12factor', group: :production
 end
 
-
+gem 'devise'
 
 # manually including bootstrap instead of this gem
 # gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
