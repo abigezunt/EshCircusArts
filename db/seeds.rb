@@ -5,8 +5,12 @@ Discipline.create(
 		* Comfortably hold a backbend for 1 minute (we will be upside down a lot)\n
 		* Backbend with arms and legs straight\n
 		* Elbowstand (against the wall or with spotter help is ok)\n
-		* Good flexibility in right and left side splits and pancake straddle"
+		* Good flexibility in right and left side splits and pancake straddle",
 		photo_url: "instructors/Tracy.jpg")
+
+# Discipline.create(
+# 	name: "Flexibility",
+# 	)
 
 Discipline.create(
 	name: "Handbalancing",
@@ -14,7 +18,7 @@ Discipline.create(
 	level_3_description: "This class is for handbalancers who are looking for intermediate to advanced level instruction. \n Hand Balancing Level 3/4 pre-requisites: \n
 		* Minimum 1 session open level hand balancing or instructor permission
 		* 5 second free-standing handstand with straight arms, legs together, hollow body
-		* Solid 2-arm croc on canes with good form"
+		* Solid 2-arm croc on canes with good form",
 	photo_url: "disciplines/handbalancing.jpg")
 
 Discipline.create(
@@ -171,13 +175,13 @@ Discipline.create(
 
 
   Course.create(
-  	name: "Handstands 101 with Roger May"
+  	name: "Handstands 101 with Roger May",
   	start_date: "Oct 26, 2013", 
   	number_of_sessions: 1, 
   	price: 40.00, 
   	description: "Come and invert!
 	In this two hour workshop, students will learn the fundamentals of handstands: proper shoulder form, body alignment, and the techniques to find safe, steady, solid control when upside down.  No handstand or acrobatic background required - beginners welcome!  This workshop is open to all students ages 16+.",
-	start_time: "2:30 pm"
+	start_time: "2:30 pm",
 	end_time: "4:30 pm",
 	level: "all levels",
 	)
@@ -188,8 +192,8 @@ Discipline.create(
   	number_of_sessions: 1,
   	price: 50.00,
   	start_time: "2:30 pm",
-  	end_time: "5:30 pm"
-  	description: "In this workshop we will explore techniques and exercises to get the most out of your aerial training.  We will work through a progression of ground-based and aerial skills designed to balance strength, flexibility, and safety. We'll cover effective warm-ups, conditioning, stretching, and tips for structuring your training time.  Pre-requisites:  Successful completion of at least one session of Level 1 Silks or Level 1 Hoop/Trapeze at Esh, or equivalent training at another circus school.  To ensure everyone's safety during the workshop, pre-requisites will be enforced."
+  	end_time: "5:30 pm",
+  	description: "In this workshop we will explore techniques and exercises to get the most out of your aerial training.  We will work through a progression of ground-based and aerial skills designed to balance strength, flexibility, and safety. We'll cover effective warm-ups, conditioning, stretching, and tips for structuring your training time.  Pre-requisites:  Successful completion of at least one session of Level 1 Silks or Level 1 Hoop/Trapeze at Esh, or equivalent training at another circus school.  To ensure everyone's safety during the workshop, pre-requisites will be enforced.",
   	level: "2"
   	)
 

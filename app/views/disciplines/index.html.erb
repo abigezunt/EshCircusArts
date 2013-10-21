@@ -1,45 +1,6 @@
-<h1>Listing disciplines</h1>
+<h1>Circus Skills</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Photo url</th>
-      <th>Level 1 description</th>
-      <th>Level 2 description</th>
-      <th>Level 3 description</th>
-      <th>Level 4 description</th>
-      <th>All levels</th>
-      <th>Apparatus description</th>
-      <th>Apparatus photo urls</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @disciplines.each do |discipline| %>
-      <tr>
-        <td><%= discipline.name %></td>
-        <td><%= discipline.description %></td>
-        <td><%= discipline.photo_url %></td>
-        <td><%= discipline.level_1_description %></td>
-        <td><%= discipline.level_2_description %></td>
-        <td><%= discipline.level_3_description %></td>
-        <td><%= discipline.level_4_description %></td>
-        <td><%= discipline.all_levels %></td>
-        <td><%= discipline.apparatus_description %></td>
-        <td><%= discipline.apparatus_photo_urls %></td>
-        <td><%= link_to 'Show', discipline %></td>
-        <td><%= link_to 'Edit', edit_discipline_path(discipline) %></td>
-        <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Discipline', new_discipline_path %>
+<% @disciplines.each do |discipline| %>
+  <%= image_tag discipline.photo_url%>
+  <h2><%= link_to discipline.name, discipline %></h2>
+<% end %>
