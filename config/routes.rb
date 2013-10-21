@@ -10,6 +10,8 @@ EshTestApp::Application.routes.draw do
 
   get '/instructors', to: 'main#instructors'
 
+  get '/workshops', to: 'main#workshops'
+
   resources :main
 
   resources :registrations do 

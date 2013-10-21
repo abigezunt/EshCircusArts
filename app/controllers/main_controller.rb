@@ -19,7 +19,7 @@ class MainController < ApplicationController
     @instructors = User.where(role: "teacher")
   end
 
-  def special_workshops
+  def workshops
     @workshops = Course.where(number_of_sessions: 1)
   end
 
