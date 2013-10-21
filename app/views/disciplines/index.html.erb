@@ -1,6 +1,13 @@
 <h1>Circus Skills</h1>
 
+
 <% @disciplines.each do |discipline| %>
-  <%= image_tag discipline.photo_url%>
-  <h2><%= link_to discipline.name, discipline %></h2>
+
+      <div><%= image_tag discipline.photo_url %></div>
+  
+
+      <h2><%= link_to discipline.name, discipline %></h2>
+      <p><%= link_to discipline.description, discipline %></p>
+
+
 <% end %>

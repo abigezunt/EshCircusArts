@@ -22,6 +22,11 @@
 
 	padding: 20px;
 
+	.photo {
+		width: 100%;
+		max-width: 400px;
+	}
+
 	#hero-image {
 		text-align: center;
 		img {
@@ -43,6 +48,15 @@
 
 		padding: 20px;
 		vertical-align: middle;
+	}
+
+	.thumbnail-photo {
+		width: 400px;
+
+	}
+
+	.index-list {
+		display: inline;
 	}
 }
 
