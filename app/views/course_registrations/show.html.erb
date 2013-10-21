@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @course_registration.user.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course_registration.course.description %> starting on 
+  <%= @course_registration.course.start_date.strftime("%A, %B %-d, %Y") %>
+</p>
+
+<p>
+  <strong>Your unpaid balance:</strong>
+  <%= @course_registration.user.unpaid_balance%>
+</p>
+
+<h3><%= link_to "Pay Now", new_course_registration_charge_path %></h3>
+
+<%= link_to 'Edit', edit_course_registration_path(@course_registration) %> |
+<%= link_to 'Back', course_registrations_path %>

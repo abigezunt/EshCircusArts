@@ -1,0 +1,30 @@
+<%= form_for(@course_registration) do |f| %>
+  <% if @course_registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
+
+      <ul>
+      <% @course_registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= collection_select(:course_registration, :user_id, User.where(:role => "student"), :id, :name) %>
+  </div>
+
+  <%= link_to "Register as a new student", new_user_path %>
+
+  <div class="field">
+    <%= f.label :course %><br>
+    <%= collection_select(:course_registration, :course_id, Course.find(:all, :conditions => ["start_date between ? and ?", Date.today, Date.today + 70]), :id, :name) %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

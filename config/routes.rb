@@ -14,7 +14,7 @@ EshTestApp::Application.routes.draw do
 
   resources :main
 
-  resources :registrations
+  resources :course_registrations
 
   resources :disciplines
 
