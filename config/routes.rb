@@ -1,7 +1,6 @@
 EshTestApp::Application.routes.draw do
 
   devise_for :users
-  resources :disciplines
 
   root to: 'main#index'
 
@@ -15,15 +14,15 @@ EshTestApp::Application.routes.draw do
 
   resources :main
 
-  resources :registrations do 
-    resources :charges
-  end
+  resources :registrations
+
+  resources :disciplines
 
   resources :courses
 
   resources :users
 
-  # resources :charges
+  resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

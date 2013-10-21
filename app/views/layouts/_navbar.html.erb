@@ -1,3 +1,8 @@
+
+
+<div id="header">
+  <div class="header-text">
+
 <% if user_signed_in? %>
   <p>logged in as <%= current_user.email %></p>
   <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
@@ -6,9 +11,6 @@
   <%= link_to "Log In", new_user_session_path %>
 <% end %>
 
-
-<div id="header">
-  <div class="header-text">
     <h1><%= link_to 'Esh Circus Arts', '/' %></h1>
     <div id="nav-bar">
       <ul> 
