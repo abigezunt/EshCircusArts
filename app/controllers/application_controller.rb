@@ -16,5 +16,7 @@ class ApplicationController < ActionController::Base
   												:phone_number
   												:address
   												:instructor
+                          :course_registrations
+                          :courses
   end
 end
