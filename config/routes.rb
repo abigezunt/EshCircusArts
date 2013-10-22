@@ -12,6 +12,12 @@ EshTestApp::Application.routes.draw do
 
   get '/workshops', to: 'main#workshops'
 
+  get '/disciplines', to: 'main#disciplines'
+
+  get '/upcoming_classes', to: 'main#upcoming_classes'
+
+  get '/private_lessons', to: 'main#private_lessons'
+
   resources :main
 
   resources :course_registrations

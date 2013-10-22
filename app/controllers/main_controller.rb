@@ -16,7 +16,7 @@ class MainController < ApplicationController
   end
 
   def instructors
-    @instructors = User.where(instructor: true)
+    @instructors = Acrobat.where(instructor: true)
   end
 
   def workshops
@@ -24,7 +24,11 @@ class MainController < ApplicationController
   end
 
   def upcoming_classes
-     @workshops = Course.where(:start_date.future?)
+     @courses = Course.all
+  end
+
+  def disciplines
+    @disciplines = Discipline.all
   end
 
 end

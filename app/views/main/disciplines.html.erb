@@ -1,0 +1,36 @@
+
+<h2>Circus Disciplines</h2>
+
+<% @disciplines.each do |discipline| %>
+  
+  <h3><%= discipline.name %></h3>
+  
+  <div class="photo">  
+    <%= image_tag discipline.photo_url %>
+    <p><%= discipline.photo_caption %></p>
+  </div>
+
+  <p><%= discipline.description %></p>
+
+  <% unless discipline.level_1_description.nil? %>
+    <strong>Level 1:</strong> 
+    <p><%= discipline.level_1_description %></p>
+  <% end %>
+
+  <% unless discipline.level_2_description.nil? %>
+    <strong>Level 2:</strong> 
+    <p><%= discipline.level_2_description %></p>
+  <% end %>
+
+  <% unless discipline.level_3_description.nil? %>
+    <strong>Level 3:</strong> 
+    <p><%= discipline.level_3_description %></p>
+  <% end %>
+
+  <% unless discipline.level_4_description.nil? %>
+    <strong>Level 4:</strong> 
+    <p><%= discipline.level_4_description %></p>
+  <% end %>
+
+  <% end %>
+

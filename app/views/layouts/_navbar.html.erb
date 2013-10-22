@@ -1,24 +1,22 @@
-
-
 <div id="header">
   <div class="header-text">
 
 <% if user_signed_in? %>
-  <p>logged in as <%= current_user.email %></p>
-  <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %>
+  <p>logged in as <%= current_user.email %> | 
+  <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %> </p>
 <% else %>  
-  <%= link_to "Sign Up", new_user_registration_path %>  
-  <%= link_to "Log In", new_user_session_path %>
+  <p><%= link_to "Sign Up", new_user_registration_path %> | 
+    <%= link_to "Log In", new_user_session_path %></p>
 <% end %>
 
     <h1><%= link_to 'Esh Circus Arts', '/' %></h1>
     <div id="nav-bar">
       <ul> 
         <li><%= link_to 'Circus Skills', '/disciplines' %></li> | 
-        <li><%= link_to 'Classes', '/courses' %> </li> | 
+        <li><%= link_to 'Classes', '/upcoming_classes' %> </li> | 
         <li><%= link_to 'Register', new_course_registration_path %></li> |
         <li><%= link_to 'Workshops', '/workshops' %></li> | 
-        <li>Private Lessons</li> | 
+        <li><%= link_to 'Private Lessons', '/private_lessons'%></li> | 
         <li><%= link_to 'Instructors', '/instructors' %></li> | 
         <li><%= link_to 'Location', '/location' %></li>
       </ul>

@@ -1,6 +1,8 @@
+<h2>Upcoming Workshops:</h2>
+
 <% @workshops.each do |workshop| %>
    <% if workshop.start_date.future? %> 
-	  <h2><%= workshop.name %></h2>
+	  <h3><%= workshop.name %></h3>
 	  <strong><%= workshop.start_date.strftime("%B %-d, %Y")%></strong>
 	  <strong><%= workshop.start_time.strftime("%-l:%M")%> - <%= workshop.end_time.strftime("%-l:%M%P")%></strong>
 	  <strong>Price: $<%= workshop.price %>0</strong>
