@@ -28,8 +28,15 @@
                     <%= course.start_time.strftime("%k:%M")%> - <%=course.end_time.strftime("%k:%M")%> 
                   <% end %>
                 </p>
-            <%= hidden_field_tag(:course_id, course.id) %>
-            <%= hidden_field_tag(:user_id, current_user.id) %>
+
+          <div class="field">
+            <%= f.label :additional_information %><br>
+            <%= f.text_area :comments %>
+          </div>
+  
+            <%= f.hidden_field :course_id, value: course.id %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+
             <%= f.submit "Register for #{course.name}" %>
          <% end %>
   

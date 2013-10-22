@@ -4,14 +4,15 @@ class CourseRegistrationsController < ApplicationController
   
   # GET /course_registrations
   # GET /course_registrations.json
-  # def index
-  #   @course_registrations = CourseRegistration.all
-  # end
+  def index
+    @course_registrations = CourseRegistration.where(user_id: current_user.id)
+  end
 
   # GET /course_registrations/1
   # GET /course_registrations/1.json
-  # def show
-  # end
+  def show
+    @course_registrations = CourseRegistration.where(user_id: current_user.id)
+  end
 
   # GET /course_registrations/new
   def new
@@ -30,8 +31,8 @@ class CourseRegistrationsController < ApplicationController
     @course_registration = CourseRegistration.new(course_registration_params)
     respond_to do |format|
       if @course_registration.save
-        format.html { render action: 'new', notice: "You've successfully registered for #{@course_registration.course.name}. Want to register for another class?" }
-        #format.json { render action: 'show', status: :created, location: @course_registration }
+        format.html { render action: 'show', notice: "Registration successful! Want to register for another class?" }
+        format.json { render action: 'show', status: :created, location: @course_registration }
       else
         format.html { render action: 'new' }
         format.json { render json: @course_registration.errors, status: :unprocessable_entity }
@@ -44,7 +45,7 @@ class CourseRegistrationsController < ApplicationController
   def update
     respond_to do |format|
       if @course_registration.update(course_registration_params)
-        format.html { redirect_to @course_registration, notice: 'Registration was successfully updated.' }
+        format.html { redirect_to @course_registration, notice: 'Registration successfully updated.  Pay now to reserve your spot.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -58,7 +59,7 @@ class CourseRegistrationsController < ApplicationController
   def destroy
     @course_registration.destroy
     respond_to do |format|
-      format.html { redirect_to course_registrations_url }
+      format.html { redirect_to new_charge_path}
       format.json { head :no_content }
     end
   end
@@ -71,6 +72,6 @@ class CourseRegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_registration_params
-      params.require(:course_registration).permit(:user_id, :course_id, :paid, :timestamps, :current_user.id)
+      params.require(:course_registration).permit(:user_id, :course_id, :paid, :comments, :timestamps)
     end
 end

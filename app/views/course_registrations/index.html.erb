@@ -1,0 +1,17 @@
+
+
+  <strong>You are registered for:</strong>
+  <% @course_registrations.each do |course_registration| %>
+
+    <%= course_registration.name %> 
+      <% if course_registration.paid %>
+        confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
+      <% else %>
+        reserved pending payment of $<%= course_registration.course.price%>0
+      <% end %>
+  <% end %>
+
+
+
+  <strong>Your unpaid balance:</strong>
+  <%= @course_registration.user.unpaid_balance%>
