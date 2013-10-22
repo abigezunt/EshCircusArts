@@ -1,23 +1,23 @@
 class ChargesController < ApplicationController
-before_filter :authenticate_user! unless user_signed_in? 
+before_filter :authenticate_user! #unless user_signed_in? 
 
 def new
-  @registration = params[:registration_id]
+  @unpaid_courses = current_user.courses.where(paid: nil)
 end
 
 def create
   # Amount in cents
-  @amount = 500
+  @amount = current_user.unpaid_balance
 
   customer = Stripe::Customer.create(
-    :email => 'example@stripe.com',
+    :email => current_user.email,
     :card  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
-    :customer    => customer.id,
+    :customer    => current_user.id,
     :amount      => @amount,
-    :description => 'Rails Stripe customer',
+    :description => current_user.name,
     :currency    => 'usd'
   )
 

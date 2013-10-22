@@ -28,7 +28,6 @@ class CourseRegistrationsController < ApplicationController
   def create
 
     @course_registration = CourseRegistration.new(course_registration_params)
-binding.pry
     respond_to do |format|
       if @course_registration.save
         format.html { render action: 'new', notice: "You've successfully registered for #{@course_registration.course.name}. Want to register for another class?" }
