@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  has_many :course_registrations
   has_many :courses, through: :course_registrations
 
   def unpaid_balance
