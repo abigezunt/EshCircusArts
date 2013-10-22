@@ -1,1 +1,9 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<h2>Thanks, you paid <strong>"<%=@amount%>"</strong>!</h2>
+
+<strong>Your current course registrations are: </strong>
+
+<ul>
+   <% current_user.course_registrations.each do |course_registration| %>
+     <li><%= course_registration.course.name %> </li>
+   <% end %>
+</ul>

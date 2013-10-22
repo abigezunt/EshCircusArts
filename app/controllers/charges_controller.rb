@@ -2,7 +2,7 @@ class ChargesController < ApplicationController
 before_filter :authenticate_user! #unless user_signed_in? 
 
 def new
-  @unpaid_courses = current_user.courses.where(paid: nil)
+  @unpaid_course_registrations = current_user.course_registrations.where(paid: nil)
 end
 
 def create
