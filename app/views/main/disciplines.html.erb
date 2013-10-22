@@ -1,36 +1,45 @@
-
 <h2>Circus Disciplines</h2>
 
-<% @disciplines.each do |discipline| %>
-  
-  <h3><%= discipline.name %></h3>
-  
-  <div class="photo">  
-    <%= image_tag discipline.photo_url %>
-    <p><%= discipline.photo_caption %></p>
-  </div>
+  <% @disciplines.each do |discipline| %>
+    
+    <div class="center">
+        <h3><%= discipline.name %></h3>
+    </div>
+    
+    <div class="row">
+        <div class="photo col-sm-4 col-md-4">  
+            <%= image_tag discipline.photo_url %>
+            <p><%= discipline.photo_caption %></p>
+        </div>
+    
+        <div class="col-sm-8 col-md-8">
+            <p><%= discipline.description %></p>
+        </div>
+    </div>
 
-  <p><%= discipline.description %></p>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">      
+        <% unless discipline.level_1_description.nil? %>
+          <h4>Level 1:</h4> 
+          <p><%= discipline.level_1_description %></p>
+        <% end %>
 
-  <% unless discipline.level_1_description.nil? %>
-    <strong>Level 1:</strong> 
-    <p><%= discipline.level_1_description %></p>
-  <% end %>
+        <% unless discipline.level_2_description.nil? %>
+          <h4>Level 2:</h4> 
+          <p><%= discipline.level_2_description %></p>
+        <% end %>
 
-  <% unless discipline.level_2_description.nil? %>
-    <strong>Level 2:</strong> 
-    <p><%= discipline.level_2_description %></p>
-  <% end %>
+        <% unless discipline.level_3_description.nil? %>
+          <h4>Level 3:</h4> 
+          <p><%= discipline.level_3_description %></p>
+        <% end %>
 
-  <% unless discipline.level_3_description.nil? %>
-    <strong>Level 3:</strong> 
-    <p><%= discipline.level_3_description %></p>
-  <% end %>
-
-  <% unless discipline.level_4_description.nil? %>
-    <strong>Level 4:</strong> 
-    <p><%= discipline.level_4_description %></p>
-  <% end %>
-
-  <% end %>
+        <% unless discipline.level_4_description.nil? %>
+          <h4>Level 4:</h4> 
+          <p><%= discipline.level_4_description %></p>
+        <% end %>
+      </div>
+    </div>
+    
+<% end %>
 
