@@ -313,25 +313,4 @@ Instructor.create(
 	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center.  Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids.  Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad.",
 	photo: "instructors/gina.jpg")
 
-User.create(
-	name: "Abby Howell",
-	bio: "Abby has been a student at Esh since January 2012 and has studied silks, partner acrobatics, trapeze, handbalancing, and cirque fitness.  She is a former teacher of the deaf and is a student at General Assembly.",
-	role: "student",
-	injuries: "sprained ankle Oct 2012",
-	email: "abby.g.howell@gmail.com",
-	phone_number: "512-762-2113",
-	emergency_contact_name: "Brian Olson",
-	emergency_contact_number: "617-899-4019",
-	address: "92 Bristol Rd, Medford MA 02155",
-	)
-
-User.create(
-	name: "Brian Olson",
-	bio: "Brian is a computer wizard and Esh student since Fall of 1999. Brian specializes in aerial silks and partner acrobatics.",
-	role: "student",
-	email: "brian.olson@gmail.com",
-	address: "92 Bristol Rd, Medford MA 02155",
-	emergency_contact_number: "512-762-2113",
-	emergency_contact_name: "Abby Howell",
-	phone_number: "617-899-4019")
 

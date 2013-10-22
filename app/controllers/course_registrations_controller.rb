@@ -72,7 +72,6 @@ binding.pry
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_registration_params
-      binding.pry
       params.require(:course_registration).permit(:user_id, :course_id, :paid, :timestamps, :current_user.id)
     end
 end
