@@ -16,6 +16,7 @@ class MainController < ApplicationController
   end
 
   def instructors
+    binding.pry
     @instructors = User.where(instructor: true)
   end
 
