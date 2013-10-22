@@ -16,7 +16,7 @@ class MainController < ApplicationController
   end
 
   def instructors
-    @instructors = Acrobat.where(instructor: true)
+    @instructors = User.where(instructor: true)
   end
 
   def workshops
