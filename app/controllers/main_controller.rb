@@ -16,7 +16,7 @@ class MainController < ApplicationController
   end
 
   def instructors
-    @instructors = Instructor.all
+    @instructors = User.where(instructor: true)
   end
 
   def workshops

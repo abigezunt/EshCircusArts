@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022003315) do
+ActiveRecord::Schema.define(version: 20131022005353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acrobats", force: true do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "injuries"
+    t.string   "photo"
+    t.string   "emergency_contact_name"
+    t.string   "emergency_contact_number"
+    t.string   "email"
+    t.string   "phone_number"
+    t.text     "address"
+    t.boolean  "instructor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "course_registrations", force: true do |t|
     t.integer  "user_id"
@@ -61,13 +76,6 @@ ActiveRecord::Schema.define(version: 20131022003315) do
     t.datetime "updated_at"
   end
 
-  create_table "instructors", force: true do |t|
-    t.string "name"
-    t.text   "bio"
-    t.string "photo"
-    t.string "email"
-  end
-
   create_table "main", force: true do |t|
     t.string   "title"
     t.text     "body"
@@ -76,27 +84,18 @@ ActiveRecord::Schema.define(version: 20131022003315) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.text     "bio"
-    t.string   "injuries"
-    t.string   "photo"
-    t.string   "emergency_contact_name"
-    t.string   "emergency_contact_number"
     t.string   "email"
-    t.string   "phone_number"
-    t.text     "address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "encrypted_password",       default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",            default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "instructor"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
