@@ -1,6 +1,28 @@
-<h1>Editing course_registration</h1>
+<h2>Edit Course Registration</h2>
 
-<%= render 'form' %>
+<p class="lead">
+You are registered for <%= @course_registration.course.name %> </p>
+<p class="lead"> starting on <%= @course_registration.course.start_date.strftime("%A %b. %-d")%> <%= @course_registration.course.start_time.strftime("%-l:%M %p")%> - <%=@course_registration.course.end_time.strftime("%-l:%M %p")%> 
+</p>
 
-<%= link_to 'Show', @course_registration %> |
-<%= link_to 'Back', course_registrations_path %>
+        <%= form_for @course_registration, action: 'create', role: 'form' do |f| %>
+              
+	        <strong>Anything we should know?  Update your message to the Esh staff here.</strong>
+	        
+            <div class="form-group">
+              <%= f.text_area :comments %>
+            </div>
+
+	          <%= f.hidden_field :course_id, value: @course_registration.course.id %>
+	          <%= f.hidden_field :user_id, value: current_user.id %>
+
+	        <div class="form-group">
+	          <%= f.submit "Update your registration" %>
+	        </div>
+          
+        <% end %>
+
+<strong><%= link_to "Pay Now", new_charge_path %></strong> | 
+<strong><%= link_to 'Delete this registration', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
+<strong><%= link_to 'See details about this registration', @course_registration %></strong> | 
+<strong><%= link_to 'Register for more courses', course_registrations_path %></strong>

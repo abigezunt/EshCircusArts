@@ -14,10 +14,11 @@
   <%= @course_registration.course.price %>
 </p>
  
-
+<strong><%= link_to 'Edit this registration', edit_course_registration_path(@course_registration) %> </strong>
+<strong><%= link_to "See all my registrations", course_registrations_path %></strong>
 
 
 <h3><%= link_to "Pay Now", new_charge_path %></h3>
 
-<%= link_to 'Edit', edit_course_registration_path(@course_registration) %> |
-<%= link_to 'Back', course_registrations_path %>
+
+
