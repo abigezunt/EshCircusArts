@@ -9,10 +9,6 @@ end
 def create
   # Amount in cents
   @amount = ( current_user.unpaid_balance * 100 )
-<<<<<<< HEAD
-=======
-  binding.pry
->>>>>>> 80d2a3bc76770e56d22df13431db23e51cdee1bb
 
   customer = Stripe::Customer.create(
     :email => current_user.email,
