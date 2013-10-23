@@ -5,7 +5,11 @@ class Course < ActiveRecord::Base
 
   # accepts_attributes_for :users
   def initialize
-  	CourseRegistration.create(user_id: self.instructor_id, role: "teacher", course_id: self.id, comments: "Teacher assigned by #{current_user.name}")
+  	if self.instructor_ids
+  	  self.instructor_ids.each do |instructor_id|
+  	    CourseRegistration.create(user_id: instructor_id, role: "teacher", course_id: self.id, comments: "Teacher assigned by #{current_user.name}")
+      end
+    end
   end 
 
   def future
