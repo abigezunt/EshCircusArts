@@ -1,55 +1,74 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% if current_user %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if current_user.admin %>
+
+      <div class="field">
+        <%= f.label :is_this_person_an_Esh_instructor? %><br>
+        <%= f.check_box :instructor %>
+      </div>
+
+      <div class="field">
+        <%= f.label :give_this_person_admin_rights_on_the_Esh_website? %><br>
+        <%= f.check_box :admin %>
+      </div>
+
+    <% else %>
+
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, value: current_user.email %>
+      </div>
+
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :bio %><br>
+      <%= f.text_area :bio %>
+    </div>
+
+    <div class="field">
+      <%= f.label :injuries %><br>
+      <%= f.text_field :injuries %>
+    </div>
+
+    <div class="field">
+      <%= f.label :emergency_contact_name %><br>
+      <%= f.text_field :emergency_contact_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :emergency_contact_number %><br>
+      <%= f.text_field :emergency_contact_number %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %><br>
+      <%= f.text_field :phone_number %>
+    </div>
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_area :address %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br>
-    <%= f.text_area :bio %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :injuries %><br>
-    <%= f.text_field :injuries %>
-  </div>
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.text_field :photo %>
-  </div>
-  <div class="field">
-    <%= f.label :emergency_contact_name %><br>
-    <%= f.text_field :emergency_contact_name %>
-  </div>
-  <div class="field">
-    <%= f.label :emergency_contact_number %><br>
-    <%= f.text_field :emergency_contact_number %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
