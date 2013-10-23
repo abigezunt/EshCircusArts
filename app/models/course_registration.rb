@@ -9,4 +9,5 @@ class CourseRegistration < ActiveRecord::Base
       reg.save
     end
   end
+  
 end
