@@ -28,8 +28,11 @@
   
             <%= f.hidden_field :course_id, value: course.id %>
             <%= f.hidden_field :user_id, value: current_user.id %>
-
-            <%= f.submit "Register for #{course.name}" %>
+            <% unless course.full %>
+              <%= f.submit "Register for #{course.name}" %>
+            <% else %>
+              <strong>This class is full.  Please <%= mail_to "scheduling@eshaerialarts.com", "contact us"%> to get on the waiting list. </strong>
+            <% end %>
          <% end %>
   
   <% end %>
