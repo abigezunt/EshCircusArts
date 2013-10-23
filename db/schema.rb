@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023024628) do
+ActiveRecord::Schema.define(version: 20131023184336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131023024628) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "comments"
+    t.string   "role",       default: "student"
   end
 
   add_index "course_registrations", ["course_id"], name: "index_course_registrations_on_course_id", using: :btree
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20131023024628) do
     t.time     "start_time"
     t.time     "end_time"
     t.string   "photo_url"
+    t.integer  "instructor_id"
   end
 
   create_table "disciplines", force: true do |t|
@@ -81,16 +83,17 @@ ActiveRecord::Schema.define(version: 20131023024628) do
     t.text     "address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "encrypted_password",       default: "", null: false
+    t.string   "encrypted_password",       default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",            default: 0,  null: false
+    t.integer  "sign_in_count",            default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "instructor"
+    t.boolean  "admin",                    default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
