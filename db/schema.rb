@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20131023184336) do
     t.time     "start_time"
     t.time     "end_time"
     t.string   "photo_url"
-    t.integer  "instructor_id"
+    t.integer  "instructor_id",      array: true
   end
 
   create_table "disciplines", force: true do |t|
