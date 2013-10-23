@@ -7,6 +7,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def student_index
+  end
+
+  def instructor_index
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show

@@ -11,7 +11,7 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-
+gem 'rails-erd', group: 'development'
 gem 'pry-rails'
 
 gem 'dotenv-rails'
