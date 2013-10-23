@@ -1,7 +1,11 @@
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
+<<<<<<< HEAD
       <span>Amount: $<%= current_user.unpaid_balance%>.00</span>
+=======
+      <span>Amount: $<%= @amount%></span>
+>>>>>>> 80d2a3bc76770e56d22df13431db23e51cdee1bb
       <h3>Pay now to confirm your spot in these courses:</h3> 
       <ul> 
         <% @unpaid_course_registrations.each do |course_registration| %>
