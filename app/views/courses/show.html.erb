@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Instructor(s):</strong>
+  <% @instructors.each do |instructor| %>
+    <%= instructor.name%>
+  <% end %>
+</p>
+<p>
   <strong>Start date:</strong>
   <%= @course.start_date %>
 </p>
@@ -8,6 +14,16 @@
 <p>
   <strong>End date:</strong>
   <%= @course.end_date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @course.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @course.end_time %>
 </p>
 
 <p>
