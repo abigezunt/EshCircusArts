@@ -1,6 +1,6 @@
 class CourseRegistration < ActiveRecord::Base
   belongs_to :user
-  belongs_to :course
+  belongs_to :course, counter_cache: true
 
   def self.check_out(user)
     unpaid_reg = user.course_registrations.where(paid: nil)
