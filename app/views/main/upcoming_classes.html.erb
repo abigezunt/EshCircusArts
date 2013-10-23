@@ -2,9 +2,9 @@
 
 <% @courses.each do |course| %>
   <% if course.future && course.number_of_sessions > 1 %>
-    <h3><%= link_to course.name, course %></h3>
-    <p><%= course.description %></p>
     <%= image_tag course.photo_url %>
-  <% end %> 
+    <%= render 'shared/course_description', :course => course %>
+  <% end %>
 <% end %>
 
+<h3><%= link_to "Sign up", new_course_registration_path %></h3>

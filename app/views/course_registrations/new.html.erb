@@ -19,20 +19,7 @@
          
          <% unless current_user.courses.include? course %>
              <%= form_for @course_registration, action: 'create' do |f| %>
-                <h3><%= course.name %></h3>
-                <p><%= course.description %></p>
-                <p>$<%= course.price%>.00</p>
-                <p>    
-                  <% if course.number_of_sessions > 1 %>
-                    <%= course.start_date.strftime("%As") %>s 
-                    <%= course.start_time.strftime("%-l:%M %p")%> - <%=course.end_time.strftime("%-l:%M %p")%> 
-                    <%= course.start_date.strftime("%B %-d") %> to 
-                    <%= course.end_date.strftime("%B %-d")%>
-                  <% else %>
-                    <%= course.start_date.strftime("%A %B %-d") %>
-                    <%= course.start_time.strftime("%-l:%M %p")%> - <%=course.end_time.strftime("%-l:%M %p")%> 
-                  <% end %>
-                </p>
+               <%= render 'shared/course_description', :course => course %>
 
           <div class="field">
             <%= f.label :additional_information %><br>
