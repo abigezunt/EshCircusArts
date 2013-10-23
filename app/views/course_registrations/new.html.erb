@@ -21,6 +21,7 @@
              <%= form_for @course_registration, action: 'create' do |f| %>
                 <h3><%= course.name %></h3>
                 <p><%= course.description %></p>
+                <p>$<%= course.price%>.00</p>
                 <p>    
                   <% if course.number_of_sessions > 1 %>
                     <%= course.start_date.strftime("%A") %>s 

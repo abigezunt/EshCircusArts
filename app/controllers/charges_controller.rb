@@ -2,13 +2,13 @@ class ChargesController < ApplicationController
 before_filter :authenticate_user! #unless user_signed_in? 
 
 def new
-  @amount = ( current_user.unpaid_balance.to_i * 100 )
+  @amount = ( current_user.unpaid_balance * 100 )
   @unpaid_course_registrations = current_user.course_registrations.where(paid: nil)
 end
 
 def create
   # Amount in cents
-  @amount = ( current_user.unpaid_balance.to_i * 100 )
+  @amount = ( current_user.unpaid_balance * 100 )
   binding.pry
 
   customer = Stripe::Customer.create(

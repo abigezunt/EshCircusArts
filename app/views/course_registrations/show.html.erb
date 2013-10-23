@@ -11,7 +11,7 @@
 
 <p>
   <strong>Tuition for this course:</strong>
-  <%= @course_registration.course.price %>
+  $<%= @course_registration.course.price %>.00
 </p>
  
 <strong><%= link_to 'Edit this registration', edit_course_registration_path(@course_registration) %> </strong>
