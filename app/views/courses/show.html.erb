@@ -32,6 +32,16 @@
 </p>
 
 <p>
+  <strong>Max class size:</strong>
+  <%= @course.max_class_size %>
+</p>
+
+<p>
+  <strong>Current Registration Count (including instructors):</strong>
+  <%= @course.course_registrations.size %>
+</p>
+
+<p>
   <strong>Price:</strong>
   $<%= @course.price %>.00
 </p>
