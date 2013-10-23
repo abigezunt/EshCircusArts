@@ -9,7 +9,6 @@ end
 def create
   # Amount in cents
   @amount = ( current_user.unpaid_balance * 100 )
-  binding.pry
 
   customer = Stripe::Customer.create(
     :email => current_user.email,
@@ -17,7 +16,7 @@ def create
   )
 
   charge = Stripe::Charge.create(
-    :customer    => current_user.id,
+    :customer    => customer,
     :amount      => @amount,
     :description => current_user.name,
     :currency    => 'usd'
