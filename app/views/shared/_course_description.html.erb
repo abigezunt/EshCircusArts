@@ -3,7 +3,7 @@
 <p>$<%= course.price%>.00</p>
 <p>    
   <% if course.number_of_sessions > 1 %>
-    <%= course.start_date.strftime("%As") %>s 
+    <%= course.start_date.strftime("%As") %>
     <%= course.start_time.strftime("%-l:%M %p")%> - <%=course.end_time.strftime("%-l:%M %p")%> 
     <%= course.start_date.strftime("%B %-d") %> to 
     <%= course.end_date.strftime("%B %-d")%>
