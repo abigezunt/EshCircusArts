@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user! #unless user_signed_in? 
-  GET /users
-  GET /users.json
+  # GET /users
+  # GET /users.json
   def index
     @users = User.all
   end
 
-  GET /users/1
-  GET /users/1.json
+  # GET /users/1
+  # GET /users/1.json
   def show
 
   end
@@ -70,6 +70,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :course_ids, :registration_ids, :bio, :role, :injuries, :photo, :emergency_contact_name, :emergency_contact_number, :email, :phone_number, :address)
+      params.require(:user).permit(:name, :course_ids, :registration_ids, :bio, :instructor, :injuries, :photo, :emergency_contact_name, :emergency_contact_number, :email, :phone_number, :address)
     end
 end
