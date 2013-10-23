@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :instructor_id %><br>
+    <%= collection_select(:course, :instructor_id, User.where(instructor: true), :id, :name) %>
+  </div>
+
+  <div class="field">
     <%= f.label :start_date %><br>
     <%= f.date_select :start_date %>
   </div>
