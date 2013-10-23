@@ -17,3 +17,4 @@
 
 /config/initializers/api_keys.rb
 /db/user_info_seeds.rb
+.env

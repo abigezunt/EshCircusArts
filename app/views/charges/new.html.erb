@@ -1,7 +1,7 @@
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <span>Amount: $<%= @amount%></span>
+      <span>Amount: $<%= current_user.unpaid_balance%>.00</span>
       <h3>Pay now to confirm your spot in these courses:</h3> 
       <ul> 
         <% @unpaid_course_registrations.each do |course_registration| %>

@@ -5,7 +5,7 @@
 	  <h3><%= workshop.name %></h3>
 	  <strong><%= workshop.start_date.strftime("%B %-d, %Y")%></strong>
 	  <strong><%= workshop.start_time.strftime("%-l:%M")%> - <%= workshop.end_time.strftime("%-l:%M%P")%></strong>
-	  <strong>Price: $<%= workshop.price %>0</strong>
+	  <strong>Price: $<%= workshop.price %>.00</strong>
 	  <p><%= workshop.description%></p>
 	  <%= image_tag workshop.photo_url %>
   <% end %>
