@@ -25,8 +25,8 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+    
     @course = Course.new(course_params)
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
@@ -66,6 +66,7 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+      @instructors = []
       @course.instructor_ids.each do |id|
         @instructors << User.find(id)
       end
@@ -73,6 +74,8 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:start_date, :end_date, :user_ids, :discipline_id, :instructor_ids, :registration_ids, :number_of_sessions, :price, :instructor_pay, :level, :description, :discipline)
+      params["course"]["instructor_ids"].delete("")
+      params["course"]["instructor_ids"].map! {|x| x.to_i }
+      params.require(:course).permit(:name, :start_date, :end_date, :start_time, :end_time, :user_ids, :discipline_id, :registration_ids, :number_of_sessions, :price, :instructor_pay, :level, :description, :discipline, :instructor_ids => [])
     end
 end

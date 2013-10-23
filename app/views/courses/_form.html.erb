@@ -18,13 +18,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :first_instructor %><br>
-      <%= collection_check_boxes(:course, :instructor_id, User.where(instructor: true), :id, :name) %>
-    </div>
-
-     <div class="field">
-      <%= f.label :optional_second_instructor %><br>
-      <%= collection_check_boxes(:course, :instructor_id, User.where(instructor: true), :id, :name) %>
+      <%= f.label :instructor_or_instructors %><br>
+      <%= collection_check_boxes(:course, :instructor_ids, User.where(instructor: true), :id, :name) %>
     </div>
 
     <div class="field">

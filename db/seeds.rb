@@ -184,6 +184,7 @@ Discipline.create(
 	start_time: "2:30 pm",
 	end_time: "4:30 pm",
 	level: "all levels",
+	instructor_ids: [2]
 	)
 
   Course.create(
@@ -194,7 +195,8 @@ Discipline.create(
   	start_time: "2:30 pm",
   	end_time: "5:30 pm",
   	description: "In this workshop we will explore techniques and exercises to get the most out of your aerial training.  We will work through a progression of ground-based and aerial skills designed to balance strength, flexibility, and safety. We'll cover effective warm-ups, conditioning, stretching, and tips for structuring your training time.  Pre-requisites:  Successful completion of at least one session of Level 1 Silks or Level 1 Hoop/Trapeze at Esh, or equivalent training at another circus school.  To ensure everyone's safety during the workshop, pre-requisites will be enforced.",
-  	level: "2"
+  	level: "2",
+  	instructor_ids: [8]
   	)
 
   Course.create(
@@ -205,7 +207,8 @@ Discipline.create(
   	start_time: "2:30 pm",
   	end_time: "4:30 pm",
   	description: "Pointed toes, straight legs, and extended arms don't just make your skills look better - they make them easier, too! Come learn how to lift, lengthen, and engage your muscles both in the air and on the ground with a series of drills and games designed to build strength and full body awareness. This workshop is appropriate for ground and aerial acrobats and students of all levels, and has no prerequisites.  Ages 16+ or permission of instructor.",
-  	level: "all levels"
+  	level: "all levels",
+  	instructor_ids: [3]
   	)
 
   Course.create(
@@ -215,6 +218,7 @@ Discipline.create(
   	end_time: "5:30 pm",
   	number_of_sessions: 1,
   	price: 25.00,
+  	instructor_ids: [1],
   	description: "Want to learn to fly? Want variation in your exercise regimen? Just want to have fun? Circus classes focus on form and body awareness through skill work, with an emphasis on strength building and injury prevention.  Aerial Taster classes give students a chance to try several of the aerial arts offered at Esh before committing to a full session of classes.  Students will have the chance to try aerial fabric (aka silks), aerial rope, static trapeze, and aerial hoop (aka lyra).  No experience or specific athletic ability is necessary- all levels are welcome! If you love the Taster Class and decide to register for a new, full session aerial course, we'll deduct the cost of the Taster Class from the session fee!  You must register for the session course before leaving the studio at the end of the Taster Class to receive the discount.  The discount is only available for new students, or for returning students who are trying a new discipline for the first time."
   	)
 
@@ -225,6 +229,7 @@ Discipline.create(
   	end_time: "1:00 pm",
   	number_of_sessions: 1,
   	price: 25.00,
+  	instructor_ids: [1],
   	description: "Want to learn to fly? Want variation in your exercise regimen? Just want to have fun? Circus classes focus on form and body awareness through skill work, with an emphasis on strength building and injury prevention.  Aerial Taster classes give students a chance to try several of the aerial arts offered at Esh before committing to a full session of classes.  Students will have the chance to try aerial fabric (aka silks), aerial rope, static trapeze, and aerial hoop (aka lyra).  No experience or specific athletic ability is necessary- all levels are welcome! If you love the Taster Class and decide to register for a new, full session aerial course, we'll deduct the cost of the Taster Class from the session fee!  You must register for the session course before leaving the studio at the end of the Taster Class to receive the discount.  The discount is only available for new students, or for returning students who are trying a new discipline for the first time."
   	)
 
@@ -234,6 +239,7 @@ Course.create(
   	start_time: "2:30 pm",
   	end_time: "4:00 pm",
   	number_of_sessions: 1,
+  	instructor_ids: [2, 3],
   	price: 15.00,
   	description: "Want to learn to fly? Want variation in your exercise regimen? Just want to have fun? Circus classes focus on form and body awareness through skill work, with an emphasis on strength building and injury prevention.  Aerial Taster classes give students a chance to try several of the aerial arts offered at Esh before committing to a full session of classes.  Students will have the chance to try aerial fabric (aka silks), aerial rope, static trapeze, and aerial hoop (aka lyra).  No experience or specific athletic ability is necessary- all levels are welcome! If you love the Taster Class and decide to register for a new, full session aerial course, we'll deduct the cost of the Taster Class from the session fee!  You must register for the session course before leaving the studio at the end of the Taster Class to receive the discount.  The discount is only available for new students, or for returning students who are trying a new discipline for the first time."
   	)
@@ -245,7 +251,7 @@ User.create(
 	password: 'password',
 	instructor: true,
 	admin: true,
-	name: "Rachel Stewart", 
+	name: "Rachel Stewart",
 	bio: "Rachel is in love with the circus. The affair began with her discovery of fire dancing and street theater, and things got serious when she was accepted to the nine-month Professional Track Training Program at the New England Center for Circus Arts with a major in aerial hoop and a minor in aerial rope. Since graduating, she has performed in venues big and small, for avant-garde theatrical shows and big-budget holiday spectaculars, around the country and up and down the hemisphere, and was awarded Best Artistic Performance at the 2011 Aerial Acrobatic Arts Festival. She is also the founder and co-owner of Esh Aerial Arts.  Rachel loves the depth of understanding that comes from teaching movement arts, and she looks forward to the interactions that come with teaching her classes. She feels constantly nourished, revitalized, challenged, and humbled by her students. Esh Aerial Arts began as a way to make ends meet while she performed. What it has become, and what she hopes it will continue to grow into, is a venue for everyone, from seasoned professionals to recreational amateurs, to discover and hone their bodies’ amazing potential.", 
 	photo: "instructors/rachel_profile_pic.jpg"
 	)
