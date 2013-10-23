@@ -247,8 +247,7 @@ User.create(
 	admin: true,
 	name: "Rachel Stewart", 
 	bio: "Rachel is in love with the circus. The affair began with her discovery of fire dancing and street theater, and things got serious when she was accepted to the nine-month Professional Track Training Program at the New England Center for Circus Arts with a major in aerial hoop and a minor in aerial rope. Since graduating, she has performed in venues big and small, for avant-garde theatrical shows and big-budget holiday spectaculars, around the country and up and down the hemisphere, and was awarded Best Artistic Performance at the 2011 Aerial Acrobatic Arts Festival. She is also the founder and co-owner of Esh Aerial Arts.  Rachel loves the depth of understanding that comes from teaching movement arts, and she looks forward to the interactions that come with teaching her classes. She feels constantly nourished, revitalized, challenged, and humbled by her students. Esh Aerial Arts began as a way to make ends meet while she performed. What it has become, and what she hopes it will continue to grow into, is a venue for everyone, from seasoned professionals to recreational amateurs, to discover and hone their bodies’ amazing potential.", 
-	photo: "instructors/rachel_profile_pic.jpg", 
-	email: "rachel.stewart@eshaerialarts.com"
+	photo: "instructors/rachel_profile_pic.jpg"
 	)
 
 
@@ -259,8 +258,7 @@ User.create(
 	admin: true,
 	name: "Roger May", 
 	bio: "Roger is a circus performer with more than a decade of experience in juggling, acrobatics, partner balancing, fire performance, hand balancing, and the aerial arts. He has performed on stages across the country, been featured in instructional videos, and taught workshops from Boston to California to Spain. Roger is a graduate of the New England Center for Circus Arts’ professional track program.  Roger is a proud founding member of the Boston Circus Guild, one half of the performing duo Off the Ground, and a touring member of the circus & fire arts troupe A Different Spin. He is endlessly excited about spreading his circus addiction to everyone – this means you!", 
-	photo: "instructors/roger.jpg",
-	email: "roger.may@eshaerialarts.com"
+	photo: "instructors/roger.jpg"
 	)
 
 User.create(

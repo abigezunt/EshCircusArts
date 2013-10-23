@@ -1,5 +1,5 @@
 class AddInstructorToCourses < ActiveRecord::Migration
   def change
-  	add_column :courses, :instructor_id, :integer, array: true
+  	add_column :courses, :instructor_ids, :integer, array: true
   end
 end
