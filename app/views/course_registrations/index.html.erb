@@ -16,7 +16,7 @@
 
 
   <strong>Your unpaid balance:</strong>
-  $<%= current_user.unpaid_balance%>0
+  $<%= current_user.unpaid_balance %>0
   <% if current_user.unpaid_balance > 0 %>
   <h3><%= link_to "Pay Now", new_charge_path %></h3>
   <% end %>

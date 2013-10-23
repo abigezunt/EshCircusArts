@@ -2,17 +2,18 @@
   <article>
     <label class="amount">
       <span>Amount: <%= @amount%></span>
-      <span>Pay now to confirm your spot in these courses:  
+      <h3>Pay now to confirm your spot in these courses:</h3> 
+      <ul> 
         <% @unpaid_course_registrations.each do |course_registration| %>
-          <%= course_registration.course.name %><%= course_registration.course.price %> 
+         <li> <%= course_registration.course.name %>: $<%= course_registration.course.price %>0 </li>
           <%= link_to "remove", course_registration, method: :delete, data: { confirm: 'Remove this course registration?'} %>
         <% end %>
-      </span>
+      </ul>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= current_user.name %>"
-          data-amount="<%= current_user.unpaid_balance %>"></script>
+          data-amount="<%= @amount %>"></script>
 <% end %>
