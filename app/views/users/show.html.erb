@@ -2,17 +2,30 @@
 
 <h2><%= @user.name %></h2>
 <%= image_tag @user.photo%>
-<% if @user.role == "teacher" %>
+<% if @user.instructor %>
 
   <% @user.courses.each do |course| %>
     <%= link_to course.name, course %>
   <% end %>
 
-<% elsif @user.role == "student" %>
+<% else %>
 
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
+</p>
+
+<p>
+  <% if @user.instructor %>
+    <strong><%= @user.name %> is currently teaching these classes at Esh:</strong>
+    <%= @user.show_classes%>
+  <% end %>
+</p>
+
+<p>
+  <% if @user.admin %>
+    <strong><%= @user.name %> is an Esh Website Admin.</strong>
+  <% end %>
 </p>
 
 <p>
@@ -54,10 +67,6 @@
   <strong>Address:</strong>
   <%= @user.address %>
 </p>
-
-<% else %>
-  
-  <h3>There seems to be an error in our records.  Please edit this user and update role to either "teacher" or "student."</h3>
 
 <% end %> 
 

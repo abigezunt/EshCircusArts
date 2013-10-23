@@ -1,6 +1,5 @@
 <% if current_user %>
 
-  <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,62 +12,67 @@
       </div>
     <% end %>
 
-    <% if current_user.admin %>
+    <%= form_for(@user) do |f| %>
 
-      <div class="field">
-        <%= f.label :is_this_person_an_Esh_instructor? %><br>
-        <%= f.check_box :instructor %>
-      </div>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email, value: current_user.email %>
+        </div>
 
-      <div class="field">
-        <%= f.label :give_this_person_admin_rights_on_the_Esh_website? %><br>
-        <%= f.check_box :admin %>
-      </div>
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
 
-    <% else %>
+        <div class="field">
+          <%= f.label :bio %><br>
+          <%= f.text_area :bio %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email, value: current_user.email %>
-      </div>
+        <div class="field">
+          <%= f.label :injuries %><br>
+          <%= f.text_field :injuries %>
+        </div>
+
+        <div class="field">
+          <%= f.label :emergency_contact_name %><br>
+          <%= f.text_field :emergency_contact_name %>
+        </div>
+
+        <div class="field">
+          <%= f.label :emergency_contact_number %><br>
+          <%= f.text_field :emergency_contact_number %>
+        </div>
+
+        <div class="field">
+          <%= f.label :phone_number %><br>
+          <%= f.text_field :phone_number %>
+        </div>
+        <div class="field">
+          <%= f.label :address %><br>
+          <%= f.text_area :address %>
+        </div>
+
+      <% if current_user.admin %>
+      
+        <h5>Show this person's bio on the Esh Instructors Page?</h5>
+        <div class="field">
+          <%= f.label :instructor? %><br>
+          <%= f.check_box :instructor %>
+        </div>
+        
+        <h5>Make this person an Esh Website Administrator?</h5>
+        <div class="field">
+          <%= f.label :admin? %><br>
+          <%= f.check_box :admin %>
+        </div>
+
+      <% end %>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
 
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-
-    <div class="field">
-      <%= f.label :bio %><br>
-      <%= f.text_area :bio %>
-    </div>
-
-    <div class="field">
-      <%= f.label :injuries %><br>
-      <%= f.text_field :injuries %>
-    </div>
-
-    <div class="field">
-      <%= f.label :emergency_contact_name %><br>
-      <%= f.text_field :emergency_contact_name %>
-    </div>
-
-    <div class="field">
-      <%= f.label :emergency_contact_number %><br>
-      <%= f.text_field :emergency_contact_number %>
-    </div>
-
-    <div class="field">
-      <%= f.label :phone_number %><br>
-      <%= f.text_field :phone_number %>
-    </div>
-    <div class="field">
-      <%= f.label :address %><br>
-      <%= f.text_area :address %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
 <% end %>
