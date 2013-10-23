@@ -22,6 +22,8 @@ def create
     :currency    => 'usd'
   )
 
+CourseRegistration.check_out(current_user)
+
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to charges_path
