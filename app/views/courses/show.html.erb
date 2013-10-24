@@ -1,65 +1,76 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Instructor(s):</strong>
-  <% @instructors.each do |instructor| %>
-    <%= instructor.name%>
-  <% end %>
-</p>
-<p>
-  <strong>Start date:</strong>
-  <%= @course.start_date %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>End date:</strong>
-  <%= @course.end_date %>
-</p>
+  <p>
+    <strong>Instructor(s):</strong>
+    <% @instructors.each do |instructor| %>
+      <%= link_to instructor.name, user_path(instructor) %>
+    <% end %>
+  </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @course.start_time %>
-</p>
+  <p>
+    <strong>Start date:</strong>
+    <%= @course.start_date %>
+  </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @course.end_time %>
-</p>
+  <p>
+    <strong>End date:</strong>
+    <%= @course.end_date %>
+  </p>
 
-<p>
-  <strong>Number of sessions:</strong>
-  <%= @course.number_of_sessions %>
-</p>
+  <p>
+    <strong>Start time:</strong>
+    <%= @course.start_time %>
+  </p>
 
-<p>
-  <strong>Max class size:</strong>
-  <%= @course.max_class_size %>
-</p>
+  <p>
+    <strong>End time:</strong>
+    <%= @course.end_time %>
+  </p>
 
-<p>
-  <strong>Current Student Registration Count (including instructors):</strong>
-  <%= @course.students_registered %>
-</p>
+  <p>
+    <strong>Number of sessions:</strong>
+    <%= @course.number_of_sessions %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  $<%= @course.price %>.00
-</p>
+  <p>
+    <strong>Max class size:</strong>
+    <%= @course.max_class_size %>
+  </p>
 
-<p>
-  <strong>Level:</strong>
-  <%= @course.level %>
-</p>
+  <p>
+    <strong>Spots left:</strong>
+    <%= @course.spots_left %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    $<%= @course.price %>.00
+  </p>
 
-<p>
-  <strong>Discipline:</strong>
-  <%= @course.discipline.name %>
-</p>
+  <p>
+    <strong>Level:</strong>
+    <%= @course.level %>
+  </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+  <p>
+    <strong>Description:</strong>
+    <%= @course.description %>
+  </p>
+
+<% if current_user.instructor || current_user.admin %>
+
+    <strong>All Students:</strong>
+    <ol>
+    <% @course.users.each do |user| %>
+      <% unless @course.instructor_ids.include? user.id %>
+        <li><%= link_to user.name, user_path(user) %></li>
+      <% end %>
+    <% end %>
+    </ol>
+
+  <%= link_to 'Edit', edit_course_path(@course) %> |
+
+<% end %>
+  
+  <%= link_to 'Back', courses_path %>

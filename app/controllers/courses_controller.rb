@@ -66,10 +66,13 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
-      @instructors = []
-      @course.instructor_ids.each do |id|
-        @instructors << User.find(id)
+
+      @instructors = @course.instructor_ids.map do |id|
+        User.find(id)
       end
+
+      @students = @course.users
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
