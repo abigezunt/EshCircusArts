@@ -1,19 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @user.name %></h2>
-<%= image_tag @user.photo%>
-
 <% if @user.instructor %>
-
-  <h4><%= @user.name %> is teaching these classes:</h4>
-  <ul>
-    <% @user.courses.each do |course| %>
-      <li><%= link_to course.name, course %> <%= render 'shared/course_time', :course => course  %></li>
-    <% end %>
-  </ul>
-
-<% end %>
-
+  <h2><%= @user.name %></h2>
+  <%= image_tag @user.photo%>
+    <h4><%= @user.name %> is teaching these classes:</h4>
+    <ul>
+      <% @user.courses.each do |course| %>
+        <li><%= link_to course.name, course %> <%= render 'shared/course_time', :course => course  %></li>
+      <% end %>
+    </ul>
 
 <% end %>
 
