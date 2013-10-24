@@ -5,7 +5,8 @@ class CourseRegistrationsController < ApplicationController
   # GET /course_registrations
   # GET /course_registrations.json
   def index
-    @course_registrations = CourseRegistration.where(user_id: current_user.id)
+    @course_registrations_as_student = CourseRegistration.where(user_id: current_user.id, role: "student")
+    @course_registrations_as_teacher = CourseRegistration.where(user_id: current_user.id, role: "teacher")
   end
 
   # GET /course_registrations/1

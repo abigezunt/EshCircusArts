@@ -18,7 +18,7 @@ class Course < ActiveRecord::Base
   end
 
   def full
-    if self.course_registrations.size < (self.max_class_size - self.course_registrations.where(role: "instructor"))
+    self.max_class_size <= (self.course_registrations.size - self.course_registrations.where(role: "instructor").size)
   end
 
   def students_registered
