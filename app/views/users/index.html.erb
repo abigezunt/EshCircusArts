@@ -1,45 +1,17 @@
-<h1>Listing users</h1>
+<% if current_user.admin %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Bio</th>
-      <th>Role</th>
-      <th>Injuries</th>
-      <th>Photo</th>
-      <th>Emergency contact name</th>
-      <th>Emergency contact number</th>
-      <th>Email</th>
-      <th>Phone number</th>
-      <th>Address</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<h1>All Esh Students</h1>
 
-  <tbody>
+
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.bio %></td>
-        <td><%= user.role %></td>
-        <td><%= user.injuries %></td>
-        <td><%= user.photo %></td>
-        <td><%= user.emergency_contact_name %></td>
-        <td><%= user.emergency_contact_number %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone_number %></td>
-        <td><%= user.address %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <%= render 'shared/user_profile', :user => user %>
+        <span><%= link_to 'Show', user %></span>
+        <span><%= link_to 'Edit', edit_user_path(user) %></span>
+        <span><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Enter a New Student or Instructor', new_user_path %>
+
+<% end %>

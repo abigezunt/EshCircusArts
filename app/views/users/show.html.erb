@@ -9,7 +9,12 @@
         <li><%= link_to course.name, course %> <%= render 'shared/course_time', :course => course  %></li>
       <% end %>
     </ul>
+    
+<% elsif current_user.instructor %>
 
+
+<% else %>  
+  <% redirect_to '/' %>
 <% end %>
 
 
