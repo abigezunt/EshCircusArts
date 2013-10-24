@@ -5,8 +5,8 @@ class CourseRegistrationsController < ApplicationController
   # GET /course_registrations
   # GET /course_registrations.json
   def index
-    @course_registrations_as_student = CourseRegistration.where(user_id: current_user.id, role: "student")
-    @course_registrations_as_teacher = CourseRegistration.where(user_id: current_user.id, role: "teacher")
+    @course_registrations_as_student = CourseRegistration.where(user_id: current_user.id, role: "student").current
+    @course_registrations_as_teacher = CourseRegistration.where(user_id: current_user.id, role: "teacher").current
   end
 
   # GET /course_registrations/1
@@ -75,4 +75,5 @@ class CourseRegistrationsController < ApplicationController
     def course_registration_params
       params.require(:course_registration).permit(:user_id, :course_id, :paid, :comments, :timestamps)
     end
+    
 end

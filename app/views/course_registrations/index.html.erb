@@ -9,29 +9,30 @@
           <% end %>
         </ul>
       <% end %>
+      
+      <% if @course_registrations_as_student.size > 0 %>
+        <strong>You are registered as a student for:</strong>
+        <ul>
+        <% @course_registrations_as_student.each do |course_registration| %>
+            <li> 
+               <%= course_registration.course.name %> 
+               <% if course_registration.paid %>
+                 confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
+               <% else %>
+                 reserved pending payment of $<%= course_registration.course.price%>.00
+               <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
 
-      <strong>You are registered as a student for:</strong>
-      <ul>
-      <% @course_registrations_as_student.each do |course_registration| %>
-          <li> 
-             <%= course_registration.course.name %> 
-             <% if course_registration.paid %>
-               confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
-             <% else %>
-               reserved pending payment of $<%= course_registration.course.price%>.00
-             <% end %>
-          </li>
-        <% end %>
-      </ul>
-
-
+      <% if current_user.unpaid_balance > 0 %>
       <strong>Your unpaid balance:</strong>
       $<%= current_user.unpaid_balance %>.00
-      <% if current_user.unpaid_balance > 0 %>
-      <h3><%= link_to "Pay Now", new_charge_path %></h3>
+        <h3><%= link_to "Pay Now", new_charge_path %></h3>
       <% end %>
 
 <% else %>
-  <p> You have not yet registered for any classes.  <%= link_to "Sign Up Now", new_course_registration_path %></p>
+  <p> You have not registered for any classes.  <%= link_to "Sign Up Now", new_course_registration_path %></p>
 <% end %>
 
