@@ -2,73 +2,67 @@
 
 <h2><%= @user.name %></h2>
 <%= image_tag @user.photo%>
+
 <% if @user.instructor %>
 
-  <% @user.courses.each do |course| %>
-    <%= link_to course.name, course %>
-  <% end %>
+  <h4><%= @user.name %> is teaching these classes:</h4>
+  <ul>
+    <% @user.courses.each do |course| %>
+      <li><%= link_to course.name, course %> <%= render 'shared/course_time', :course => course  %></li>
+    <% end %>
+  </ul>
 
-<% else %>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <% if @user.instructor %>
-    <strong><%= @user.name %> is currently teaching these classes at Esh:</strong>
-    <%= @user.show_classes%>
-  <% end %>
-</p>
+<% if @user == current_user %>
 
-<p>
-  <% if @user.admin %>
-    <strong><%= @user.name %> is an Esh Website Admin.</strong>
-  <% end %>
-</p>
+<h4>Your student information</h4>
+<h5>This information will be shared with your instructors.</h5>
 
 <p>
   <strong>Bio:</strong>
-  <%= @user.bio %>
+  <%= current_user.bio %>
 </p>
 
 <p>
   <strong>Injuries:</strong>
-  <%= @user.injuries %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
+  <%= current_user.injuries %>
 </p>
 
 <p>
   <strong>Emergency contact name:</strong>
-  <%= @user.emergency_contact_name %>
+  <%= current_user.emergency_contact_name %>
 </p>
 
 <p>
   <strong>Emergency contact number:</strong>
-  <%= @user.emergency_contact_number %>
+  <%= current_user.emergency_contact_number %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+  <%= current_user.email %>
 </p>
 
 <p>
   <strong>Phone number:</strong>
-  <%= @user.phone_number %>
+  <%= current_user.phone_number %>
 </p>
 
 <p>
   <strong>Address:</strong>
-  <%= @user.address %>
+  <%= current_user.address %>
 </p>
 
-<% end %> 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit Your Profile', edit_user_path(current_user) %> |
+<%= link_to 'Your Student Page', student_path %>
+<% if current_user.admin %>
+  | <%= link_to "Admin Page", admin_path %>
+<% end %>
+
+
+<% end %>
+
+

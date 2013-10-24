@@ -19,14 +19,14 @@
         <li><%= link_to 'Private Lessons', '/private_lessons'%></li> | 
         <li><%= link_to 'Instructors', '/instructors' %></li> | 
         <li><%= link_to 'Location', '/location' %></li>
-        <% if current_user%>
-        | <li><%= link_to 'Student Page', student_path %></li>
+        <% if current_user %>
+        | <li><%= link_to 'My Profile', student_path %></li>
         <% end %>
         <% if current_user.try(:instructor) %>
-        | <li><%= link_to 'Instructor Page', instructor_path %></li>
+        | <li><%= link_to 'My Instructor Page', instructor_path %></li>
         <% end %>
         <% if current_user.try(:admin) %>
-        | <li><%= link_to 'Admin Page', admin_path %></li>
+        | <li><%= link_to 'Esh Admin Page', admin_path %></li>
         <% end %>
       </ul>
     </div>
