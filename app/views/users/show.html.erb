@@ -11,7 +11,8 @@
     </ul>
     
 <% elsif current_user.instructor %>
-
+  
+  <%= render 'shared/show_user', :user => @user %>
 
 <% else %>  
   <% redirect_to '/' %>

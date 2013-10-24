@@ -1,12 +1,15 @@
 
 <% if current_user %>
+	<% if current_user.instructor %>
+	  <h4>Your bio and photo will be visible to the public on the instructors page.</h4>
+	  <h5>The rest of your personal information is only viewable by other Esh staff</h5>
+	<% else %>
+	  <h4>Your student profile</h4>
+	  <h5>This information will be shared with your instructors.</h5>
+	<% end %>
+	<%= render 'shared/show_user', :user => current_user %>
 
-<h4>Your student profile</h4>
-<h5>This information will be shared with your instructors.</h5>
-
-<%= render 'shared/show_user', :user => current_user %>
-
-<p><%= link_to "update my profile", edit_user_path(current_user) %></p>
-<p><%= link_to "see my current course registrations", course_registrations_path %></p>
+	<p><%= link_to "update my profile", edit_user_path(current_user) %></p>
+	<p><%= link_to "see my current course registrations", course_registrations_path %></p>
 
 <% end %>
