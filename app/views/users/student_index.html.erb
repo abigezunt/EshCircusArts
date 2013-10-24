@@ -1,8 +1,11 @@
 
 <% if current_user %>
 
-<h4>Your student information</h4>
+<h4>Your student profile</h4>
 <h5>This information will be shared with your instructors.</h5>
+
+<h2><%= current_user.name %></h2>
+<%= image_tag current_user.photo%>
 
 <p>
   <strong>Bio:</strong>
