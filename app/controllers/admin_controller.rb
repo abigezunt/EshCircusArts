@@ -42,8 +42,4 @@ class AdminController < ApplicationController
   def course_destroy
   end
 
-
-
-
-
 end
