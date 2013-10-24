@@ -1,3 +1,45 @@
 
-<%= link_to "update my profile", edit_user_path(current_user) %>
-<%= link_to "see my current course registrations", course_registrations_path %>
+<% if current_user %>
+
+<h4>Your student information</h4>
+<h5>This information will be shared with your instructors.</h5>
+
+<p>
+  <strong>Bio:</strong>
+  <%= current_user.bio %>
+</p>
+
+<p>
+  <strong>Injuries:</strong>
+  <%= current_user.injuries %>
+</p>
+
+<p>
+  <strong>Emergency contact name:</strong>
+  <%= current_user.emergency_contact_name %>
+</p>
+
+<p>
+  <strong>Emergency contact number:</strong>
+  <%= current_user.emergency_contact_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= current_user.phone_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= current_user.address %>
+</p>
+
+<p><%= link_to "update my profile", edit_user_path(current_user) %></p>
+<p><%= link_to "see my current course registrations", course_registrations_path %></p>
+
+<% end %>
