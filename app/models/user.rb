@@ -16,4 +16,12 @@ class User < ActiveRecord::Base
   	return balance
   end
 
+  def courses_teaching
+    CourseRegistration.where(user_id: self.id, role: "instructor").current
+  end
+
+  def courses_taking
+    CourseRegistration.where(user_id: self.id, role: "student").current
+  end
+
 end
