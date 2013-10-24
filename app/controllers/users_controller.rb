@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @students = User.where(instructor: nil)
+    @instructors = User.where(instructor: true)
   end
 
   def student_index

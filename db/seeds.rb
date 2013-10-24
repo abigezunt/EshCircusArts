@@ -321,6 +321,7 @@ User.create(
 	email: 'kate@example.com',
 	password: 'password',
 	name: "Kate Law",
+	instructor: true,
 	photo: "instructors/Kate-Law.jpg",
 	bio: "Kate Law graduated from the University of Puget Sound.  While there, she was an active choreographer and performer. She has performed with Tensile Dance (Tacoma, WA), as well as Jo Krieter/Flyaway Productions, Project Bandaloop, The Crucible, and Supperclub in the Bay Area.  Her movement background began with competitive gymnastics, and spread to a four-year affair with pole vaulting and a lifetime relationship with dance and circus arts. She has trained with Master Lu Yi (SF Circus Center), Stephane Beauregard (Cirque du Soleil), Ethan Law, and Veronique Thibeault (L’Ecole National du Cirque). She is currently a member of the Boston Circus Guild, in addition to choreographing, performing, and producing for her company, Bow & Sparrow. She loves a hot cup of tea, inclement weather, and ninjas.")
 
