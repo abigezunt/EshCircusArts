@@ -4,7 +4,7 @@
 <ol>
 
 <% @registrations.each do |registration| %>
-  
+
 	<% if registration.role == "student" %>
 
 	  <li>Registration # <%= registration.id %>:</li>
@@ -24,6 +24,13 @@
 	  <p><%= registration.created_at.strftime("%m/%d/%Y, %-l:%M %P ") %> </p>
 
 	<% end %>
+
+	  <% if current_user.admin %>
+      <span><%= link_to 'Show', registration %></span> | 
+      <span><%= link_to 'Edit', edit_course_registration_path(registration) %></span> | 
+      <span><%= link_to 'Delete', registration, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <% end %>
+  
 
 <% end %>
 
