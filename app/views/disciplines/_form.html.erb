@@ -1,0 +1,50 @@
+<% if user_signed_in? && current_user.admin %>
+  <%= form_for(@discipline) do |f| %>
+    <% if @discipline.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@discipline.errors.count, "error") %> prohibited this discipline from being saved:</h2>
+
+        <ul>
+        <% @discipline.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :level_1_description %><br>
+      <%= f.text_area :level_1_description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :level_2_description %><br>
+      <%= f.text_area :level_2_description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :level_3_description %><br>
+      <%= f.text_area :level_3_description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :level_4_description %><br>
+      <%= f.text_area :level_4_description %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+<% end %>
