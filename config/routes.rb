@@ -25,6 +25,8 @@ EshTestApp::Application.routes.draw do
 
   get '/admin', to: 'admin#admin_index'
 
+  get '/recent_registrations', to: 'admin#recent_registrations'
+
   resources :main
 
   resources :course_registrations

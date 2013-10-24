@@ -1,0 +1,30 @@
+
+<h2>Recent Course Registrations</h2>
+
+<ol>
+
+<% @registrations.each do |registration| %>
+  
+	<% if registration.role == "student" %>
+
+	  <li>Registration # <%= registration.id %>:</li>
+    <ul>
+		  <li><%= link_to registration.user.name, user_path(registration.user) %></li>
+
+		  <li>Course: <%= link_to registration.course.name, course_path(registration.course) %> 
+		    <%= render 'shared/course_time', :course => registration.course  %></li>
+		  <li><% if registration.paid %> Paid <% else %> Not yet paid <% end %></li>
+		  <p><%= registration.created_at.strftime("%m/%d/%Y, %-l:%M %P") %> </p>
+    </ul>
+  <% else %>
+
+    <li><%= link_to registration.user.name, user_path(registration.user) %> was assigned to teach: 
+    <%= link_to registration.course.name, course_path(registration.course) %> 
+	  <%= render 'shared/course_time', :course => registration.course  %> </li>
+	  <p><%= registration.created_at.strftime("%m/%d/%Y, %-l:%M %P ") %> </p>
+
+	<% end %>
+
+<% end %>
+
+</ol>
