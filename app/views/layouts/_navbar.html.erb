@@ -1,18 +1,24 @@
 
 
-<% if user_signed_in? %>
-  <p>logged in as <%= link_to current_user.email, student_path(current_user) %> | 
-  <%= link_to "Log Out", destroy_user_session_path, method: 'delete' %> </p>
-<% else %>  
-  <p><%= link_to "Sign Up", new_user_registration_path %> | 
-    <%= link_to "Log In", new_user_session_path %></p>
-<% end %>
-
 <div id="header">
   <div class="header-text">
-
+    <div class="nav-bar">
+      <ul> 
+        <% if current_user.try(:instructor) %>
+        <li><%= link_to 'My Instructor Page', instructor_path %></li> | 
+        <% end %>
+        <% if current_user.try(:admin) %>
+        <li><%= link_to 'Esh Admin Page', admin_path %></li> |
+        <% end %>
+        <% if current_user %>
+        <li><%= link_to 'My Profile', student_path %></li> | 
+        <% end %>
+        <li><%= render 'devise/menu/registration_items' %></li>
+        | <li><%= render 'devise/menu/login_items' %></li>
+      </ul>
+    </div>
     <h1><%= link_to 'Esh Circus Arts', '/' %></h1>
-    <div id="nav-bar">
+    <div class="nav-bar">
       <ul> 
         <li><%= link_to 'Circus Skills', '/disciplines' %></li> | 
         <li><%= link_to 'Classes', '/upcoming_classes' %> </li> | 
@@ -21,15 +27,7 @@
         <li><%= link_to 'Private Lessons', '/private_lessons'%></li> | 
         <li><%= link_to 'Instructors', '/instructors' %></li> | 
         <li><%= link_to 'Location', '/location' %></li>
-        <% if current_user %>
-        | <li><%= link_to 'My Profile', student_path %></li>
-        <% end %>
-        <% if current_user.try(:instructor) %>
-        | <li><%= link_to 'My Instructor Page', instructor_path %></li>
-        <% end %>
-        <% if current_user.try(:admin) %>
-        | <li><%= link_to 'Esh Admin Page', admin_path %></li>
-        <% end %>
+     
       </ul>
     </div>
   </div>
