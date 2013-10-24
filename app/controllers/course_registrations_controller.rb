@@ -1,12 +1,10 @@
 class CourseRegistrationsController < ApplicationController
-  before_action :set_course_registration, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_course_registration, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user! #unless user_signed_in? 
   
   # GET /course_registrations
   # GET /course_registrations.json
   def index
-    @course_registrations_as_student = CourseRegistration.where(user_id: current_user.id, role: "student").current
-    @course_registrations_as_teacher = CourseRegistration.where(user_id: current_user.id, role: "teacher").current
   end
 
   # GET /course_registrations/1

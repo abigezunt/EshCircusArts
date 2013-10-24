@@ -1,25 +1,25 @@
 
 
 
-      <% if @course_registrations_as_teacher.size > 0 %>
+      <% if current_user.courses_teaching.size > 0 %>
         <strong>You are teaching:</strong>
         <ul>
-          <% @course_registrations_as_teacher.each do |course_registration| %>
-            <li> <%= link_to course_registration.course.name, course_registration.course %> </li>
+          <% current_user.courses_teaching.each do |course_registration| %>
+            <li> <%= link_to course_registration.course.name, course_registration.course %>   <%= render 'shared/course_time', :course => course_registration.course %></li>
           <% end %>
         </ul>
       <% end %>
       
-      <% if @course_registrations_as_student.size > 0 %>
+      <% if current_user.courses_taking.size > 0 %>
         <strong>You are registered as a student for:</strong>
         <ul>
-        <% @course_registrations_as_student.each do |course_registration| %>
+        <% current_user.courses_taking.each do |course_registration| %>
             <li> 
-               <%= course_registration.course.name %> 
+               <%= link_to course_registration.course.name, course_registration.course %> 
                <% if course_registration.paid %>
                  confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
                <% else %>
-                 reserved pending payment of $<%= course_registration.course.price%>.00
+                 <strong>reserved pending payment of $<%= course_registration.course.price%>.00</strong>
                <% end %>
             </li>
           <% end %>
@@ -33,5 +33,5 @@
       <% end %>
 
 
-  <p> You have not registered for any classes.  <%= link_to "Sign Up Now", new_course_registration_path %></p>
+  <p><%= link_to "Register for classes", new_course_registration_path %></p>
 

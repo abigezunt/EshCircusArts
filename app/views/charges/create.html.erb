@@ -3,7 +3,7 @@
 <h3>Your current course registrations are: </h3>
 
 <ul>
-   <% current_user.course_registrations.each do |course_registration| %>
+   <% current_user.courses_taking.each do |course_registration| %>
      <li><%= course_registration.course.name %> </li>
    <% end %>
 </ul>
