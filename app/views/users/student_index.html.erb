@@ -4,8 +4,7 @@
 <h4>Your student profile</h4>
 <h5>This information will be shared with your instructors.</h5>
 
-<%= render 'shared/user_profile', :user => current_user %>
-
+<%= render 'shared/show_user', :user => current_user %>
 
 <p><%= link_to "update my profile", edit_user_path(current_user) %></p>
 <p><%= link_to "see my current course registrations", course_registrations_path %></p>

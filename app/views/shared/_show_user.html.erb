@@ -1,14 +1,16 @@
 <div class="container">
-<div class="row">
-  <h3 class="container"><%= user.name %></h3>
-</div>
-<div class="row">      
-  <div class="col-sm-4 col-md-4 left-column"><%= image_tag user.photo %></div>
+	<div class="row">
+	  <h3 class="container"><%= user.name %></h3>
+	</div>
+	<div class="row">    
 
-  <div class="col-sm-8 col-md-8 right-column">
-    <%= render 'shared/user_profile', :user => user %>
-        <span><%= link_to 'Show', user %></span>
-        <span><%= link_to 'Edit', edit_user_path(user) %></span>
-        <span><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-  </div>
-</div></div>
+	  <div class="col-sm-4 col-md-4 left-column">
+	    <%= image_tag user.photo %>
+	  </div>
+
+	  <div class="col-sm-8 col-md-8 right-column">
+	    <%= render 'shared/user_profile', :user => user %>
+	  </div>
+	  
+	</div>
+</div>

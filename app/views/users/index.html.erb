@@ -1,17 +1,27 @@
 <% if current_user.admin %>
 
+  <%= link_to 'Enter a New Student or Instructor', new_user_path %>
+
   <h1>All Esh Community Members</h1>
 
   <h2>Students</h2>
   <% @students.each do |user| %>
     <%= render 'shared/show_user', :user => user %>
+    <div class="container">      
+      <span><%= link_to 'Show', user %></span> | 
+      <span><%= link_to 'Edit', edit_user_path(user) %></span> | 
+      <span><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </div>
   <% end %>
 
   <h2>Instructors</h2>
   <% @instructors.each do |user| %>
-      <%= render 'shared/show_user', :user => user %>
+    <%= render 'shared/show_user', :user => user %>
+    <div class="container">      
+      <span><%= link_to 'Show', user %></span> | 
+      <span><%= link_to 'Edit', edit_user_path(user) %></span> | 
+      <span><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </div>
   <% end %>
-
-  <%= link_to 'Enter a New Student or Instructor', new_user_path %>
 
 <% end %>
