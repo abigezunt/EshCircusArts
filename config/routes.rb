@@ -1,8 +1,8 @@
 EshTestApp::Application.routes.draw do
+  
+  root to: 'main#index'
 
   devise_for :users
-
-  root to: 'main#index'
 
   get '/location', to: 'main#location'
 

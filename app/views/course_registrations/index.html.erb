@@ -14,8 +14,10 @@
       <li> 
          <% if course_registration.seven_week_session_id %>
            <%= link_to course_registration.seven_week_session.name, course_registration.seven_week_session %> 
-         <% else %>
+         <% elsif course_registration.course_id %>
            <%= link_to course_registration.course.name, course_registration.course %> 
+         <% else %>
+           <%= link_to course_registration, course_registration%>
          <% end %>
          
          <% if course_registration.paid %>

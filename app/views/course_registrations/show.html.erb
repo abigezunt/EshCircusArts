@@ -5,10 +5,10 @@
 
 <p>
   <strong>Course:</strong>
-  <% if @course_registration.seven_week_session_id %>
+  <% if @course_registration.seven_week_session %>
     <%= @course_registration.seven_week_session.name %> starting on 
     <%= @course_registration.seven_week_session.start_date.strftime("%A, %B %-d, %Y") %>
-  <% elsif @course_registration.course_id %>
+  <% elsif @course_registration.course %>
     <%= @course_registration.course.name %> on 
     <%= @course_registration.course.start_date.strftime("%A, %B %-d, %Y") %>
   <% end %>
