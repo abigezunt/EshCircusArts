@@ -21,7 +21,7 @@ class SevenWeekSession < ActiveRecord::Base
   									)
     end
     # Create make-up class
-    Course.create(seven_week_session_id: self.id, 
+    Course.create(
               name: "Make-up class for #{self.name}", 
               start_time: self.start_time, 
               end_time: self.end_time,
@@ -31,12 +31,16 @@ class SevenWeekSession < ActiveRecord::Base
               instructor_ids: self.instructor_ids,
               max_class_size: self.max_class_size,
               drop_in_price: self.drop_in_price,
-              start_date: self.start_date + (8 * x)
+              start_date: self.start_date + (56)
               )
   end
 
   def future
     self.start_date > Date.today
+  end
+
+  def short_description
+    "#{self.name} #{self.start_date.strftime("%b %-d")} #{self.start_time.strftime("%-l:%M%P")} - #{self.end_time.strftime("%-l:%M%P")}"
   end
 
   def full
