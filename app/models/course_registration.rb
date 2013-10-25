@@ -11,14 +11,5 @@ class CourseRegistration < ActiveRecord::Base
       reg.save
     end
   end
-
-  def price
-    if self.course.price
-      self.course.price
-    elsif self.course.seven_week_session.price
-      self.course.seven_week_session.price / self.course.seven_week_session.number_of_sessions
-    else
-      self.course.drop_in_price
-    end
-  end
+  
 end

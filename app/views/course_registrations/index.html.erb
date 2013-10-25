@@ -1,37 +1,39 @@
+<% if current_user.courses_teaching.size > 0 %>
+  <strong>You are teaching:</strong>
+  <ul>
+    <% current_user.courses_teaching.each do |course_registration| %>
+      <li> <%= link_to course_registration.course.name, course_registration.course %>   <%= render 'shared/course_time', :course => course_registration.course %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if current_user.courses_taking.size > 0 %>
+  <strong>You are registered as a student for:</strong>
+  <ul>
+  <% current_user.courses_taking.each do |course_registration| %>
+      <li> 
+         <% if course_registration.seven_week_session_id %>
+           <%= link_to course_registration.seven_week_session.name, seven_week_session_registration.course %> 
+         <% else %>
+           <%= link_to course_registration.course.name, course_registration.course %> 
+         <% end %>
+         
+         <% if course_registration.paid %>
+           confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
+         <% else %>
+           <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
+         <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if current_user.unpaid_balance > 0 %>
+<strong>Your unpaid balance:</strong>
+$<%= current_user.unpaid_balance %>.00
+  <h3><%= link_to "Pay Now", new_charge_path %></h3>
+<% end %>
 
 
-
-      <% if current_user.courses_teaching.size > 0 %>
-        <strong>You are teaching:</strong>
-        <ul>
-          <% current_user.courses_teaching.each do |course_registration| %>
-            <li> <%= link_to course_registration.course.name, course_registration.course %>   <%= render 'shared/course_time', :course => course_registration.course %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      
-      <% if current_user.courses_taking.size > 0 %>
-        <strong>You are registered as a student for:</strong>
-        <ul>
-        <% current_user.courses_taking.each do |course_registration| %>
-            <li> 
-               <%= link_to course_registration.course.name, course_registration.course %> 
-               <% if course_registration.paid %>
-                 confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
-               <% else %>
-                 <strong>reserved pending payment of $<%= course_registration.course.price%>.00</strong>
-               <% end %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-
-      <% if current_user.unpaid_balance > 0 %>
-      <strong>Your unpaid balance:</strong>
-      $<%= current_user.unpaid_balance %>.00
-        <h3><%= link_to "Pay Now", new_charge_path %></h3>
-      <% end %>
-
-
-  <p><%= link_to "Register for classes", new_course_registration_path %></p>
+<p><%= link_to "Register for classes", new_course_registration_path %></p>
 
