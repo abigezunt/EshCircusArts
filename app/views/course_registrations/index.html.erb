@@ -26,7 +26,8 @@
         <% end %>
 
     <% elsif course_registration.is_full_registration %>
-      <li><%= render 'shared/course_time', :course => course_registration.course_page %></li>
+      <li> <%= link_to course_registration.name, course_registration.course_page %>
+      <%= render 'shared/course_time', :course => course_registration.course_page %></li>
     <% end %>
          
     <% if course_registration.paid %>
