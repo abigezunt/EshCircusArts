@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20131025033628) do
     t.integer  "instructor_ids",                         array: true
     t.integer  "course_registrations_count"
     t.integer  "max_class_size",             default: 6
-    t.integer  "session_id"
+    t.integer  "seven_week_session_id"
     t.integer  "drop_in_price"
   end
 
