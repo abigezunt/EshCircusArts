@@ -5,11 +5,7 @@ class SevenWeekSession < ActiveRecord::Base
   after_save :create_courses
   scope :future, -> { where("'start_date' > ?", Date.today)}
 
-  def reserve(user)
-  	self.courses.each do |course|
-  		CourseRegistration.create(user_id: user.id, course_id: course.id)
-  	end
-  end
+
 
   def create_courses
   	self.number_of_sessions.times do |x|

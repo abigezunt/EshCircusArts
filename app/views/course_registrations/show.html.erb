@@ -5,13 +5,18 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @course_registration.course.name %> starting on 
-  <%= @course_registration.course.start_date.strftime("%A, %B %-d, %Y") %>
+  <% if @course_registration.seven_week_session_id %>
+    <%= @course_registration.seven_week_session.name %> starting on 
+    <%= @course_registration.seven_week_session.start_date.strftime("%A, %B %-d, %Y") %>
+  <% elsif @course_registration.course_id %>
+    <%= @course_registration.course.name %> on 
+    <%= @course_registration.course.start_date.strftime("%A, %B %-d, %Y") %>
+  <% end %>
 </p>
 
 <p>
   <strong>Tuition for this course:</strong>
-  $<%= @course_registration.course.price %>.00
+  $<%= @course_registration.price %>.00
 </p>
  
 <strong><%= link_to 'Edit this registration', edit_course_registration_path(@course_registration) %> </strong>

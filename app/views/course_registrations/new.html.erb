@@ -6,8 +6,60 @@
 
 <% if @sessions.size > 0 %>
 
-  <%= @sessions.each do |session| %>
-    <%= render 'registration_menu', :course => session  %>
+  <%= @sessions.each do |seven_week_session| %>
+    
+      <% if seven_week_session.future %>
+    <% if @course_registration.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
+
+        <ul>
+        <% @course_registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+    <% unless current_user.seven_week_sessions.include? seven_week_session %>
+      <%= form_for @course_registration, action: 'create' do |f| %>
+     
+        <h3><%= seven_week_session.name %></h3>
+        <p><%= seven_week_session.description %></p>
+
+        <% if seven_week_session.try(:full_price?) %>
+          <p>Full Price for Seven-Week Session: $<%= seven_week_session.full_price %>.00</p>
+          <%= f.hidden_field :price, value: seven_week_session.full_price %>
+
+        <% elsif seven_week_session.try(:drop_in_price?) %>
+          <p> Drop-in Price: $<%= seven_week_session.drop_in_price%>.00 </p>
+          <%= f.hidden_field :price, value: seven_week_session.drop_in_price %>
+        <% else seven_week_session.price %>
+          <p>Price $<%= seven_week_session.price%>.00</p>
+          <%= f.hidden_field :price, value: seven_week_session.price %>
+        <% end %>
+
+        <%= render 'shared/course_time', :course => seven_week_session  %>
+
+        <%= seven_week_session.spots_left %> spots left.
+
+      <div class="field">
+        <%= f.label :additional_information_for_your_instructors %><br>
+        <%= f.text_area :comments %>
+      </div>
+
+        <%= f.hidden_field :seven_week_session_id, value: seven_week_session.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+        <% unless seven_week_session.full %>
+          <%= f.submit "Register for #{seven_week_session.name}" %>
+        <% else %>
+          <strong>This class is full.  Please <%= mail_to "scheduling@eshaerialarts.com", "contact us"%> to get on the waiting list. </strong>
+        <% end %>
+
+      <% end %>
+    <% end %>
+<% end %>
   <% end %>
 
 <% else %>
@@ -19,7 +71,59 @@
 <h2>Upcoming Workshops and Drop-in Classes</h2>
 
 <% @courses.each do |course| %>
-  <%= render 'registration_menu', :course => course  %>
+ 
+    <% if course.future %>
+    <% if @course_registration.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
+
+        <ul>
+        <% @course_registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+   
+    <% unless current_user.courses.include? course %>
+      <%= form_for @course_registration, action: 'create' do |f| %>
+     
+        <h3><%= course.name %></h3>
+        <p><%= course.description %></p>
+
+        <% if course.try(:full_price?) %>
+          <p>Full Price for Seven-Week Session: $<%= course.full_price %>.00</p>
+          <%= f.hidden_field :price, value: course.full_price %>
+
+        <% elsif course.try(:drop_in_price?) %>
+          <p> Drop-in Price: $<%= course.drop_in_price%>.00 </p>
+          <%= f.hidden_field :price, value: course.drop_in_price %>
+        <% else course.price %>
+          <p>Price $<%= course.price%>.00</p>
+          <%= f.hidden_field :price, value: course.price %>
+        <% end %>
+
+        <%= render 'shared/course_time', :course => course  %>
+
+        <%= course.spots_left %> spots left.
+
+      <div class="field">
+        <%= f.label :additional_information_for_your_instructors %><br>
+        <%= f.text_area :comments %>
+      </div>
+
+        <%= f.hidden_field :course_id, value: course.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+        <% unless course.full %>
+          <%= f.submit "Register for #{course.name}" %>
+        <% else %>
+          <strong>This class is full.  Please <%= mail_to "scheduling@eshaerialarts.com", "contact us"%> to get on the waiting list. </strong>
+        <% end %>
+
+      <% end %>
+    <% end %>
+<% end %>
 <% end %>
 
 <h3><%= link_to "Pay Now", new_charge_path %></h3>
