@@ -6,19 +6,19 @@
 
 <% if @sessions.size > 0 %>
 
-  <%= @sessions.each do |seven_week_session| %>
+  <% @sessions.each do |seven_week_session| %>
     
-      <% if seven_week_session.future %>
-    <% if @course_registration.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
+    <% if seven_week_session.future %>
+      <% if @course_registration.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@course_registration.errors.count, "error") %> prohibited this course_registration from being saved:</h2>
 
-        <ul>
-        <% @course_registration.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+          <ul>
+          <% @course_registration.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
     <% end %>
    
     <% unless current_user.seven_week_sessions.include? seven_week_session %>

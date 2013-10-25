@@ -2,7 +2,7 @@
   <strong>You are teaching:</strong>
   <ul>
     <% current_user.courses_teaching.each do |course_registration| %>
-      <li> <%= link_to course_registration.course.name, course_registration.course %>   <%= render 'shared/course_time', :course => course_registration.course %></li>
+      <li> <%= link_to course_registration.name, course_registration.course_page %>   <%= render 'shared/course_time', :course => course_registration.course_page %></li>
     <% end %>
   </ul>
 <% end %>
@@ -11,36 +11,31 @@
   <strong>You are registered as a student for:</strong>
   <ul>
   <% current_user.courses_taking.each do |course_registration| %>
-      <li> 
-         <% if course_registration.seven_week_session_id %>
+    
+    <% if course_registration.seven_week_session %>
+      <li> <%= link_to course_registration.name, course_registration.course_page %> </li>
+      <%= course_registration.course_page.start_date.strftime("%As") %>
+      meeting <%= course_registration.seven_week_session.number_of_sessions%> times, on:
+        <% course_registration.seven_week_session.courses.each do |course| %>
+          <ul>
+            <li><%= link_to course.start_date.strftime("%A %B %-d"), course %></li>
+            <% if course.start_date >= ( Date.today + 1 )%>
+              <p><%= link_to "Can't make it? Let us know.", edit_course_registration_path(course) %></p>
+            <% end %> 
+          </ul>
+        <% end %>
 
-           <%= link_to course_registration.seven_week_session.name, course_registration.seven_week_session %> 
-           <%= course_registration.seven_week_session.start_date.strftime("%As") %>
-           meeting <%= course_registration.seven_week_session.number_of_sessions%> times, on:
-
-           <% course_registration.seven_week_session.courses.each do |course| %>
-           <ul>
-             <li>
-             <%= link_to course.start_date.strftime("%A %B %-d"), course %> 
-             <% if course.future %>
-               <p><%= link_to "Can't make it? Let us know.", edit_course_registration_path(course) %></p>
-             <% end %>
-             </li>
-           </ul>
-           <% end %>
-
-         <% else course_registration.course_id && course_registration.price > 0 %>
-           <%= link_to course_registration.course.name, course_registration.course %> 
-           <%= render 'shared/course_time', :course => course_registration.course %>
-         <% end %>
-         
-         <% if course_registration.paid %>
-           confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
-         <% elsif course_registration.price > 0 %>
-           <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
-         <% end %>
-      </li>
+    <% elsif course_registration.is_full_registration %>
+      <li><%= render 'shared/course_time', :course => course_registration.course_page %></li>
     <% end %>
+         
+    <% if course_registration.paid %>
+      confirmed and paid for on <%= course_registration.updated_at.strftime("%A, %B %-d, %Y") %>
+    <% elsif course_registration.price > 0 %>
+      <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
+    <% end %>
+  
+  <% end %>
   </ul>
 <% end %>
 
@@ -49,7 +44,6 @@
   $<%= current_user.unpaid_balance %>.00
   <h3><%= link_to "Pay Now", new_charge_path %></h3>
 <% end %>
-
 
 <p><%= link_to "Register for classes", new_course_registration_path %></p>
 

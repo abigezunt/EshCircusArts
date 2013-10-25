@@ -22,5 +22,25 @@ class CourseRegistration < ActiveRecord::Base
 
     end
   end
+
+  def name
+    if self.course 
+      self.course.name
+    elsif self.seven_week_session
+      self.seven_week_session.name
+    end
+  end
+
+  def course_page
+    if self.course
+      self.course
+    elsif self.seven_week_session
+      self.seven_week_session
+    end
+  end
+
+  def is_full_registration
+    self.price > 0
+  end
   
 end
