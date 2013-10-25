@@ -17,6 +17,6 @@ class CourseRegistration < ActiveRecord::Base
     elsif self.course.seven_week_session.price
       self.course.seven_week_session.price / self.course.seven_week_session.number_of_sessions
     else
-      self.course.drop_in_rate
+      self.course.drop_in_price
     end
 end

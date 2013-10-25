@@ -1,8 +1,8 @@
 <h3><%= course.name %></h3>
 <p><%= course.description %></p>
 
-<% if course.drop_in_rate %>
-  <p> Drop-in Rate: $<%= course.drop_in_rate%>.00 </p>
+<% if course.drop_in_price %>
+  <p> Drop-in Price: $<%= course.drop_in_price%>.00 </p>
 <% elsif course.price %>
   <p>Price $<%= course.price%>.00</p>
 <% else %>

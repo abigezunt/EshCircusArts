@@ -20,7 +20,7 @@ class SevenWeekSession < ActiveRecord::Base
   									instructor_ids: self.instructor_ids,
   									max_class_size: self.max_class_size,
   									start_date: self.start_date + (7 * x),
-                    drop_in_rate: self.drop_in_rate,
+                    drop_in_price: self.drop_in_price,
   									)
     end
   end
