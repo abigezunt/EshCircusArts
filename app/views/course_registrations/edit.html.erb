@@ -5,16 +5,22 @@ You are registered for <%= @course_registration.course.short_description %> </p>
 
   <%= form_for @course_registration, action: 'create', role: 'form' do |f| %>
         
-    <strong>Anything we should know?  Update your message to the Esh staff here.</strong>
+    <strong>
+    Anything we should know?  Send a message to the Esh staff here.
+    </strong>
     
-      <div class="form-group">
-        <%= f.text_area :comments %>
-      </div>
+    <div class="form-group">
+      <%= f.text_area :comments, value: ""%>
+    </div>
       
-      <p class="lead"> Can't make it? Come to make up week or drop in to another course.</p>
+    <p class="lead"> 
+    Can't make it? Come to make up week or drop in to another course.
+    </p>
+
+    <div class="form-group">
       <%= f.label :course_id%>
       <%= f.collection_select :course_id, @equivalent_courses, :id, :short_description %>
-
+    </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
 
     <div class="form-group">
@@ -26,5 +32,4 @@ You are registered for <%= @course_registration.course.short_description %> </p>
   <strong><%= link_to "Pay Now", new_charge_path %></strong> | 
 <% end %>
 <strong><%= link_to 'Delete this registration', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
-<strong><%= link_to 'See details about this registration', @course_registration %></strong> | 
 <strong><%= link_to 'Register for more courses', course_registrations_path %></strong>

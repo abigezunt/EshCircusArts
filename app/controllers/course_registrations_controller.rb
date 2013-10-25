@@ -5,12 +5,13 @@ class CourseRegistrationsController < ApplicationController
   # GET /course_registrations
   # GET /course_registrations.json
   def index
+    @course_registrations = CourseRegistration.where(user_id: current_user.id).order("start_date ASC").current
   end
 
   # GET /course_registrations/1
   # GET /course_registrations/1.json
   def show
-    @course_registrations = CourseRegistration.where(user_id: current_user.id)
+    @course_registrations = CourseRegistration.where(user_id: current_user.id).current
   end
 
   # GET /course_registrations/new
@@ -60,7 +61,7 @@ class CourseRegistrationsController < ApplicationController
   def destroy
     @course_registration.destroy
     respond_to do |format|
-      format.html { redirect_to new_charge_path}
+      format.html { redirect_to course_registrations_path}
       format.json { head :no_content }
     end
   end

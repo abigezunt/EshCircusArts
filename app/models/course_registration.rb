@@ -24,7 +24,7 @@ class CourseRegistration < ActiveRecord::Base
   end
 
   def name
-    course.name || seven_week_session.name
+    self.course.name || self.seven_week_session.name
   end
 
   def course_page
