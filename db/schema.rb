@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025152713) do
+ActiveRecord::Schema.define(version: 20131025153107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20131025152713) do
   create_table "seven_week_sessions", force: true do |t|
     t.string  "name"
     t.integer "instructor_id"
-    t.integer "price"
+    t.integer "full_price"
     t.date    "start_date"
     t.time    "start_time"
     t.time    "end_time"

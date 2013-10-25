@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   	unpaid_course_registrations = CourseRegistration.where(user_id: self.id, paid: nil)
   	balance = 0
   	unpaid_course_registrations.each do |course_registration|
-  		balance += course_registration.course.price
+  		  balance += course_registration.price
   	end
   	return balance
   end

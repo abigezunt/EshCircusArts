@@ -19,8 +19,8 @@ class SevenWeekSession < ActiveRecord::Base
   									photo_url: self.photo_url,
   									instructor_ids: self.instructor_ids,
   									max_class_size: self.max_class_size,
-  									price: (self.price.to_f/self.number_of_sessions.to_f).to_i,
-  									start_date: self.start_date + (7 * x)
+  									start_date: self.start_date + (7 * x),
+                    drop_in_rate: self.drop_in_rate,
   									)
     end
   end
