@@ -24,4 +24,20 @@ class SevenWeekSession < ActiveRecord::Base
   									)
     end
   end
+
+  def future
+    self.start_date > Date.today
+  end
+
+  def full
+    self.max_class_size <= (self.course_registrations.size - self.course_registrations.where(role: "instructor").size)
+  end
+
+  def students_registered
+    self.course_registrations.size - self.course_registrations.where(role: "instructor")
+  end
+
+  def spots_left
+    self.max_class_size - (self.course_registrations.size - self.course_registrations.where(role: "instructor").size)
+  end
 end

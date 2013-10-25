@@ -1,9 +1,17 @@
 <h2>Upcoming seven-week session courses:</h2>
 
 <% @sessions.each do |session| %>
-  <% if session.start_date > Date.today %>
-	  <%= session.name %>
+  <% if session.future %>
+
+    <%= image_tag session.photo_url %>
 	  <%= render 'shared/course_description', :course => session %>
+    <%= session.spots_left %> spots left
+
+    <% if current_user.try(:admin?) %>
+      <span><%= link_to 'Edit', edit_session_path(session) %></span> | 
+      <span><%= link_to 'Delete', session, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <% end %>
+
   <% end %>
 <% end %>
 
@@ -13,6 +21,7 @@
   <% if course.future %>
     <%= image_tag course.photo_url %>
     <%= render 'shared/course_description', :course => course %>
+    <%= course.spots_left %> spots left
     
     <% if current_user.try(:admin?) %>
       <span><%= link_to 'Edit', edit_course_path(course) %></span> | 
