@@ -17,7 +17,7 @@ class CourseRegistration < ActiveRecord::Base
     if self.seven_week_session_id
 
       self.seven_week_session.courses.each do |course|
-        CourseRegistration.create(user_id: self.user_id, role: self.role, paid: self.paid, sub: true, course_id: course.id, price: 0, comments: "Registered for entire session")
+        CourseRegistration.create(user_id: self.user_id, role: self.role, paid: self.paid, sub: true, course_id: course.id, price: 0, comments: self.comments)
       end
 
     end
