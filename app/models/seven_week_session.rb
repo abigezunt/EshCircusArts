@@ -1,5 +1,7 @@
 class SevenWeekSession < ActiveRecord::Base
   has_many :courses
+  has_many :course_registrations
+  has_many :users, through: :course_registrations
   after_save :create_courses
   scope :future, -> { where("'start_date' > ?", Date.today)}
 

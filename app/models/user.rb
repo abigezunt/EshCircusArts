@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   
   has_many :course_registrations
   has_many :courses, through: :course_registrations
+  has_many :seven_week_sessions, through: :course_registrations
 
   def unpaid_balance
   	unpaid_course_registrations = CourseRegistration.where(user_id: self.id, paid: nil)

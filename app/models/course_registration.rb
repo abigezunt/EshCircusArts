@@ -1,5 +1,6 @@
 class CourseRegistration < ActiveRecord::Base
   belongs_to :user
+  belongs_to :seven_week_session
   belongs_to :course, counter_cache: true
   scope :current, -> { where("'course.start_date' > ?", Date.today)}
 
