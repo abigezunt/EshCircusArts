@@ -24,7 +24,11 @@ class CourseRegistration < ActiveRecord::Base
   end
 
   def name
-    self.course.name || self.seven_week_session.name
+    if self.course
+      self.course.name
+    elsif self.seven_week_session
+      self.seven_week_session.name
+    end
   end
 
   def course_page

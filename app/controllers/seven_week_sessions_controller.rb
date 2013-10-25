@@ -1,27 +1,22 @@
-class CoursesController < ApplicationController
+class SevenWeekSessionsController < ApplicationController
   before_action :set_seven_week_session, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  # GET /seven_week_sessions
-  # GET /seven_week_sessions.json
+  
+  def index
+    @seven_week_sessions = SevenWeekSession.all.order("start_date ASC")
+  end
 
-  # GET /seven_week_sessions/1
-  # GET /seven_week_sessions/1.json
   def show
   end
 
-  # GET /seven_week_sessions/new
   def new
     @seven_week_session = SevenWeekSession.new
   end
 
-  # GET /seven_week_sessions/1/edit
   def edit
   end
 
-  # POST /seven_week_sessions
-  # POST /seven_week_sessions.json
   def create
-    
     @seven_week_session = SevenWeekSession.new(seven_week_session_params)
     respond_to do |format|
       if @seven_week_session.save
@@ -62,7 +57,6 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_seven_week_session
       @seven_week_session = SevenWeekSession.find(params[:id])
-
       @instructors = @seven_week_session.instructor_ids.map do |id|
         User.find(id)
       end

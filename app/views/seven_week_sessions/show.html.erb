@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+  <h2><%= @seven_week_session.name %></h2>
+
   <p>
     <strong>Instructor(s):</strong>
     <% @instructors.each do |instructor| %>
       <%= link_to instructor.name, user_path(instructor) %>
     <% end %>
   </p>
-  
 
   <strong>Includes these class meetings:</strong>
     <ul>
@@ -42,12 +43,7 @@
 
   <p>
     <strong>Price:</strong>
-    $<%= @seven_week_session.price %>.00
-  </p>
-
-  <p>
-    <strong>Level:</strong>
-    <%= @seven_week_session.level %>
+    $<%= @seven_week_session.full_price %>.00
   </p>
 
   <p>
@@ -55,7 +51,7 @@
     <%= @seven_week_session.description %>
   </p>
 
-<% if current_user.instructor || current_user.admin %>
+<% if current_user.try(:instructor?) || current_user.try(:admin?) %>
 
     <strong>All Students:</strong>
     <ol>

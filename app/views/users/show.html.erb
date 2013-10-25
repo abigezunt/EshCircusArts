@@ -7,7 +7,7 @@
     <h4><%= @user.name %> is teaching these classes:</h4>
     <ul>
       <% @user.courses_teaching.each do |reg| %>
-        <li><%= link_to reg.course.name, reg.course %> <%= render 'shared/course_time', :course => reg.course  %></li>
+        <li><%= link_to reg.course_page.short_description, reg.course_page %> </li>
       <% end %>
     </ul>
     
@@ -18,8 +18,8 @@
   <%= render 'shared/show_user', :user => @user %>
     <h4><%= @user.name %> is taking these classes:</h4>
     <ul>
-      <% @user.courses_taking.each do |reg| %>
-        <li><%= link_to reg.course.name, reg.course %> <%= render 'shared/course_time', :course => reg.course  %></li>
+      <% @courses_taking.each do |reg| %>
+        <li><%= link_to reg.course_page.short_description, reg.course_page %></li>
       <% end %>
     </ul>
 <% else %>  

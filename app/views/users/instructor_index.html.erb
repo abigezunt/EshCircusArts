@@ -1,26 +1,23 @@
 <% if current_user.instructor %>
 	<h3>Classes I am teaching</h3>
-	<ol>
+	<ul>
 	<% @my_courses.each do |course| %>
 	  <li><%= link_to course.name, course_path(course) %><%= render 'shared/course_time', :course => course  %></li>
 
-      <ul>
+      <ol>
 		  <% course.course_registrations.each do |registration| %>
 			    <% if registration.role == "student" %> 
-				    <li><%= link_to registration.user.name, user_path(registration.user) %> </li>
-				    <p>Registered at: <%= registration.created_at %></p>
-				    <p>Comments: <%= registration.comments %></p>
-				      <% if registration.paid %>
-				        <p> Paid on <%= registration.updated_at %> </p>
-				      <% else %>
-		            <p>Tuition owed: $<%= registration.course.price %>.00</p>
+				    <li><%= link_to registration.user.name, user_path(registration.user) %> 
+				    Comments: <%= registration.comments %></li>
+				      <% unless registration.paid %>
+		            Tuition owed: $<%= registration.course.price %>.00
 				      <% end %>
 			    <% end %>
 		  <% end %>
-      </ul>
+      </ol>
       <%= course.spots_left %> spots left in this course.
   <% end %>
-  </ol>
+  </ul>
 	
 
 <% end %>

@@ -1,6 +1,7 @@
 
   <p id="notice"><%= notice %></p>
 
+<h3><%= @course.short_description %></h3>
   <p>
     <strong>Instructor(s):</strong>
     <% @instructors.each do |instructor| %>
@@ -14,26 +15,6 @@
       <%= link_to @course.seven_week_session.name, @course.seven_week_session %>
     </p>
   <% end %>
-
-  <p>
-    <strong>Start date:</strong>
-    <%= @course.start_date %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= @course.start_time %>
-  </p>
-
-  <p>
-    <strong>End time:</strong>
-    <%= @course.end_time %>
-  </p>
-
-  <p>
-    <strong>Max class size:</strong>
-    <%= @course.max_class_size %>
-  </p>
 
   <p>
     <strong>Spots left:</strong>
@@ -71,5 +52,5 @@
 
 <% end %>
   
-  <%= link_to 'Register', new_course_registration_path %>
-  <%= link_to 'Back', '/upcoming_classes' %>
+  <%= link_to 'Edit', edit_course_registration_path %> | 
+  <%= link_to 'Back', student_path %>

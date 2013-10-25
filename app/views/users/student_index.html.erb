@@ -7,13 +7,13 @@
 	  <h4>Your student profile</h4>
 	  <h5>This information will be shared with your instructors.</h5>
 	<% end %>
-	<%= render 'shared/show_user', :user => current_user %>
 
+	<%= render 'shared/show_user', :user => current_user %>
 
     <h4>You have registered for these classes:</h4>
     <ul>
-      <% current_user.courses_taking.each do |reg| %>
-        <li><%= link_to reg.name, reg.course_page %> <%= render 'shared/course_time', :course => reg.course_page  %></li>
+      <% @courses_taking.each do |reg| %>
+        <li><%= link_to reg.course_page.short_description, reg.course_page %> </li>
         <% unless reg.paid %> <p class="lead"><%= link_to "Pay and reserve your spot now", new_charge_path %></p>
         <% end %>
       <% end %>

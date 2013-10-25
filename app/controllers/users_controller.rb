@@ -11,7 +11,10 @@ class UsersController < ApplicationController
   end
 
   def student_index
+    @courses_teaching = CourseRegistration.where(user_id: current_user.id, role: "instructor").current
+    @courses_taking = CourseRegistration.where(user_id: current_user.id, role: "student").current
   end
+
 
   def instructor_index
     @my_courses = CourseRegistration.where(user_id: current_user.id, role: "instructor").current.map do |reg|
@@ -22,7 +25,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
+    @courses_teaching = CourseRegistration.where(user_id: @user.id, role: "instructor").current
+    @courses_taking = CourseRegistration.where(user_id: @user.id, role: "student").current
   end
 
   # GET /users/new
