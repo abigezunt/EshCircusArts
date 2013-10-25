@@ -421,4 +421,10 @@ User.create(
 	bio: "Gina DeFreitas is an aerialist, dancer, choreographer and circus performer. With roots in Boston, dance and performing brought her to NYC, where she studied at Broadway Dance Center, Alvin Ailey, and New Dance Group. She studied circus arts both in NYC and across the US. Her coaches include Elsie Smith of the New England Center for Circus Arts, and Elena Panova of the San Francisco Circus Center.  Gina is AFAA, CPR, CDT and Zumba certified. She has taught aerial arts, dance, and women’s self defense, and has directed a circus arts camp for kids.  Gina has performed in theatrical and corporate productions, musicals, and dance concerts in theaters and venues across the US and abroad.",
 	photo: "instructors/gina.jpg")
 
+User.create(
+	email: 'abby@example.com',
+	password: 'password',
+	name: 'Abby Howell',
+	bio: 'Abby is a student of web development at general assembly.')
+
 
