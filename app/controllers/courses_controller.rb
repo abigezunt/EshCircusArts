@@ -73,6 +73,6 @@ class CoursesController < ApplicationController
     def course_params
       params["course"]["instructor_ids"].delete("")
       params["course"]["instructor_ids"].map! {|x| x.to_i }
-      params.require(:course).permit(:name, :start_date, :start_time, :end_time, :user_ids, :session_id, :discipline_id, :registration_ids, :number_of_sessions, :price, :drop_in_price, :level, :description, :discipline, :instructor_ids => [])
+      params.require(:course).permit(:name, :start_date, :start_time, :end_time, :user_ids, :seven_week_session_id, :discipline_id, :registration_ids, :number_of_sessions, :price, :drop_in_price, :level, :description, :discipline, :instructor_ids => [])
     end
 end
