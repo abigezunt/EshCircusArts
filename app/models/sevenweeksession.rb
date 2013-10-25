@@ -10,6 +10,17 @@ class SevenWeekSession < ActiveRecord::Base
 
   def create_courses
   	self.number_of_sessions.times do
-  		Course.create(session_id: self.id, name: self.name, start_date: self.start_date, start_time: self.start_time, end_time: self.end_time)
+  		Course.create(session_id: self.id, 
+  									name: self.name, 
+  									start_date: self.start_date, 
+  									start_time: self.start_time, 
+  									end_time: self.end_time,
+  									discipline_id: self.discipline_id,
+  									description: self.description,
+  									photo_url: self.photo_url,
+  									instructor_ids: self.instructor_ids,
+  									max_class_size: self.max_class_size,
+  									price: (self.price.to_f/self.number_of_sessions.to_f).to_i
+  									)
   end
 end
