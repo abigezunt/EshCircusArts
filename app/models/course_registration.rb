@@ -19,4 +19,5 @@ class CourseRegistration < ActiveRecord::Base
     else
       self.course.drop_in_price
     end
+  end
 end

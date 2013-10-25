@@ -15,7 +15,8 @@ class CourseRegistrationsController < ApplicationController
 
   # GET /course_registrations/new
   def new
-    @courses = Course.all
+    @sessions = SevenWeekSession.all.future
+    @courses = Course.all.future
     @course_registration = CourseRegistration.new
   end
 
