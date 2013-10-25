@@ -58,7 +58,7 @@
           <%= f.text_area :address %>
         </div>
 
-      <% if current_user.admin %>
+      <% if current_user.try(:admin?) %>
       
         <h5>Show this person's bio on the Esh Instructors Page?</h5>
         <div class="field">

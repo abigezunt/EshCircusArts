@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user! 
+
   # GET /users
   # GET /users.json
   def index
+    redirect_to :new_user_session_path unless current_user && current_user.admin
     @students = User.where(instructor: nil)
     @instructors = User.where(instructor: true)
   end

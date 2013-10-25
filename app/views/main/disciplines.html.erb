@@ -41,7 +41,7 @@
       </div>
     </div>
     
-    <% if current_user.admin %>
+    <% if current_user.try(:admin?) %>
       <span><%= link_to 'Show', discipline %></span> | 
       <span><%= link_to 'Edit', edit_discipline_path(discipline) %></span> | 
       <span><%= link_to 'Delete', discipline, method: :delete, data: { confirm: 'Are you sure?' } %></span>

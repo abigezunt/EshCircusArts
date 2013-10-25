@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
   def index
     @disciplines = Discipline.all
     @courses = Course.all
+    @sessions = SevenWeekSession.all
   end
 
   # GET /courses/1

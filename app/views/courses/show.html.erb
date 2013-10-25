@@ -7,11 +7,13 @@
       <%= link_to instructor.name, user_path(instructor) %>
     <% end %>
   </p>
-
-  <p>
-    <strong>Session id:</strong>
-    <%= @course.session_id %>
-  </p>
+  
+  <% if @course.seven_week_session_id %>
+    <p>
+      <strong>Seven-Week Session ID:</strong>
+      <%= @course.seven_week_session_id %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Start date:</strong>
@@ -26,11 +28,6 @@
   <p>
     <strong>End time:</strong>
     <%= @course.end_time %>
-  </p>
-
-  <p>
-    <strong>Number of sessions:</strong>
-    <%= @course.number_of_sessions %>
   </p>
 
   <p>

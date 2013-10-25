@@ -2,6 +2,7 @@ class Course < ActiveRecord::Base
   has_many :course_registrations
   has_many :users, through: :course_registrations
   belongs_to :discipline
+  belongs_to :seven_week_session
   after_save :assign_instructors
   # accepts_attributes_for :users
 

@@ -16,7 +16,7 @@ class MainController < ApplicationController
   end
 
   def instructors
-    @instructors = User.where(instructor: true)
+    @instructors = User.where(instructor: true).group(:id)
   end
 
   def workshops
