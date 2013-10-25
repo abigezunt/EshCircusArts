@@ -2,11 +2,11 @@ class SevenWeekSession < ActiveRecord::Base
   has_many :courses
   after_save :create_courses
 
-  # def reserve(user)
-  # 	self.number_of_sessions.times do 
-  # 		CourseRegistration.create(user_id: user.id, course_id: x)
-  # 	end
-  # end
+  def reserve(user)
+  	self.courses.each do |course|
+  		CourseRegistration.create(user_id: user.id, course_id: course.id)
+  	end
+  end
 
   def create_courses
   	self.number_of_sessions.times do |x|
