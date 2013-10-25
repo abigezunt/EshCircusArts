@@ -4,6 +4,7 @@ class Course < ActiveRecord::Base
   belongs_to :discipline
   belongs_to :seven_week_session
   after_save :assign_instructors
+  scope :future, -> { where("'start_date' > ?", Date.today)}
   # accepts_attributes_for :users
 
   # working on automatically creating an instructor assignment whenever a course is created
