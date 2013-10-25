@@ -10,8 +10,8 @@
   
   <% if @course.seven_week_session_id %>
     <p>
-      <strong>Seven-Week Session ID:</strong>
-      <%= @course.seven_week_session_id %>
+      <strong>Part of a seven-week session:</strong>
+      <%= link_to @course.seven_week_session.name, @course.seven_week_session %>
     </p>
   <% end %>
 
@@ -41,13 +41,14 @@
   </p>
 
   <p>
-    <strong>Price:</strong>
-    $<%= @course.price %>.00
-  </p>
-
-  <p>
-    <strong>Level:</strong>
-    <%= @course.level %>
+    
+    <% if @course.drop_in_price%>
+    <strong>Drop-In Price:</strong>
+      $<%= @course.drop_in_price %>.00
+    <% else %>
+    <strong>Workshop Price:</strong>
+      $<%= @course.price %>.00
+    <% end %>
   </p>
 
   <p>
@@ -55,7 +56,7 @@
     <%= @course.description %>
   </p>
 
-<% if current_user.instructor || current_user.admin %>
+<% if current_user.try(:instructor?) || current_user.try(:admin?) %>
 
     <strong>All Students:</strong>
     <ol>
@@ -70,4 +71,5 @@
 
 <% end %>
   
+  <%= link_to 'Register', new_course_registration_path %>
   <%= link_to 'Back', '/upcoming_classes' %>
