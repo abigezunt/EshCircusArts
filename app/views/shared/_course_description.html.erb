@@ -1,6 +1,12 @@
 <h3><%= course.name %></h3>
 <p><%= course.description %></p>
-<p>$<%= course.price%>.00</p>
+
+<% if course.drop_in_rate %>
+  <p> Drop-in Rate: $<%= course.drop_in_rate%>.00 </p>
+<% else %>
+  <p>$<%= course.price%>.00</p>
+<% end %>
+
 <p>    
 <%= render 'shared/course_time', :course => course  %>
 </p>

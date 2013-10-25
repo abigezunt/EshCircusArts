@@ -1,7 +1,16 @@
-<h2>Upcoming courses:</h2>
+<h2>Upcoming seven-week session courses:</h2>
+
+<% @sessions.each do |session| %>
+  <% if session.start_date > Date.today %>
+	  <%= session.name %>
+	  <%= render 'shared/course_description', :course => session %>
+  <% end %>
+<% end %>
+
+<h2>Upcoming one-time classes and drop-in sessions:</h2>
 
 <% @courses.each do |course| %>
-  <% if course.future && course.number_of_sessions > 1 %>
+  <% if course.future %>
     <%= image_tag course.photo_url %>
     <%= render 'shared/course_description', :course => course %>
     

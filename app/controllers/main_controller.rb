@@ -24,7 +24,9 @@ class MainController < ApplicationController
   end
 
   def upcoming_classes
-     @courses = Course.all
+    @courses = Course.all
+    @disciplines = Discipline.all
+    @sessions = SevenWeekSession.all
   end
 
   def disciplines

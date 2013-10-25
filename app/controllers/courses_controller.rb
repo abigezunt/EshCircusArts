@@ -3,11 +3,6 @@ class CoursesController < ApplicationController
   before_filter :authenticate_user!
   # GET /courses
   # GET /courses.json
-  def index
-    @disciplines = Discipline.all
-    @courses = Course.all
-    @sessions = SevenWeekSession.all
-  end
 
   # GET /courses/1
   # GET /courses/1.json
