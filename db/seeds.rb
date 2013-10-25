@@ -244,7 +244,70 @@ Course.create(
   	description: "Want to learn to fly? Want variation in your exercise regimen? Just want to have fun? Circus classes focus on form and body awareness through skill work, with an emphasis on strength building and injury prevention.  Aerial Taster classes give students a chance to try several of the aerial arts offered at Esh before committing to a full session of classes.  Students will have the chance to try aerial fabric (aka silks), aerial rope, static trapeze, and aerial hoop (aka lyra).  No experience or specific athletic ability is necessary- all levels are welcome! If you love the Taster Class and decide to register for a new, full session aerial course, we'll deduct the cost of the Taster Class from the session fee!  You must register for the session course before leaving the studio at the end of the Taster Class to receive the discount.  The discount is only available for new students, or for returning students who are trying a new discipline for the first time."
   	)
 
+SevenWeekSession.create(
+		name: "Cirque Fitness",
+		start_date: "Nov 20, 2013",
+		start_time: "6:00pm",
+		end_time: '7:15pm',
+		number_of_sessions: 7,
+		instructor_ids: [2],
+		full_price: 112,
+		description: "Want to work out like circus stars? This 75 minute open-level class is designed to build overall fitness by focusing on strength, endurance, balance, and flexibility. This class is great for everyone from non-acrobats looking for a unique workout to full-time circus students in training. While we will use the aerial apparatuses in the space, we will not be teaching any skills beyond climbing silks and hanging from hands and knees on the bar. No previous experience necessary!",
+		max_class_size: 8,
+		drop_in_price: 20,
+		)
 
+SevenWeekSession.create(
+		name: "Cirque Fitness",
+		start_date: "Nov 18, 2013",
+		start_time: "7:15pm",
+		end_time: '8:30pm',
+		number_of_sessions: 7,
+		instructor_ids: [12],
+		full_price: 112,
+		description: "Want to work out like circus stars? This 75 minute open-level class is designed to build overall fitness by focusing on strength, endurance, balance, and flexibility. This class is great for everyone from non-acrobats looking for a unique workout to full-time circus students in training. While we will use the aerial apparatuses in the space, we will not be teaching any skills beyond climbing silks and hanging from hands and knees on the bar. No previous experience necessary!",
+		max_class_size: 8,
+		drop_in_price: 20,
+		)
+
+SevenWeekSession.create(
+		name: "Partner Acro Advanced",
+		start_date: "Nov 20, 2013",
+		start_time: "7:15pm",
+		end_time: '8:30pm',
+		number_of_sessions: 7,
+		instructor_ids: [2, 3],
+		full_price: 112,
+		description: "Partner acrobatics consists of a base supporting a flyer in a variety of poses, lifts, and dynamic movements.  Each class explores range of partner and group balancing poses and transitions.  Students will develop strength and technique, and focus on the “hows” of balancing, breaking down how each trick works, and how to experiment safely to develop new variations. No need to bring a partner- the whole class works together. Classes will also cover safe spotting techniques.",
+		max_class_size: 12,
+		drop_in_price: 20,
+		)
+
+SevenWeekSession.create(
+		name: "Level 2/3 Silks Aerial",
+		start_date: "Nov 21, 2013",
+		start_time: "6:00pm",
+		end_time: '7:15pm',
+		number_of_sessions: 7,
+		instructor_ids: [3],
+		full_price: 220,
+		description: "Aerial silks (a.k.a. aerial fabric, aerial tissue, aerial ribbons, chiffon) consist of two ribbons of nylon fabric (actually a single ribbon folded in half and tied to a piece of rigging to create two tails). Through use of friction, knots, and wraps, these can be used for a wide range of sequences, poses, drops, and movements. A relatively young circus art, aerial fabric was invented in the early 1960s, but only became widely recognized in 1998 when Isabelle Chasse performed an aerial contortion in fabrics act in the Cirque du Soleil production Quidam.",
+		max_class_size: 4,
+		drop_in_price: 40,
+		)
+
+SevenWeekSession.create(
+		name: "Level 1 Silks Aerial",
+		start_date: "Nov 21, 2013",
+		start_time: "6:00pm",
+		end_time: '7:15pm',
+		number_of_sessions: 7,
+		instructor_ids: [8],
+		full_price: 220,
+		description: "Aerial silks (a.k.a. aerial fabric, aerial tissue, aerial ribbons, chiffon) consist of two ribbons of nylon fabric (actually a single ribbon folded in half and tied to a piece of rigging to create two tails). Through use of friction, knots, and wraps, these can be used for a wide range of sequences, poses, drops, and movements. A relatively young circus art, aerial fabric was invented in the early 1960s, but only became widely recognized in 1998 when Isabelle Chasse performed an aerial contortion in fabrics act in the Cirque du Soleil production Quidam.",
+		max_class_size: 4,
+		drop_in_price: 40,
+		)
 
 User.create(
 	email: 'rachel@example.com',
