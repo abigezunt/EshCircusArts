@@ -6,7 +6,7 @@
       <h3>Pay now to confirm your spot in these courses:</h3> 
       <ul> 
         <% @unpaid_course_registrations.each do |course_registration| %>
-         <li> <%= course_registration.course.name %>: $<%= course_registration.course.price %>.00 </li>
+         <li> <%= course_registration.course.name %>: $<%= course_registration.price %>.00 </li>
           <%= link_to "remove", course_registration, method: :delete, data: { confirm: 'Remove this course registration?'} %>
         <% end %>
       </ul>
