@@ -13,7 +13,7 @@
     <h4>You have registered for these classes:</h4>
     <ul>
       <% current_user.courses_taking.each do |reg| %>
-        <li><%= link_to reg.course.name, reg.course %> <%= render 'shared/course_time', :course => reg.course  %></li>
+        <li><%= link_to reg.name, reg.course_page %> <%= render 'shared/course_time', :course => reg.course_page  %></li>
         <% unless reg.paid %> <p class="lead"><%= link_to "Pay and reserve your spot now", new_charge_path %></p>
         <% end %>
       <% end %>

@@ -4,6 +4,10 @@
 
 <ul>
    <% current_user.courses_taking.each do |course_registration| %>
-     <li><%= link_to course_registration.name, course_registration %> </li>
-   <% end %>
+    <% if course_registration.is_full_registration %>
+      <li><%= link_to course_registration.name, course_registration %>
+         <%= render 'shared/course_time', :course => course_registration.course_page  %></li>
+      </li>
+    <% end %>
+  <% end %>
 </ul>
