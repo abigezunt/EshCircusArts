@@ -22,6 +22,7 @@ class CourseRegistrationsController < ApplicationController
 
   # GET /course_registrations/1/edit
   def edit
+    @equivalent_courses = Course.all.future.equivalent(@course_registration.course.one_time_price)
   end
 
   # POST /course_registrations

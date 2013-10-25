@@ -24,7 +24,7 @@
       <%= course_registration.seven_week_session.number_of_sessions%> times, on:
         <% course_registration.seven_week_session.courses.each do |course| %>
           <ul>
-            <li><%= link_to course.start_date.strftime("%A %B %-d"), course %></li>
+            <li><%= link_to course.short_description, course %></li>
             <% if course.start_date >= ( Date.today + 1 )%>
               <p><%= link_to "Can't make it? Let us know.", edit_course_registration_path(course) %></p>
             <% end %> 

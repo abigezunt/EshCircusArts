@@ -1,28 +1,30 @@
 <h2>Edit Course Registration</h2>
 
 <p class="lead">
-You are registered for <%= @course_registration.course.name %> </p>
-<p class="lead"> starting on <%= @course_registration.course.start_date.strftime("%A %b. %-d")%> <%= @course_registration.course.start_time.strftime("%-l:%M %p")%> - <%=@course_registration.course.end_time.strftime("%-l:%M %p")%> 
-</p>
+You are registered for <%= @course_registration.course.short_description %> </p>
 
-        <%= form_for @course_registration, action: 'create', role: 'form' do |f| %>
-              
-	        <strong>Anything we should know?  Update your message to the Esh staff here.</strong>
-	        
-            <div class="form-group">
-              <%= f.text_area :comments %>
-            </div>
+  <%= form_for @course_registration, action: 'create', role: 'form' do |f| %>
+        
+    <strong>Anything we should know?  Update your message to the Esh staff here.</strong>
+    
+      <div class="form-group">
+        <%= f.text_area :comments %>
+      </div>
+      
+      <p class="lead"> Can't make it? Come to make up week or drop in to another course.</p>
+      <%= f.label :course_id%>
+      <%= f.collection_select :course_id, @equivalent_courses, :id, :short_description %>
 
-	          <%= f.hidden_field :course_id, value: @course_registration.course.id %>
-	          <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
 
-	        <div class="form-group">
-	          <%= f.submit "Update your registration" %>
-	        </div>
-          
-        <% end %>
-
-<strong><%= link_to "Pay Now", new_charge_path %></strong> | 
+    <div class="form-group">
+      <%= f.submit "Update your registration" %>
+    </div>
+    
+  <% end %>
+<% if @course_registration.paid == nil %>
+  <strong><%= link_to "Pay Now", new_charge_path %></strong> | 
+<% end %>
 <strong><%= link_to 'Delete this registration', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
 <strong><%= link_to 'See details about this registration', @course_registration %></strong> | 
 <strong><%= link_to 'Register for more courses', course_registrations_path %></strong>

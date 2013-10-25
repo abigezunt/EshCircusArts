@@ -5,8 +5,6 @@ class SevenWeekSession < ActiveRecord::Base
   after_save :create_courses
   scope :future, -> { where("'start_date' > ?", Date.today)}
 
-
-
   def create_courses
   	self.number_of_sessions.times do |x|
   		Course.create(seven_week_session_id: self.id, 
@@ -22,6 +20,19 @@ class SevenWeekSession < ActiveRecord::Base
                     drop_in_price: self.drop_in_price
   									)
     end
+    # Create make-up class
+    Course.create(seven_week_session_id: self.id, 
+              name: "Make-up class for #{self.name}", 
+              start_time: self.start_time, 
+              end_time: self.end_time,
+              discipline_id: self.discipline_id,
+              description: "Make-up class",
+              photo_url: self.photo_url,
+              instructor_ids: self.instructor_ids,
+              max_class_size: self.max_class_size,
+              drop_in_price: self.drop_in_price,
+              start_date: self.start_date + (8 * x)
+              )
   end
 
   def future
