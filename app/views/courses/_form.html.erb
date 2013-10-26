@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.admin %>
+<% if user_signed_in? && current_user.admin || current_user.instructor%>
   <%= form_for(@course) do |f| %>
     <% if @course.errors.any? %>
       <div id="error_explanation">
@@ -13,7 +13,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :workshop_name %><br>
+      <%= f.label :name %><br>
       <%= f.text_field :name %>
     </div>
 
@@ -42,10 +42,17 @@
       <%= f.number_field :max_class_size %>
     </div>
 
+  <% if @course.seven_week_session %>
+    <div class="field">
+      <%= f.label :drop_in_price %><br>
+      <%= f.number_field :drop_in_price %>
+    </div>
+  <% else %>
     <div class="field">
       <%= f.label :one_time_workshop_price %><br>
-      $<%= f.text_field :price %>.00
+      <%= f.number_field :price %>
     </div>
+  <% end %>
 
     <div class="field">
       <%= f.label :level %><br>
@@ -58,7 +65,8 @@
     <div class="field">
       <%= f.label :discipline %><br>
       <%= collection_select(:course, :discipline_id, Discipline.all, :id, :name) %>
-    </div>
+    </div> 
+    <br>
     <div class="actions">
       <%= f.submit %>
     </div>

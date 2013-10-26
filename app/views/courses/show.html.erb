@@ -48,9 +48,8 @@
     <% end %>
     </ol>
 
-  <%= link_to 'Edit', edit_course_path(@course) %> |
+  <%= link_to 'Edit this course listing', edit_course_path(@course) %> |
 
 <% end %>
   
-  <%= link_to 'Edit', edit_course_registration_path %> | 
-  <%= link_to 'Back', student_path %>
+  <%= link_to "Can't make it? Edit Your Registration", edit_course_registration_path %>
