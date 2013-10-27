@@ -1,4 +1,5 @@
 class CourseRegistrationsController < ApplicationController
+  before_action :set_registerable, only: [:index]
   before_action :set_course_registration, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user! #unless user_signed_in? 
   
@@ -70,6 +71,14 @@ class CourseRegistrationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course_registration
       @course_registration = CourseRegistration.find(params[:id])
+    end
+
+    def set_registerable
+      @registerable = params[:registerable].classify.constantize.find(registerable_id)
+    end
+
+    def registerable_id
+      params[(params[:registerable] + "_id").to_sym]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
