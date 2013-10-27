@@ -1,21 +1,21 @@
 <% if current_user.instructor %>
 	<h3>Classes I am teaching</h3>
 	<ul>
-	<% @my_courses.each do |course| %>
-	  <li><%= link_to course.name, course_path(course) %><%= render 'shared/course_time', :registerable => course  %></li>
+	<% @my_courses.each do |registerable| %>
+	  <li><%= link_to registerable.name, registerable %><%= render 'shared/course_time', :registerable => registerable  %></li>
 
       <ol>
-		  <% course.course_registrations.each do |registration| %>
+		  <% registerable.course_registrations.each do |registration| %>
 			    <% if registration.role == "student" %> 
 				    <li><%= link_to registration.user.name, user_path(registration.user) %> 
 				    Comments: <%= registration.comments %></li>
 				      <% unless registration.paid %>
-		            Tuition owed: $<%= registration.course.price %>.00
+		            Tuition owed: $<%= registration.price %>.00
 				      <% end %>
 			    <% end %>
 		  <% end %>
       </ol>
-      <%= course.spots_left %> spots left in this course.
+      <%= registerable.spots_left %> spots left in this class.
   <% end %>
   </ul>
 	

@@ -2,14 +2,11 @@
 
 <h2>Upcoming seven-week session courses:</h2>
 
-
 <% @sessions.each do |course| %>
   <div><%= render 'calendar_event_view', :course => course %>
   </div><% end %>
 
-
 <h2>Upcoming one-time classes and drop-in sessions:</h2>
-
 
 <% @courses.each do |course| %>
   <div><%= render 'calendar_event_view', :course => course %></div>

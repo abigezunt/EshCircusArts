@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @course_registration = CourseRegistration.new
   end
 
   # GET /courses/new

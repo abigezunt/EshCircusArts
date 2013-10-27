@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h2>New course registration created for: </h2>
+<h2>New class registration created for: </h2>
 <p><%= current_user.name %> <%= @course_registration.user.email %></p>
 
 <p>
-  <strong>Course:</strong>
-  <% if @course_registration.seven_week_session %>
-    <%= @course_registration.seven_week_session.name %> starting on 
-    <%= @course_registration.seven_week_session.start_date.strftime("%A, %B %-d, %Y") %>
-  <% elsif @course_registration.course %>
-    <%= @course_registration.course.name %> on 
-    <%= @course_registration.course.start_date.strftime("%A, %B %-d, %Y") %>
+  <strong>Class:</strong>
+  <% if @course_registration.registerable_type == "SevenWeekSession" %>
+    <%= @course_registration.registerable.name %> starting on 
+    <%= @course_registration.registerable.start_date.strftime("%A, %B %-d, %Y") %>
+  <% elsif @course_registration.registerable_type == "Course" %>
+    <%= @course_registration.registerable.name %> on 
+    <%= @course_registration.registerable.start_date.strftime("%A, %B %-d, %Y") %>
   <% end %>
 </p>
 

@@ -18,9 +18,10 @@ You are registered for <%= @course_registration.course.short_description %> </p>
     </p>
 
     <div class="form-group">
-      <%= f.label :Substitute_Course %><br>
-      <%= f.collection_select :course_id, @equivalent_courses, :id, :short_description %>
+      <%= f.label :Substitute_Class %><br>
+      <%= f.collection_select :registerable_id, @equivalent_courses, :id, :short_description %>
     </div>
+      <%= f.hidden_field :registerable_type, value: "Course" %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :role, value: "student" %>
 
@@ -38,4 +39,4 @@ You are registered for <%= @course_registration.course.short_description %> </p>
   <strong><%= link_to 'Delete this registration ', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
 <% end %>
 
-<strong><%= link_to 'Register for more courses', course_registrations_path %></strong>
+<strong><%= link_to 'Register for more classes', course_registrations_path %></strong>

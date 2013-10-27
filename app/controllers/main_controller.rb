@@ -16,7 +16,7 @@ class MainController < ApplicationController
   end
 
   def instructors
-    @instructors = User.where(instructor: true).group(:id)
+    @instructors = User.where(instructor: true)
   end
 
   def workshops
@@ -25,7 +25,6 @@ class MainController < ApplicationController
 
   def upcoming_classes
     @courses = Course.all
-    @disciplines = Discipline.all
     @sessions = SevenWeekSession.all
   end
 

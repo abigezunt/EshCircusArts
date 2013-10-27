@@ -7,7 +7,7 @@
     <h4><%= @user.name %> is teaching these classes:</h4>
     <ul>
       <% @user.courses_teaching.each do |reg| %>
-        <li><%= link_to reg.course_page.short_description, reg.course_page %> </li>
+        <li><%= link_to reg.registerable.short_description, reg.registerable %> </li>
       <% end %>
     </ul>
     
@@ -19,7 +19,7 @@
     <h4><%= @user.name %> is taking these classes:</h4>
     <ul>
       <% @courses_taking.each do |reg| %>
-        <li><%= link_to reg.course_page.short_description, reg.course_page %></li>
+        <li><%= link_to reg.registerable.short_description, reg.registerable %></li>
       <% end %>
     </ul>
 <% else %>  

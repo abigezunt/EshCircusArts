@@ -2,7 +2,7 @@
   <strong>You are teaching:</strong>
   <ul>
     <% current_user.courses_teaching.each do |course_registration| %>
-      <li> <%= link_to course_registration.course_page.short_description, course_registration.course_page %> </li>
+      <li> <%= link_to course_registration.registerable.short_description, course_registration.registerable %> </li>
     <% end %>
   </ul>
 
@@ -14,20 +14,18 @@
   <ul>
 
   <% current_user.courses_taking.each do |course_registration| %>
-    
-    <% if course_registration.seven_week_session %>
-      <li><h4><%= link_to course_registration.seven_week_session.name, course_registration %></h4></li>
-    <% elsif course_registration.is_full_registration %>
-      <li><h4><%= link_to course_registration.course_page.short_description, course_registration %></h4></li>
-    <% elsif course_registration.sub && !course_registration.paid %>
-    <% else %>
-      <li><%= link_to course_registration.course_page.short_description, course_registration %></li>
-    <% end %>
 
-    <% if !course_registration.paid && course_registration.is_full_registration %>
-      <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
-    <% elsif course_registration.paid && course_registration.course_page.start_date > Date.today && !course_registration.seven_week_session%>
+    <% if !course_registration.sub  %>
+    <li><%= link_to course_registration.registerable.short_description, course_registration %></li>
+      
+      <% if !course_registration.paid %>
+        <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
+      <% end %>
+
+    <% elsif course_registration.paid && course_registration.registerable.start_date > Date.today && course_registration.registerable_type == "Course" %>
+
       <%= link_to "Can't make it? Let us know.", edit_course_registration_path(course_registration) %>
+      
     <% end %> 
 
   <% end %>
