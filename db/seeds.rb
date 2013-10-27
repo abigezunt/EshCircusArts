@@ -1,3 +1,8 @@
+# events = Cal.events
+# events.each do |event|
+# 	event.delete
+# end
+
 Discipline.create(
 	name: "Contortion",
 	description: "This beginning contortion class focuses on developing flexibility in all parts of the back, and on improving split flexibility into oversplit flexibility.  Whether you want a to achieve a cheststand with feet flat on the floor, or work toward a full headsit, this class will give you the tools you need to reach your flexibility goals. \n \n

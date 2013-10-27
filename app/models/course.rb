@@ -1,7 +1,6 @@
 class Course < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => {:scope => :start_time}
   has_many :course_registrations
-  validates_associated :course_registrations
   has_many :users, through: :course_registrations
   belongs_to :discipline
   belongs_to :seven_week_session

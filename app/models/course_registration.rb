@@ -3,9 +3,9 @@ class CourseRegistration < ActiveRecord::Base
   belongs_to :seven_week_session, counter_cache: true
   belongs_to :course, counter_cache: true
   scope :current, -> { where("'course.start_date' > ?", Date.today)}
-  validate :cannot_duplicate_registrations
-  after_save :create_sub_registrations
+  before_validation :create_sub_registrations
   validates :role, inclusion: { in: %w(student instructor)}
+  # validate :cannot_duplicate_registrations
   # validates :
 
   def self.check_out(user)
@@ -16,17 +16,17 @@ class CourseRegistration < ActiveRecord::Base
     end
   end
 
-  def cannot_duplicate_registrations
-    if course_id.present?
-      if user.courses.where(id: course_id).any?
-        errors.add(:user_id, "is already registered for this course")
-      end
-    elsif seven_week_session_id.present?
-      if user.seven_week_sessions.where(id: seven_week_session_id).any?
-        errors.add(:user_id, "is already registered for this session")
-      end
-    end
-  end
+  # def cannot_duplicate_registrations
+  #   if course_id.present?
+  #     if self.user.courses.where(id: course_id).any?
+  #       errors.add(:user_id, "is already registered for this course")
+  #     end
+  #   elsif seven_week_session_id.present?
+  #     if self.user.seven_week_sessions.where(id: seven_week_session_id).any?
+  #       errors.add(:user_id, "is already registered for this session")
+  #     end
+  #   end
+  # end
 
   def create_sub_registrations
     if self.seven_week_session_id
