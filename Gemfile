@@ -23,13 +23,8 @@ group :production do
 end
 
 gem 'devise'
+gem 'google_calendar'
 
-# manually including bootstrap instead of this gem
-# gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-#                           :github => 'anjlab/bootstrap-rails',
-#                           :branch => '3.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views

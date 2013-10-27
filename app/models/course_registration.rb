@@ -4,6 +4,8 @@ class CourseRegistration < ActiveRecord::Base
   belongs_to :course, counter_cache: true
   scope :current, -> { where("'course.start_date' > ?", Date.today)}
   after_save :create_sub_registrations
+  validates :role, inclusion: { in: %w(student instructor)}
+  # validates :
 
   def self.check_out(user)
     unpaid_reg = user.course_registrations.where(paid: nil)

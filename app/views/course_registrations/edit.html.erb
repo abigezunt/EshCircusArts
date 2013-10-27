@@ -18,18 +18,24 @@ You are registered for <%= @course_registration.course.short_description %> </p>
     </p>
 
     <div class="form-group">
-      <%= f.label :course_id%>
+      <%= f.label :Substitute_Course %><br>
       <%= f.collection_select :course_id, @equivalent_courses, :id, :short_description %>
     </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :role, value: "student" %>
 
     <div class="form-group">
       <%= f.submit "Update your registration" %>
     </div>
     
-  <% end %>
+<% end %>
+
 <% if @course_registration.paid == nil %>
   <strong><%= link_to "Pay Now", new_charge_path %></strong> | 
 <% end %>
-<strong><%= link_to 'Delete this registration', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
+
+<% if current_user.try(:admin?) %>
+  <strong><%= link_to 'Delete this registration ', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
+<% end %>
+
 <strong><%= link_to 'Register for more courses', course_registrations_path %></strong>

@@ -1,7 +1,18 @@
 
   <p id="notice"><%= notice %></p>
 
+<% if current_user && current_user.courses.include?(@course) %>
+  
+  <%= link_to "Can't make it? Edit Your Registration", edit_course_registration_path %>
+
+<% end %>
+
+
+<%= render 'course_registrations/form', :course => @course %>
+
+
 <h3><%= @course.short_description %></h3>
+
   <p>
     <strong>Instructor(s):</strong>
     <% @instructors.each do |instructor| %>
@@ -12,7 +23,7 @@
   <% if @course.seven_week_session_id %>
     <p>
       <strong>Part of a seven-week session:</strong>
-      <%= link_to @course.seven_week_session.name, @course.seven_week_session %>
+      <%= link_to @course.seven_week_session.name, new_course_registration_path(@course.seven_week_session) %>
     </p>
   <% end %>
 
@@ -51,5 +62,4 @@
   <%= link_to 'Edit this course listing', edit_course_path(@course) %> |
 
 <% end %>
-  
-  <%= link_to "Can't make it? Edit Your Registration", edit_course_registration_path %>
+
