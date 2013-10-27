@@ -1,7 +1,6 @@
 class CourseRegistration < ActiveRecord::Base
   belongs_to :user
-  belongs_to :seven_week_session, counter_cache: true
-  belongs_to :course, counter_cache: true
+  belongs_to :registerable, polymorphic: true, counter_cache: true
   scope :current, -> { where("'course.start_date' > ?", Date.today)}
   before_validation :create_sub_registrations
   validates :role, inclusion: { in: %w(student instructor)}
@@ -29,27 +28,23 @@ class CourseRegistration < ActiveRecord::Base
   # end
 
   def create_sub_registrations
-    if self.seven_week_session_id
+    if self.seven_week_session
       self.seven_week_session.courses.each do |course|
-        CourseRegistration.create(user_id: self.user_id, role: self.role, paid: self.paid, sub: true, course_id: course.id, price: 0, comments: self.comments)
+        CourseRegistration.create(user_id: self.user_id, role: self.role, paid: self.paid, sub: true, course_id: course.id, price: nil, comments: self.comments)
       end
     end
   end
 
   def name
-    if self.course
-      self.course.name
-    elsif self.seven_week_session
-      self.seven_week_session.name
-    end
+    registerable.name
   end
 
   def course_page
-    course || seven_week_session
+    registerable
   end
 
   def is_full_registration
-    self.price > 0
+    self.price
   end
   
 end

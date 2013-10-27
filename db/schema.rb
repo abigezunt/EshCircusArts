@@ -11,26 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027163113) do
+ActiveRecord::Schema.define(version: 20131027213002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "course_registrations", force: true do |t|
     t.integer  "user_id"
-    t.integer  "course_id"
+    t.integer  "integer"
     t.boolean  "paid"
     t.string   "timestamps"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "comments"
-    t.string   "role",                  default: "student"
-    t.integer  "seven_week_session_id"
+    t.string   "role",              default: "student"
     t.integer  "price"
     t.boolean  "sub"
+    t.integer  "registerable_id"
+    t.string   "registerable_type"
   end
 
-  add_index "course_registrations", ["course_id"], name: "index_course_registrations_on_course_id", using: :btree
+  add_index "course_registrations", ["integer"], name: "index_course_registrations_on_integer", using: :btree
   add_index "course_registrations", ["user_id"], name: "index_course_registrations_on_user_id", using: :btree
 
   create_table "courses", force: true do |t|
