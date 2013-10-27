@@ -7,6 +7,7 @@ class SevenWeekSessionsController < ApplicationController
   end
 
   def show
+    @course_registration = CourseRegistration.new
   end
 
   def new

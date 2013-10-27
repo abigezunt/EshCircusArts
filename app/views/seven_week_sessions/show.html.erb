@@ -2,6 +2,10 @@
 
   <h2><%= @seven_week_session.name %></h2>
 
+<% unless current_user && current_user.seven_week_sessions.include?(@seven_week_session) %>
+<%= render 'course_registrations/form', :course => @seven_week_session %><br>
+<% end %>
+
   <p>
     <strong>Instructor(s):</strong>
     <% @instructors.each do |instructor| %>
@@ -12,7 +16,7 @@
   <strong>Includes these class meetings:</strong>
     <ul>
       <% @seven_week_session.courses.each do |course| %>
-        <li><%= link_to course.start_date.strftime("%A, %B %-d"), course %></li>
+        <li><%= link_to course.short_description, course %></li>
       <% end %>
     </ul>
 
