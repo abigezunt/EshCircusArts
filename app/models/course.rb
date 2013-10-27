@@ -16,7 +16,7 @@ class Course < ActiveRecord::Base
 
   def assign_instructors
     self.instructor_ids.each do |instructor_id|
-      CourseRegistration.create(user_id: instructor_id, role: "instructor", course_id: self.id, paid: true)
+      CourseRegistration.create(user_id: instructor_id, role: "instructor", registerable_id: self.id, registerable_type: "Course", paid: true)
     end
   end
 

@@ -18,7 +18,6 @@ EshTestApp::Application.routes.draw do
 
   get '/private_lessons', to: 'main#private_lessons'
 
-
   get '/student', to: 'users#student_index'
 
   get '/instructor', to: 'users#instructor_index'

@@ -2,7 +2,7 @@
 	<h3>Classes I am teaching</h3>
 	<ul>
 	<% @my_courses.each do |course| %>
-	  <li><%= link_to course.name, course_path(course) %><%= render 'shared/course_time', :course => course  %></li>
+	  <li><%= link_to course.name, course_path(course) %><%= render 'shared/course_time', :registerable => course  %></li>
 
       <ol>
 		  <% course.course_registrations.each do |registration| %>

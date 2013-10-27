@@ -28,9 +28,9 @@ class CourseRegistration < ActiveRecord::Base
   # end
 
   def create_sub_registrations
-    if self.seven_week_session
-      self.seven_week_session.courses.each do |course|
-        CourseRegistration.create(user_id: self.user_id, role: self.role, paid: self.paid, sub: true, course_id: course.id, price: nil, comments: self.comments)
+    if self.registerable_type == "seven_week_session"
+      self.registerable.courses.each do |course|
+        CourseRegistration.create(user_id: self.user_id, role: self.role, paid: self.paid, sub: true, registerable_id: course.id, registerable_type: "course", price: nil, comments: self.comments)
       end
     end
   end
@@ -39,6 +39,7 @@ class CourseRegistration < ActiveRecord::Base
     registerable.name
   end
 
+  # nearly cruft
   def course_page
     registerable
   end

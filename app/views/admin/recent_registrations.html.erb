@@ -11,16 +11,16 @@
     <ul>
 		  <li><%= link_to registration.user.name, user_path(registration.user) %></li>
 
-		  <li>Course: <%= link_to registration.course.name, course_path(registration.course) %> 
-		    <%= render 'shared/course_time', :course => registration.course  %></li>
+		  <li>Course: <%= link_to registration.registerable.name, registerable_url([registeration.registerable_type.to_sym, registration]) %> 
+		    <%= render 'shared/course_time', :course => registration.registerable  %></li>
 		  <li><% if registration.paid %> Paid <% else %> Not yet paid <% end %></li>
 		  <p><%= registration.created_at.strftime("%m/%d/%Y, %-l:%M %P") %> </p>
     </ul>
   <% else %>
 
     <li><%= link_to registration.user.name, user_path(registration.user) %> was assigned to teach: 
-    <%= link_to registration.course.name, course_path(registration.course) %> 
-	  <%= render 'shared/course_time', :course => registration.course  %> </li>
+    <%= link_to registration.registerable.name, registerable_url([registeration.registerable_type.to_sym, registration]) %> 
+	  <%= render 'shared/course_time', :course => registration.registerable  %> </li>
 	  <p><%= registration.created_at.strftime("%m/%d/%Y, %-l:%M %P ") %> </p>
 
 	<% end %>

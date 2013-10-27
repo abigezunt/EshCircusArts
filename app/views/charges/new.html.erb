@@ -3,18 +3,15 @@
     <label class="amount">
       <span>Amount: $<%= current_user.unpaid_balance %>.00</span>
 
-      <h3>Pay now to confirm your spot in these courses:</h3> 
+      <h3>Pay now to confirm your spot in these classes:</h3> 
       <ul> 
         <% @unpaid_course_registrations.each do |course_registration| %>
-          <% if course_registration.price > 0 %>
+          <% if course_registration.price %>
             <li> 
-              <% if course_registration.seven_week_session %>
-                <%= course_registration.seven_week_session.name %>
-              <% elsif course_registration.course %>
-                <%= course_registration.course.name %>
-              <% end %>
+                <%= course_registration.name %>
+             
               : $<%= course_registration.price %>.00 </li>
-          <%= link_to "remove", course_registration, method: :delete, data: { confirm: 'Remove this course registration?'} %>
+          <%= link_to "remove", course_registration, method: :delete, data: { confirm: 'Remove this class registration?'} %>
           <% end %>
         <% end %>
       </ul>

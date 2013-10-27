@@ -1,39 +1,40 @@
 
-    <% if course.future %>
+    <% if registerable.future %>
 
    
-    <% unless current_user.courses.include? course %>
+    <% unless current_user.registerables.include? registerable %>
       <%= form_for @course_registration, action: 'create' do |f| %>
      
-        <h3><%= course.name %></h3>
-        <p><%= course.description %></p>
+        <h3><%= registerable.name %></h3>
+        <p><%= registerable.description %></p>
 
-        <% if course.try(:full_price?) %>
-          <p>Full Price for Seven-Week Session: $<%= course.full_price %>.00</p>
-          <%= f.hidden_field :price, value: course.full_price %>
+        <% if registerable.try(:full_price?) %>
+          <p>Full Price for Seven-Week Session: $<%= registerable.full_price %>.00</p>
+          <%= f.hidden_field :price, value: registerable.full_price %>
 
-        <% elsif course.try(:drop_in_price?) %>
-          <p> Drop-in Price: $<%= course.drop_in_price%>.00 </p>
-          <%= f.hidden_field :price, value: course.drop_in_price %>
-        <% else course.price %>
-          <p>Price $<%= course.price%>.00</p>
-          <%= f.hidden_field :price, value: course.price %>
+        <% elsif registerable.try(:drop_in_price?) %>
+          <p> Drop-in Price: $<%= registerable.drop_in_price%>.00 </p>
+          <%= f.hidden_field :price, value: registerable.drop_in_price %>
+        <% else registerable.price %>
+          <p>Price $<%= registerable.price%>.00</p>
+          <%= f.hidden_field :price, value: registerable.price %>
         <% end %>
 
-        <%= render 'shared/course_time', :course => course  %>
+        <%= render 'shared/course_time', :registerable => registerable  %>
 
-        <%= course.spots_left %> spots left.
+        <%= registerable.spots_left %> spots left.
 
       <div class="field">
         <%= f.label :additional_information_for_your_instructors %><br>
         <%= f.text_area :comments %>
       </div>
 
-        <%= f.hidden_field :course_id, value: course.id %>
+        <%= f.hidden_field :registerable_id, value: registerable.id %>
+        <%= f.hidden_field :registerable_type, value: registerable.registerable_type%>
         <%= f.hidden_field :user_id, value: current_user.id %>
 
-        <% unless course.full %>
-          <%= f.submit "Register for #{course.name}" %>
+        <% unless registerable.full %>
+          <%= f.submit "Register for #{registerable.name}" %>
         <% else %>
           <strong>This class is full.  Please <%= mail_to "scheduling@eshaerialarts.com", "contact us"%> to get on the waiting list. </strong>
         <% end %>
