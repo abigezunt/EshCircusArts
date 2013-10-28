@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @my_registration = CourseRegistration.where(user_id: current_user.id, registerable_id: @course.id, registerable_type: "Course")
+    @my_registration = CourseRegistration.where(user_id: current_user.id, registerable_id: @course.id, registerable_type: "Course").first
     @course_registration = CourseRegistration.new
   end
 

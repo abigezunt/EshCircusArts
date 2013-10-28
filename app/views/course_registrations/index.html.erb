@@ -32,16 +32,17 @@
 
   <ul>
   <% current_user.courses_taking.each do |course_registration| %>
+  <li><%= link_to course_registration.registerable.short_description, course_registration %></li>
     <% if !course_registration.paid && course_registration.is_full_registration %>
-      <li><%= link_to course_registration.registerable.short_description, course_registration %></li>
       <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
     
     <% else %> 
+
       <ul>
       <% if course_registration.registerable_type == "SevenWeekSession" %>
         <% course_registration.registerable.courses.each do |course| %>
           <li>
-            <%= link_to course.short_description, course %> | 
+            <%= link_to course.short_description, course %>
           </li>
         <% end %>
       <% end%>

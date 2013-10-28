@@ -3,7 +3,7 @@
 
 <% if @course.users.include? current_user %>
   
-  <%= link_to "Can't make it?  Let us know.", edit_course_registration_path(@my_registration) %>
+  <%= link_to "Can't make it?  Let us know.", edit_course_registration_path(@my_registration.id) %>
 
 <% else %>
   
