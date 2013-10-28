@@ -31,18 +31,14 @@
   <strong>You are registered as a student for:</strong>
 
   <ul>
-
   <% current_user.courses_taking.each do |course_registration| %>
-
-    <% if course_registration.registerable_type == "SevenWeekSession" %>
+    <% if !course_registration.paid %>
       <li><%= link_to course_registration.registerable.short_description, course_registration %></li>
-      <% if !course_registration.paid %>
-        <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
-      <% end %>
-
+      <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
     
-      <% if course_registration.paid %> 
-        <ul>
+    <% else %> 
+      <ul>
+      <% if course_registration.registerable_type == "SevenWeekSession" %>
         <% course_registration.registerable.courses.each do |course| %>
           <li>
             <%= link_to course.short_description, course %> | 
@@ -51,14 +47,9 @@
             <% end %>
           </li>
         <% end %>
-        </ul>
-      <% end %>  
-    
-
-    <% elsif course_registration.registerable.number_of_sessions == 1 %>
-      <li><%= link_to course_registration.registerable.short_description, course_registration %></li>
-    <% end %>
-        
+      <% end%>
+      </ul>
+    <% end %>  
   </ul> 
 
 <% end %>
