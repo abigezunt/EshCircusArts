@@ -1,16 +1,5 @@
-<iframe src="https://www.google.com/calendar/embed?src=eshcircusartswebmaster%40gmail.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div class="center"><iframe src="https://www.google.com/calendar/embed?src=eshcircusartswebmaster%40gmail.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>
 
-<h2>Upcoming seven-week session courses:</h2>
-
-<% @sessions.each do |course| %>
-  <div><%= render 'calendar_event_view', :course => course %>
-  </div><% end %>
-
-<h2>Upcoming one-time classes and drop-in sessions:</h2>
-
-<% @courses.each do |course| %>
-  <div><%= render 'calendar_event_view', :course => course %></div>
-<% end %>
 
 <h3><%= link_to "Sign up", new_course_registration_path %></h3>
 
