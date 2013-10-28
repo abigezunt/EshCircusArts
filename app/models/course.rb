@@ -20,7 +20,9 @@ class Course < ActiveRecord::Base
   end
 
   def create_gcal_event
-    self.destroy_gcal_event
+    if self.event_id
+      self.destroy_gcal_event
+    end
     event = Cal.create_event do |e|
       e.title = self.name
       e.start_time = DateTime.new(self.start_date.year, self.start_date.month, self.start_date.day, self.start_time.hour, self.start_time.min, self.start_time.sec).to_s

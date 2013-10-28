@@ -4,6 +4,7 @@ class SevenWeekSession < ActiveRecord::Base
   has_many :users, through: :course_registrations
   after_create :assign_instructors
   after_create :create_courses
+  after_update :update_courses
   scope :future, -> { where("'start_date' > ?", Date.today)}
   scope :equivalent, ->(price) {where("full_price <= ?", price)} 
 
@@ -36,6 +37,25 @@ class SevenWeekSession < ActiveRecord::Base
               start_date: self.start_date + (56)
               )
   end
+
+  def update_courses
+    self.courses.each do |course|
+      course.update_attributes(
+                    seven_week_session_id: self.id, 
+                    name: self.name, 
+                    start_time: self.start_time, 
+                    end_time: self.end_time,
+                    discipline_id: self.discipline_id,
+                    description: self.description,
+                    photo_url: self.photo_url,
+                    instructor_ids: self.instructor_ids,
+                    max_class_size: self.max_class_size,
+                    start_date: self.start_date + (7 * x),
+                    drop_in_price: self.drop_in_price
+                    )
+    end
+  end
+
 
   def assign_instructors
     self.instructor_ids.each do |instructor_id|

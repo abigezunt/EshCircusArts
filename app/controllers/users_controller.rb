@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     @courses_taking = CourseRegistration.where(user_id: current_user.id, role: "student").current
   end
 
-
   def instructor_index
     @my_courses = CourseRegistration.where(user_id: current_user.id, role: "instructor").current.map do |reg|
       reg.registerable

@@ -13,7 +13,7 @@ class SevenWeekSessionsController < ApplicationController
   def new
     @seven_week_session = SevenWeekSession.new
   end
-
+  
   def edit
   end
 
