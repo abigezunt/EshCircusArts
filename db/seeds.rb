@@ -429,12 +429,5 @@ User.create(
 	name: 'Abby Howell',
 	bio: 'Abby is a student of web development at general assembly.')
 
-Cal.events.each do |event|
-	event.delete
-end
-
-Course.all.each do |course|
-	course.create_gcal_event
-end
 
 

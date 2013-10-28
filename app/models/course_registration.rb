@@ -4,8 +4,6 @@ class CourseRegistration < ActiveRecord::Base
   scope :current, -> { where("'course.start_date' > ?", Date.today)}
   before_validation :create_sub_registrations
   validates :role, inclusion: { in: %w(student instructor)}
-  validates [:user_id, :registerable_id], :uniqueness => true
-  # validates :
 
   def self.check_out(user)
     unpaid_reg = user.course_registrations.where(paid: nil)
