@@ -11,7 +11,7 @@
       <% end %>
     </ul>
     
-<% elsif current_user.instructor %>
+<% elsif current_user.try(:instructor?) || current_user == @user %>
 
   <h2><%= @user.name %></h2>
   
@@ -22,8 +22,8 @@
         <li><%= link_to reg.registerable.short_description, reg.registerable %></li>
       <% end %>
     </ul>
-<% else %>  
-  <% redirect_to '/' %>
+
+
 <% end %>
 
 
