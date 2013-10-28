@@ -4,7 +4,7 @@ class Course < ActiveRecord::Base
   belongs_to :discipline
   belongs_to :seven_week_session
   before_save :create_gcal_event
-  after_save :assign_instructors
+  after_create :assign_instructors
   before_destroy :destroy_gcal_event
   scope :future, -> { where("'start_date' > ?", Date.today)}
   scope :equivalent, ->(price) {where("drop_in_price <= ?", price)} 
@@ -20,6 +20,7 @@ class Course < ActiveRecord::Base
   end
 
   def create_gcal_event
+    self.destroy_gcal_event
     event = Cal.create_event do |e|
       e.title = self.name
       e.start_time = DateTime.new(self.start_date.year, self.start_date.month, self.start_date.day, self.start_time.hour, self.start_time.min, self.start_time.sec).to_s

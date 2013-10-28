@@ -1,16 +1,17 @@
 <% if user_signed_in? && current_user.admin %>
-  <%= form_for(@course) do |f| %>
-    <% if @course.errors.any? %>
+  <%= form_for(@seven_week_session) do |f| %>
+    <% if @seven_week_session.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
+        <h2><%= pluralize(@seven_week_session.errors.count, "error") %> prohibited this session from being saved:</h2>
         <ul>
-        <% @course.errors.full_messages.each do |msg| %>
+        <% @seven_week_session.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
         </ul>
       </div>
     <% end %>
+
+    <h3><%= @seven_week_session.short_description %></h3>
 
     <div class="field">
       <%= f.label :seven_week_session_name %><br>
@@ -19,7 +20,7 @@
 
     <div class="field">
       <%= f.label :instructor_or_instructors %><br>
-      <%= collection_check_boxes(:course, :instructor_ids, User.where(instructor: true), :id, :name) %>
+      <%= collection_check_boxes(:seven_week_session, :instructor_ids, User.where(instructor: true), :id, :name) %>
     </div>
 
     <div class="field">
@@ -67,7 +68,7 @@
     </div>
     <div class="field">
       <%= f.label :discipline %><br>
-      <%= collection_select(:course, :discipline_id, Discipline.all, :id, :name) %>
+      <%= collection_select(:seven_week_session, :discipline_id, Discipline.all, :id, :name) %>
     </div>
     <div class="actions">
       <%= f.submit %>

@@ -10,15 +10,6 @@
 
 	<%= render 'shared/show_user', :user => current_user %>
 
-    <h4>You have registered for these classes:</h4>
-    <ul>
-      <% @courses_taking.each do |reg| %>
-        <li><%= link_to reg.registerable.short_description, edit_course_registration_path(reg) %> </li>
-        <% unless reg.paid %> <p class="lead"><%= link_to "Pay and reserve your spot now", new_charge_path %></p>
-        <% end %>
-      <% end %>
-    </ul>
-
 	<p><%= link_to "update my profile", edit_user_path(current_user) %></p>
 	<p><%= link_to "see my current course registrations", course_registrations_path %></p>
 

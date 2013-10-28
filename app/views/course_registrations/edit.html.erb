@@ -39,4 +39,4 @@ You are registered for <%= @course_registration.registerable.short_description %
   <strong><%= link_to 'Delete this registration ', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
 <% end %>
 
-<strong><%= link_to 'Register for more classes', course_registrations_path %></strong>
+<strong><%= link_to 'Register for more classes', new_course_registration_path %></strong>

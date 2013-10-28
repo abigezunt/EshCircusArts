@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027215319) do
+ActiveRecord::Schema.define(version: 20131028024530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20131027215319) do
     t.integer "course_registrations_count"
     t.integer "max_class_size"
     t.integer "drop_in_price"
+    t.string  "level"
   end
 
   create_table "users", force: true do |t|

@@ -59,7 +59,7 @@
   <% if @course.seven_week_session_id %>
     <p>
       <strong>Part of a seven-week session:</strong>
-      <%= link_to @course.seven_week_session.name, new_course_registration_path(@course.seven_week_session) %>
+      <%= link_to @course.seven_week_session.name, @course.seven_week_session %>
     </p>
   <% end %>
 
