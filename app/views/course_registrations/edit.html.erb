@@ -32,6 +32,7 @@ You are registered for <%= @course_registration.registerable.short_description %
 
 <% if @course_registration.paid == nil %>
   <strong><%= link_to "Pay Now", new_charge_path %></strong> | 
+  <strong><%= link_to 'Delete this registration ', @course_registration, method: :delete, data: { confirm: 'Are you sure?' } %></strong> | 
 <% end %>
 
 <% if current_user.try(:admin?) %>

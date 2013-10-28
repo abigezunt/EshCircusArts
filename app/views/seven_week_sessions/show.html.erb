@@ -3,7 +3,40 @@
 <h2><%= @seven_week_session.name %></h2>
 
 <% unless @seven_week_session.users.include? current_user %>
-  <%= render 'course_registrations/form', :registerable => @seven_week_session %><br>
+  
+    <% if @seven_week_session.future %>
+   
+    <% unless @seven_week_session.users.include? current_user %>
+      <%= form_for @course_registration, action: 'create' do |f| %>
+     
+        <h3><%= @seven_week_session.name %></h3>
+        <p><%= @seven_week_session.description %></p>
+       
+        <p>Full Price for Seven-Week Session: $<%= @seven_week_session.full_price %>.00</p>
+        <%= f.hidden_field :price, value: @seven_week_session.full_price %>
+
+        <%= render 'shared/course_time', :registerable => @seven_week_session  %>
+
+        <%= @seven_week_session.spots_left %> spots left.
+
+      <div class="field">
+        <%= f.label :additional_information_for_your_instructors %><br>
+        <%= f.text_area :comments %>
+      </div>
+
+        <%= f.hidden_field :registerable_id, value: @seven_week_session.id %>
+        <%= f.hidden_field :registerable_type, value: "SevenWeekSession" %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+        <% unless @seven_week_session.full %>
+          <%= f.submit "Register for #{@seven_week_session.name}" %>
+        <% else %>
+          <strong>This class is full.  Please <%= mail_to "scheduling@eshaerialarts.com", "contact us"%> to get on the waiting list. </strong>
+        <% end %>
+
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
 
   <p>

@@ -13,7 +13,7 @@
     <h4>You have registered for these classes:</h4>
     <ul>
       <% @courses_taking.each do |reg| %>
-        <li><%= link_to reg.registerable.short_description, reg.registerable %> </li>
+        <li><%= link_to reg.registerable.short_description, edit_course_registration_path(reg) %> </li>
         <% unless reg.paid %> <p class="lead"><%= link_to "Pay and reserve your spot now", new_charge_path %></p>
         <% end %>
       <% end %>

@@ -2,7 +2,7 @@ class SevenWeekSession < ActiveRecord::Base
   has_many :courses
   has_many :course_registrations, as: :registerable
   has_many :users, through: :course_registrations
-  after_save :create_courses
+  after_save :assign_instructors, :create_courses
   scope :future, -> { where("'start_date' > ?", Date.today)}
   scope :equivalent, ->(price) {where("full_price <= ?", price)} 
 
@@ -34,6 +34,12 @@ class SevenWeekSession < ActiveRecord::Base
               drop_in_price: self.drop_in_price,
               start_date: self.start_date + (56)
               )
+  end
+
+  def assign_instructors
+    self.instructor_ids.each do |instructor_id|
+      CourseRegistration.create(user_id: instructor_id, role: "instructor", registerable_id: self.id, registerable_type: "SevenWeekSession", paid: true)
+    end
   end
 
   def future

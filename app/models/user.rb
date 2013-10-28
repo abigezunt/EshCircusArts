@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
 
   def unpaid_balance
-  	unpaid_course_registrations = CourseRegistration.where(user_id: self.id, paid: nil, role: "student")
+  	unpaid_course_registrations = CourseRegistration.where(user_id: self.id, paid: nil, role: "student").where('price is not null')
   	balance = 0
   	unpaid_course_registrations.each do |course_registration|
   		  balance += course_registration.price

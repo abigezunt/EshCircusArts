@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027215319) do
+ActiveRecord::Schema.define(version: 20131028011655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20131027215319) do
     t.string   "registerable_type"
   end
 
-  add_index "course_registrations", ["registerable_id"], name: "index_course_registrations_on_registerable_id", using: :btree
+  add_index "course_registrations", ["user_id", "registerable_id", "registerable_type"], name: "unique_registration_index", unique: true, using: :btree
   add_index "course_registrations", ["user_id"], name: "index_course_registrations_on_user_id", using: :btree
 
   create_table "courses", force: true do |t|
