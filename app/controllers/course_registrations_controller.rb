@@ -16,8 +16,8 @@ class CourseRegistrationsController < ApplicationController
 
   # GET /course_registrations/new
   def new
-    @sessions = SevenWeekSession.future #.where_user_not_registered(current_user)
-    @courses = Course.future #.where_user_not_registered(current_user)
+    @sessions = SevenWeekSession.future.where_user_not_registered(current_user)
+    @courses = Course.future.where_user_not_registered(current_user)
     @course_registration = CourseRegistration.new
   end
 
