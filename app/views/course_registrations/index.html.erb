@@ -28,7 +28,7 @@
 <% end %>
 
 <% if current_user.courses_taking.size > 0 %>
-  <strong>You are registered as a student for:</strong>
+  <strong>You are registered as a student for:</strong><br>
 
   <ul>
   <% current_user.courses_taking.each do |course_registration| %>
@@ -37,7 +37,7 @@
       <% if !course_registration.paid %>
       <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
       <% end %>
-    <% else %> 
+    
 
       <ul>
       <% if course_registration.registerable_type == "SevenWeekSession" %>
@@ -53,7 +53,7 @@
 
 <% end %>
 <% end %>
-
+<br>
 <% if current_user.unpaid_balance > 0 %>
   <strong>Your unpaid balance:</strong>
   $<%= current_user.unpaid_balance %>.00
