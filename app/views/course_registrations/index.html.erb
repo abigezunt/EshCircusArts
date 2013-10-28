@@ -42,9 +42,6 @@
         <% course_registration.registerable.courses.each do |course| %>
           <li>
             <%= link_to course.short_description, course %> | 
-            <% if course.start_date > Date.today %>
-              <%= link_to "Can't make it? Let us know.", edit_course_registration_path(course) %>
-            <% end %>
           </li>
         <% end %>
       <% end%>

@@ -1,13 +1,14 @@
 
   <p id="notice"><%= notice %></p>
 
+<% if @course.users.include? current_user %>
+  
+  <%= link_to "Can't make it?  Let us know.", edit_course_registration_path(@my_registration) %>
 
-
-<% unless @course.users.include? current_user %>
+<% else %>
   
   <% if @course.future %>
    
-    <% unless @course.users.include? current_user %>
       <%= form_for @course_registration, action: 'create' do |f| %>
      
         <h3><%= @course.name %></h3>
@@ -41,7 +42,7 @@
         <% end %>
 
       <% end %>
-    <% end %>
+
   <% end %>
 <% end %>
 
