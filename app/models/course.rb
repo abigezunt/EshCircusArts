@@ -41,7 +41,6 @@ class Course < ActiveRecord::Base
     where('id NOT IN (?)', Course.joins(:course_registrations).where({ course_registrations: { user_id: user.id }}).pluck(:id))
   end
 
-
   def short_description
     "#{self.name} #{self.start_date.strftime("%A %b %-d")} #{self.start_time.strftime("%-l:%M%P")} - #{self.end_time.strftime("%-l:%M%P")}"
   end
