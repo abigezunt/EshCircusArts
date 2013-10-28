@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-  <h2><%= @seven_week_session.name %></h2>
+<h2><%= @seven_week_session.name %></h2>
 
-<% unless current_user && current_user.seven_week_sessions.include?(@seven_week_session) %>
-<%= render 'course_registrations/form', :registerable => @seven_week_session %><br>
+<% unless @seven_week_session.users.include? current_user %>
+  <%= render 'course_registrations/form', :registerable => @seven_week_session %><br>
 <% end %>
 
   <p>

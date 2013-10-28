@@ -1,7 +1,7 @@
 
   <p id="notice"><%= notice %></p>
 
-<% if current_user && current_user.courses.include?(@course) %>
+<% unless @course.users.include? current_user %>
   
   <%= link_to "Can't make it? Edit Your Registration", edit_course_registration_path %>
 

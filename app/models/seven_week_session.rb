@@ -4,6 +4,7 @@ class SevenWeekSession < ActiveRecord::Base
   has_many :users, through: :course_registrations
   after_save :create_courses
   scope :future, -> { where("'start_date' > ?", Date.today)}
+  scope :equivalent, ->(price) {where("full_price <= ?", price)} 
 
   def create_courses
   	self.number_of_sessions.times do |x|
@@ -46,6 +47,11 @@ class SevenWeekSession < ActiveRecord::Base
   def full
     self.max_class_size <= (self.course_registrations.size - self.course_registrations.where(role: "instructor").size)
   end
+
+  def self.where_user_not_registered(user)
+    where('id NOT IN (?)', SevenWeekSession.joins(:course_registrations).where({ course_registrations: { user_id: user.id }}).pluck(:id))
+  end
+
 
   def students_registered
     self.course_registrations.size - self.course_registrations.where(role: "instructor")

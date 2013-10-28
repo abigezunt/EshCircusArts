@@ -6,16 +6,16 @@
 <p>
   <strong>Class:</strong>
   <% if @course_registration.registerable_type == "SevenWeekSession" %>
-    <%= @course_registration.registerable.name %> starting on 
+    <%= link_to @course_registration.registerable.name, seven_week_session_path(@course_registration.registerable) %> starting on 
     <%= @course_registration.registerable.start_date.strftime("%A, %B %-d, %Y") %>
   <% elsif @course_registration.registerable_type == "Course" %>
-    <%= @course_registration.registerable.name %> on 
+    <%= link_to @course_registration.registerable.name, course_path(@course_registration.registerable) %> on 
     <%= @course_registration.registerable.start_date.strftime("%A, %B %-d, %Y") %>
   <% end %>
 </p>
 
 <p>
-<% unless @course_registration.sub %>
+<% unless @course_registration.sub  || @course_registration.paid %>
   <strong>Tuition for this course:</strong>
   $<%= @course_registration.price %>.00
 <% end %>

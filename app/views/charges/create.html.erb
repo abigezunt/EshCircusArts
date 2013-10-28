@@ -1,12 +1,12 @@
 <h2>Thanks, you have paid <strong>$<%=@amount / 100 %>.00</strong> to Esh Circus Arts.</h2>
 
-<h3>Your current course registrations are: </h3>
+<h3>Your current class registrations are: </h3>
 
 <ul>
    <% current_user.courses_taking.each do |course_registration| %>
     <% if course_registration.is_full_registration %>
       <li><%= link_to course_registration.name, course_registration %>
-         <%= render 'shared/course_time', :course => course_registration.registerable  %></li>
+         <%= render 'shared/course_time', :registerable => course_registration.registerable  %></li>
       </li>
     <% end %>
   <% end %>

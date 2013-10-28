@@ -2,7 +2,7 @@
     <% if course.future %>
 
    
-    <% unless current_user.courses.include? course %>
+    <% unless course.users.include? current_user %>
       <%= form_for @course_registration, action: 'create' do |f| %>
      
         <h3><%= course.name %></h3>

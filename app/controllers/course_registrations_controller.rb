@@ -1,5 +1,4 @@
 class CourseRegistrationsController < ApplicationController
-  before_action :set_registerable, only: [:index]
   before_action :set_course_registration, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user! #unless user_signed_in? 
   
@@ -17,14 +16,18 @@ class CourseRegistrationsController < ApplicationController
 
   # GET /course_registrations/new
   def new
-    @sessions = SevenWeekSession.all.future
-    @courses = Course.all.future
+    @sessions = SevenWeekSession.future.where_user_not_registered(current_user)
+    @courses = Course.future.where_user_not_registered(current_user)
     @course_registration = CourseRegistration.new
   end
 
   # GET /course_registrations/1/edit
   def edit
-    @equivalent_courses = Course.future.equivalent(@course_registration.course.one_time_price).where_user_not_registered(current_user)
+    if @course_registration.registerable_type == "Course"
+      @equivalent_courses = Course.future.equivalent(@course_registration.registerable.one_time_price).where_user_not_registered(current_user)
+    elsif @course_registration.registerable_type == "SevenWeekSession"
+      @equivalent_courses = SevenWeekSession.future.equivalent(@course_registration.registerable.full_price)
+    end
   end
 
   # POST /course_registrations
@@ -48,7 +51,7 @@ class CourseRegistrationsController < ApplicationController
   def update
     respond_to do |format|
       if @course_registration.update(course_registration_params)
-        format.html { redirect_to @course_registration, notice: 'Registration successfully updated.  Pay now to reserve your spot.' }
+        format.html { redirect_to @course_registration, notice: 'Registration successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,10 +74,6 @@ class CourseRegistrationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course_registration
       @course_registration = CourseRegistration.find(params[:id])
-    end
-
-    def set_registerable
-      @registerable = params[:registerable].classify.constantize.find(registerable_id)
     end
 
     def registerable_id

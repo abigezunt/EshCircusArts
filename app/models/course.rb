@@ -36,7 +36,7 @@ class Course < ActiveRecord::Base
   end
 
   def self.where_user_not_registered(user)
-    where('id NOT IN (?)', joins(:course_registrations).where({ course_registrations: { user_id: user.id }}).pluck(:id))
+    where('id NOT IN (?)', Course.joins(:course_registrations).where({ course_registrations: { user_id: user.id }}).pluck(:id))
   end
 
 

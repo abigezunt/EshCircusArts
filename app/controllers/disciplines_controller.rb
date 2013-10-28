@@ -10,7 +10,6 @@ class DisciplinesController < ApplicationController
   # GET /disciplines/1
   # GET /disciplines/1.json
   def show
-    @course_registration = CourseRegistration.new
   end
 
   # GET /disciplines/new

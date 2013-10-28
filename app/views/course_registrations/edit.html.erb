@@ -1,7 +1,7 @@
 <h2>Edit Course Registration</h2>
 
 <p class="lead">
-You are registered for <%= @course_registration.course.short_description %> </p>
+You are registered for <%= @course_registration.registerable.short_description %> </p>
 
   <%= form_for @course_registration, action: 'create', role: 'form' do |f| %>
         
@@ -14,14 +14,13 @@ You are registered for <%= @course_registration.course.short_description %> </p>
     </div>
       
     <p class="lead"> 
-    Can't make it? Come to make up week or drop in to another course.
+    Can't make it? Come to make up week or drop in to another class.
     </p>
 
     <div class="form-group">
       <%= f.label :Substitute_Class %><br>
       <%= f.collection_select :registerable_id, @equivalent_courses, :id, :short_description %>
     </div>
-      <%= f.hidden_field :registerable_type, value: "Course" %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.hidden_field :role, value: "student" %>
 
