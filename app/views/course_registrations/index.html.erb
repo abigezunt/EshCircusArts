@@ -32,7 +32,7 @@
 
   <ul>
   <% current_user.courses_taking.each do |course_registration| %>
-    <% if !course_registration.paid %>
+    <% if !course_registration.paid && course_registration.is_full_registration %>
       <li><%= link_to course_registration.registerable.short_description, course_registration %></li>
       <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
     
