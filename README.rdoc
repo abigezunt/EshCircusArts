@@ -1,28 +1,21 @@
-== README
+Built as my first project for General Assembly's Web Development Immersive, this website was an extreme-makeover-website-edition guerrilla remake of the website of my favorite circus school.  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features: 
 
-Things you may want to cover:
+* lists upcoming classes and workshops, filtering to only show events happening in the future
+ 
+* allows users to sign in, make a profile, and register for classes and workshops
 
-* Ruby version
+* accepts payments using stripe API and adds paid class registrations to the user's profile
 
-* System dependencies
+* has a teacher view where instructors can log in and see who has enrolled in their classes and those students' profiles and personal information
 
-* Configuration
+* has an admin view that allows admins to view all profiles on the site and create, edit, update, and delete courses, disciplines, and workshops.
 
-* Database creation
+* allows students to log in and edit an individual class reservation and swap it for another equivalently-priced class.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* features google calendar integration - new courses automatically create a corresponding gcal event, and deleted courses delete their corresponding gcal event.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+[![wdi](http://ga.bling.phillbaker.com/images/shield_imagined_ga_wdi.png)](https://generalassemb.ly/education/web-development-immersive)
