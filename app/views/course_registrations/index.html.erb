@@ -37,12 +37,12 @@
       <% if !course_registration.paid && course_registration.is_full_registration  %>
       <strong>reserved pending payment of $<%= course_registration.price%>.00</strong>
       <% end %>
-    <% end %>  
+  <% end %>  
   
-
-  <% end %>
   </ul> 
 <% end %>
+ 
+
 <br>
 <% if current_user.unpaid_balance > 0 %>
   <strong>Your unpaid balance:</strong>
