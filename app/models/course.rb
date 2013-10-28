@@ -1,5 +1,4 @@
 class Course < ActiveRecord::Base
-  validates :name, :presence => true, :uniqueness => {:scope => :start_time}
   has_many :course_registrations, as: :registerable
   has_many :users, through: :course_registrations
   belongs_to :discipline
@@ -41,7 +40,7 @@ class Course < ActiveRecord::Base
 
 
   def short_description
-    "#{self.name} #{self.start_date.strftime("%b %-d")} #{self.start_time.strftime("%-l:%M%P")} - #{self.end_time.strftime("%-l:%M%P")}"
+    "#{self.name} #{self.start_date.strftime("%A %b %-d")} #{self.start_time.strftime("%-l:%M%P")} - #{self.end_time.strftime("%-l:%M%P")}"
   end
 
   def future

@@ -48,7 +48,7 @@ class SevenWeekSession < ActiveRecord::Base
   end
 
   def short_description
-    "#{self.name} #{self.start_date.strftime("%b %-d")} #{self.start_time.strftime("%-l:%M%P")} - #{self.end_time.strftime("%-l:%M%P")}"
+    "#{self.name} #{self.start_date.strftime("%As")} #{self.start_time.strftime("%-l:%M%P")} - #{self.end_time.strftime("%-l:%M%P")} starting on #{self.start_date.strftime("%b %-d %Y")}"
   end
 
   def full

@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def instructor_index
     @my_courses = CourseRegistration.where(user_id: current_user.id, role: "instructor").current.map do |reg|
-      reg.course
+      reg.registerable
     end
   end
 
