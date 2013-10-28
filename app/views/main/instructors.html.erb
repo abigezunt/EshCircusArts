@@ -1,13 +1,15 @@
 <h2>Our Instructors</h2>
 
 <% @instructors.each do |instructor| %>
-<div class="row">  
-  <div class="col-sm-4 col-md-4 left-column">
-    <%= image_tag instructor.photo %>
-  </div>
-  <div class="col-sm-8 col-md-8 right-column">
-    <h3><%= instructor.name %></h3>
-    <p><%= instructor.bio %></p>
-  </div>
+<div class="container">
+	<div class="row">  
+	  <div class="col-sm-4 col-md-4 photo">
+	    <%= image_tag instructor.photo %>
+	  </div>
+	  <div class="col-sm-8 col-md-8 bio">
+	    <h3><%= instructor.name %></h3>
+	    <p><%= instructor.bio %></p>
+	  </div>
+	</div>
 </div>
 <% end %>

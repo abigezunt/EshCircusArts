@@ -16,25 +16,13 @@
 
 }
 
-.inline {
-	display: inline;
-}
-.inline-block {
-	display: inline-block;
-}
 
-.container {
-	padding: 20px;
-}
-
-.center {
-	margin: auto;
-	text-align: center;
-}
 
 #page-container {
 	
-	padding: 20px;
+	padding: 40px;
+	max-width: 900px;
+	margin: auto;
 
 	.photo {
 		img {
@@ -69,6 +57,23 @@
 
 	.index-list {
 		display: inline;
+	}
+
+		.inline {
+		display: inline;
+	}
+
+	.inline-block {
+		display: inline-block;
+	}
+
+	.container {
+		padding: 20px;
+	}
+
+	.center {
+		margin: auto;
+		text-align: center;
 	}
 }
 
