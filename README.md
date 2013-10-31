@@ -16,6 +16,6 @@ Features:
 
 * features google calendar integration - new courses automatically create a corresponding gcal event, and deleted courses delete their corresponding gcal event.
 
-
+* test deployment at esh-circus-arts.herokuapp.com
 
 [![wdi](http://ga.bling.phillbaker.com/images/shield_imagined_ga_wdi.png)](https://generalassemb.ly/education/web-development-immersive)
