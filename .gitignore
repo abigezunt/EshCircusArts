@@ -19,4 +19,5 @@
 
 /db/user_info_seeds.rb
 .env
+.DS_Store
 
