@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131028024530) do
     t.string   "registerable_type"
   end
 
+  add_index "course_registrations", ["registerable_id"], name: "index_course_registrations_on_registerable_id", using: :btree
   add_index "course_registrations", ["user_id"], name: "index_course_registrations_on_user_id", using: :btree
 
   create_table "courses", force: true do |t|
